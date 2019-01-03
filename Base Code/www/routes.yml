@@ -1,0 +1,51 @@
+"/":
+  controller: Pages
+  action: default
+
+"/liste_des_utilisateurs":
+  controller: Users
+  action: default
+
+"/inscription":
+  controller: Users
+  action: register
+
+"/connexion":
+  controller: Users
+  action: login
+
+"/mot_de_passe_oublie":
+  controller: Users
+  action: forgetPassword
+
+"/back_office":
+  controller: Pages
+  action: mainPageBack
+
+"/addImage":
+  controller: Admin
+  action: addImage
+
+"/addOption":
+  controller: Admin
+  action: addOptions
+
+"/addPage":
+  controller: Admin
+  action: addPage
+
+"/adjustement":
+  controller: Admin
+  action: adjustement
+
+"/customizer":
+  controller: Admin
+  action: customizer
+
+"/statistics":
+  controller: Admin
+  action: statistics
+
+"/yourWebSite":
+  controller: Admin
+  action: yourWebSite
