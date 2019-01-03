@@ -39,9 +39,9 @@ class Users extends BaseSQL{
                 "method"=>"POST",
                 "action"=>Routing::getSlug("Users", "register"),
                 "class"=>"",
-                "id"=>"",
+                "id"=>"form",
                 "submit"=>"S'inscrire",
-                "reset"=>"Annuler" ],
+                "classSubmit" =>"bouttonConfirmFrom"],
 
 
             "data"=>[
@@ -50,14 +50,14 @@ class Users extends BaseSQL{
                     "type"=>"text",
                     "placeholder"=>"Votre Prénom",
                     "required"=>true,
-                    "class"=>"form-control",
-                    "id"=>"firstname"],
+                    "class"=>"inputAddLogUser",
+                    "id"=>"i1--AddLogUser"],
 
 
-                "lastname"=>["type"=>"text","placeholder"=>"Votre nom", "required"=>true, "class"=>"form-control", "id"=>"lastname"],
-                "email"=>["type"=>"email","placeholder"=>"Votre email", "required"=>true, "class"=>"form-control", "id"=>"email"],
-                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"form-control", "id"=>"pwd"],
-                "pwdConfirm"=>["type"=>"password","placeholder"=>"Confirmation", "required"=>true, "class"=>"form-control", "id"=>"pwdConfirm"]
+                "lastname"=>["type"=>"text","placeholder"=>"Votre nom", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i2--AddLogUser"],
+                "email"=>["type"=>"email","placeholder"=>"Votre email", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i3--AddLogUser"],
+                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i4--AddLogUser"],
+                "pwdConfirm"=>["type"=>"password","placeholder"=>"Confirmation", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i5--AddLogUser"]
 
             ]
 
