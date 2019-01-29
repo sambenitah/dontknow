@@ -2,40 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cee0f292-5b2f-48df-8183-4c75a2ebcbc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Users.frm" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Users.frm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Users.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Users.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mvcdocker2/Users.frm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mvcdocker2/Users.ibd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mvcdocker2/db.opt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/www/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/conf.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/conf.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/AdminController.class.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/PagesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/PagesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/UsersController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/UsersController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/BaseSql.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/BaseSql.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/Routing.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Routing.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/Users.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/Users.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Back-css/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Back-css/_general.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Back-css/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Back-css/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Back-css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Back-css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Commercial-css/commercial.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Commercial-css/commercial.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Grid/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Grid/_grid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Grid/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Grid/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Grid/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Grid/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Grid/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Grid/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/js/back.tpl.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/js/admin.tpl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/routes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/www/routes.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/addPage.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/addPage.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/forgetPasswordUser.view.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/loginUser.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/loginUser.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/modals/form.mod.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/modals/form.mod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/templates/back.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/templates/admin.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/views/addOptions.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/addOptions.view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,8 +45,31 @@
     <session id="-1332872623">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="27" />
+          <entry key="txt" value="46" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="27" />
+          <entry key="PLAIN_TEXT" value="46" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="6" />
         </counts>
       </usages-collector>
     </session>
@@ -99,6 +90,7 @@
         <option value="$PROJECT_DIR$/www/conf.inc.php" />
         <option value="$PROJECT_DIR$/www/models/Users.class.php" />
         <option value="$PROJECT_DIR$/www/core/BaseSql.class.php" />
+        <option value="$PROJECT_DIR$/www/views/addOptions.view.php" />
       </list>
     </option>
   </component>
@@ -113,7 +105,7 @@
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1388" />
+    <option name="width" value="1387" />
     <option name="height" value="799" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -142,6 +134,127 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/www/controllers" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/dontknow/Picture.frm</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/dontknow/Picture.ibd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ib_logfile0</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ibdata1</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ibtmp1</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -166,12 +279,34 @@
       <updated>1542807383441</updated>
       <workItem from="1542807384585" duration="6003000" />
       <workItem from="1542877164352" duration="16000" />
-      <workItem from="1548752733245" duration="372000" />
+      <workItem from="1548752733245" duration="2240000" />
     </task>
+    <task id="LOCAL-00001" summary="reset project">
+      <created>1548753304095</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1548753304095</updated>
+    </task>
+    <task id="LOCAL-00002" summary="reset project 2">
+      <created>1548754191046</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1548754191046</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ceci est un test">
+      <created>1548754247119</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1548754247119</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6391000" />
+    <option name="totallyTimeSpent" value="8259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1388" height="799" extended-state="0" />
@@ -179,6 +314,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25705793" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.32956153" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -190,7 +326,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32956153" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -203,6 +339,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="reset project" />
+    <MESSAGE value="reset project 2" />
+    <MESSAGE value="ceci est un test" />
+    <option name="LAST_COMMIT_MESSAGE" value="ceci est un test" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/www/core/BaseSql.php" />
     <entry file="file://$PROJECT_DIR$/www/conf.inf.php" />
@@ -210,13 +352,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -240,6 +375,32 @@
           <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/controllers/sUsersController.class.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/addOptions.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/loginUser.view.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/addPicture.view.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/addUser.view.php">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
