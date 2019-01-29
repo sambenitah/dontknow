@@ -1,109 +1,74 @@
-*{
-  box-sizing: border-box;
+*{box-sizing: border-box }
+
+body{
+  margin: 0;
 }
 
-p{
-  margin:0;
-  padding: 0;
+%col{
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding: 0  $gutter * 0.5;
 }
 
-div{
-  margin:0;
-  padding: 0;
-}
+%clearfix{
 
-.container {
-  margin: 0 auto;
-  max-width: $width-section-content;
-  overflow: hidden;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  margin:  0 -1%;
-  overflow: hidden;
-}
-
-.col{
-  padding: 0px 1%;
-  display: flex;
-  justify-content: center;
-}
-
-
-.col-12 {
-  flex-basis: 100%;
-}
-
-.col-10 {
-  flex-basis: 83.3%;
-}
-
-.col-9 {
-  flex-basis: 75%;
-}
-
-.col-8 {
-  flex-basis: 66.67%;
-}
-
-.col-6 {
-  flex-basis: 50%;
-}
-
-.col-4 {
-  flex-basis: 33.33%;
-}
-
-.col-3 {
-  flex-basis: 25%;
-}
-
-.col-2 {
-
-  flex-basis: calc(100%/6);
-}
-
-.col-1 {
-  flex-basis: calc(100%/12);
-}
-
-
-@media screen and (max-width: $medium-container-width) {
-
-  .row {
-    flex-wrap: wrap;
+  &:before,&:after{
+    content:"";
+    display: table;
   }
-  .col-8 {
-    flex-basis: calc((100%/3)*2);
+  &:after{
+    clear: both;
   }
-  .col-6 {
-    flex-basis: calc(100%/2);
+  &{
+    zoom:1;
   }
-  .col-4 {
-    flex-basis: calc(100%/4);
+}
+
+.row{
+  margin: 0 $gutter * -0.5;
+  @extend %clearfix;
+}
+
+
+//if permet de supprimer le decalage de la grille
+
+@for $i from 0 through $columns{
+
+  @if($i == $columns) {
+
+    .row{
+      margin: 0;
+      @extend %clearfix;
+    }
+
+    .col-#{$i}, .col-m-#{$i}, .col-l-#{$i} {@extend %col; padding: 0;}
+
   }
-  .col-3 {
-    flex-basis: calc(100%/3);
-  }
-  .col-1{
-    flex-basis: calc(100%/4);
+
+  @else {
+
+  .col-#{$i}, .col-m-#{$i}, .col-l-#{$i} {@extend %col;}
+
   }
 
 }
-
-@media screen and (max-width: $small-container-width) {
-
-  .col-4 {
-    flex-basis: 100%;
-  }
-  .col-2 {
-    flex-basis: calc(100%/2);
-  }
-  .col-1{
-    flex-basis: calc(100%/2);
-  }
-
+@media only screen and (max-width: $medium) {
+  @include responsive-columns();
+  @include properties-columns();
 }
+
+
+@media only screen and (min-width: $medium) and (max-width: $large) {
+  @include responsive-columns('-m');
+  @include properties-columns('m-');
+}
+
+
+@media only screen and (min-width: $large) {
+
+  @include responsive-columns('-l');
+  @include properties-columns('l-');
+}
+
+

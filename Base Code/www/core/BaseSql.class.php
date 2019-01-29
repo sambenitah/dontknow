@@ -7,7 +7,7 @@ class BaseSQL{
     public function __construct(){
         try{
             $this->pdo = new PDO(DBDRIVER.":host=".DBHOST.";dbname=".DBNAME,DBUSER,DBPWD);
-
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(Exception $e){
             die("Erreur SQL : ".$e->getMessage());
         }
@@ -23,29 +23,56 @@ class BaseSQL{
 
     }
 
+    public function getAll(array $where, $object = false){
+
+
+            $sqlWhere = [];
+            foreach ($where as $key => $value) {
+                $sqlWhere[] = $key . "=:" . $key;
+            }
+
+            $sql = " SELECT * FROM " . $this->table . (!empty($where) ? 'WHERE': '') . implode(" AND ", $sqlWhere) . ";";
+            $query = $this->pdo->prepare($sql);
+
+
+            if ($object) {
+                //modifier l'objet $this avec le contenu de la bdd
+                $query->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+            } else {
+                //on retourne un simple table php
+                $query->setFetchMode(PDO::FETCH_ASSOC);
+            }
+
+            $query->execute($where);
+            return $query->fetchAll();
+
+
+
+    }
+
 
     // $where -> tableau pour créer notre requête sql
     // $object -> si vrai aliment l'objet $this sinon retourn un tableau
     public function getOneBy(array $where, $object = false){
 
-        // $where = ["id"=>$id, "email"=>"y.skrzypczyk@gmail.com"];
-        $sqlWhere = [];
-        foreach ($where as $key => $value) {
-            $sqlWhere[]=$key."=:".$key;
-        }
-        $sql = " SELECT * FROM ".$this->table." WHERE  ".implode(" AND ", $sqlWhere).";";
-        $query = $this->pdo->prepare($sql);
+            // $where = ["id"=>$id, "email"=>"y.skrzypczyk@gmail.com"];
+            $sqlWhere = [];
+            foreach ($where as $key => $value) {
+                $sqlWhere[] = $key . "=:" . $key;
+            }
+            $sql = " SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
+            $query = $this->pdo->prepare($sql);
 
-        if($object){
-            //modifier l'objet $this avec le contenu de la bdd
-            $query->setFetchMode( PDO::FETCH_INTO, $this);
-        }else{
-            //on retourne un simple table php
-            $query->setFetchMode( PDO::FETCH_ASSOC);
-        }
+            if ($object) {
+                //modifier l'objet $this avec le contenu de la bdd
+                $query->setFetchMode(PDO::FETCH_INTO, $this);
+            } else {
+                //on retourne un simple table php
+                $query->setFetchMode(PDO::FETCH_ASSOC);
+            }
 
-        $query->execute( $where );
-        return $query->fetch();
+            $query->execute($where);
+            return $query->fetch();
 
     }
 

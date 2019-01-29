@@ -1,8 +1,4 @@
 "/":
-  controller: Pages
-  action: default
-
-"/liste_des_utilisateurs":
   controller: Users
   action: default
 
@@ -20,32 +16,20 @@
 
 "/back_office":
   controller: Pages
-  action: mainPageBack
-
-"/addImage":
-  controller: Admin
-  action: addImage
-
-"/addOption":
-  controller: Admin
-  action: addOptions
+  action: default
 
 "/addPage":
-  controller: Admin
+  controller: Pages
   action: addPage
 
-"/adjustement":
-  controller: Admin
-  action: adjustement
+"/showPages":
+  controller: Pages
+  action: showPages
 
-"/customizer":
-  controller: Admin
-  action: customizer
+"/showPictures":
+  controller: Pictures
+  action: showPictures
 
-"/statistics":
-  controller: Admin
-  action: statistics
-
-"/yourWebSite":
-  controller: Admin
-  action: yourWebSite
+"/addPictures":
+  controller: Pictures
+  action: addPicture

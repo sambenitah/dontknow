@@ -9,7 +9,7 @@ html, body, p{
     padding: 0;
 }
 
-.bouttonConfirmFrom{
+.bouttonConfirmForm{
     color: white;
     background-color:rgb(49,49,49);
     padding: 1em;
@@ -22,7 +22,7 @@ html, body, p{
     font-weight: bold;
 }
 
-.bouttonConfirmFrom:hover{
+.bouttonConfirmForm:hover{
     background-color: black;
 }
 
@@ -397,13 +397,13 @@ input:focus{
     content: '';
     display: block;
     height: 2px;
-    width: 100%;
+    width: 0%;
     background: white;
     transition: width .7s ease, background-color .7s ease;
 }
 
 .t2-SectionTwo:hover:after {
-    width: 0%;
+    width: 100%;
     background: transparent;
 }
 

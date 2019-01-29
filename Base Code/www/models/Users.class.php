@@ -41,8 +41,9 @@ class Users extends BaseSQL{
                 "class"=>"",
                 "id"=>"form",
                 "submit"=>"S'inscrire",
-                "classSubmit" =>"bouttonConfirmFrom"],
-
+                "classSubmit" =>"bouttonConfirmForm",
+                "cancelButton"=>false
+            ],
 
             "data"=>[
 
@@ -51,22 +52,51 @@ class Users extends BaseSQL{
                     "placeholder"=>"Votre Prénom",
                     "required"=>true,
                     "class"=>"inputAddLogUser",
-                    "id"=>"i1--AddLogUser"],
+                    "id"=>"i1--AddLogUser",
+                    "minlength"=>2,
+                    "maxlength"=>50,
+                    "error"=>"Le prénom doit faire entre 2 et 50 caractères"
+                ],
 
+                "lastname"=>["type"=>"text","placeholder"=>"Votre nom", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i2--AddLogUser","minlength"=>2,"maxlength"=>100,
+                    "error"=>"Le nom doit faire entre 2 et 100 caractères"],
 
-                "lastname"=>["type"=>"text","placeholder"=>"Votre nom", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i2--AddLogUser"],
-                "email"=>["type"=>"email","placeholder"=>"Votre email", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i3--AddLogUser"],
-                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i4--AddLogUser"],
-                "pwdConfirm"=>["type"=>"password","placeholder"=>"Confirmation", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i5--AddLogUser"]
+                "email"=>["type"=>"email","placeholder"=>"Votre email", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i3--AddLogUser","maxlength"=>250,
+                    "error"=>"L'email n'est pas valide ou il dépasse les 250 caractères"],
+
+                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i4--AddLogUser","minlength"=>6,
+                    "error"=>"Le mot de passe doit faire au minimum 6 caractères avec des minuscules, majuscules et chiffres"],
+
+                "pwdConfirm"=>["type"=>"password","placeholder"=>"Confirmation", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i5--AddLogUser", "confirm"=>"pwd", "error"=>"Les mots de passe ne correspondent pas"]
 
             ]
 
         ];
     }
 
+    public function getLoginForm(){
+        return [
+            "config"=>[
+                "method"=>"POST",
+                "action"=>"",
+                "class"=>"",
+                "id"=>"form",
+                "submit"=>"Log in",
+                "classSubmit" =>"bouttonConfirmForm",
+                "cancelButton"=>false
+            ],
 
+
+            "data"=>[
+
+                "email"=>["type"=>"email","placeholder"=>"Votre email", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i1--AddLogUser",
+                    "error"=>"L'email n'est pas valide"],
+
+                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"inputAddLogUser", "id"=>"pwd",
+                    "error"=>"Veuillez préciser un mot de passe"]
+
+
+            ]
+        ];
+    }
 }
-
-
-
-

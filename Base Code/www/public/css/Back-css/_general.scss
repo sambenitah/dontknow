@@ -1,92 +1,238 @@
-html, body, p, h1, h2{
-  margin: 0;
+body,main,p,hr{
   padding: 0;
+  margin: 0;
 }
 
 input:focus{
   outline: none;
 }
 
-#mainSection{
-    height: calc(100vh - 50px);
+.bouttonConfirmForm{
+  color: white;
+  background-color:rgb(49,49,49);
+  padding: 1em;
+  font-size: 15px;
+  margin: 1em auto 0em auto;
+  width: 20%;
+  border: none;
+  border-radius: 7px;
+  transition: background-color 0.5s;
+  font-weight: bold;
 }
 
-#header{
-  height: 50px;
-  background-color: rgb(28,54,74);
+.bouttonConfirmForm:hover{
+  background-color: black;
 }
 
-#headerTitleBack{
-  text-decoration: none;
+#form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#backgroundHeader{
+  background-color: $blue-petrol;
+}
+
+#headerPartMainSection{
   color: $white;
   font-family: $PermanentMarker;
+  text-decoration: none;
   font-size: 30px;
+  padding-left: 25px;
 }
 
-.adminMenu{
-  display: flex;
-  flex-direction:column;
+#leftPartMainSection{
+  background-color: rgba(230, 230, 230, 0.2);
+  padding: 15px 0 0 0px;
+  height: calc(100vh - 44.4px);
+}
+
+#rightPartMainSection{
+  height: calc(100vh - 44.4px);
+  overflow: auto;
 }
 
 .a-adminMenu{
     text-decoration: none;
     color:$black;
-    font-size: $hyper-link-size;
+    font-size: 16px;
     font-family: $Lato;
-    margin: 0.8em 0em;
+    margin: .8em 0em;
+    padding: 0 20px 0 0 ;
     height: 40px;
-}
-
-.a-adminMenu:after{
-  content: "";
-  display: block;
-  margin-top: 8px;
-  height: 1px;
-  width: 100%;
-  background-color: rgba(132,131,131,0.3);
+    width: max-content;
+    width: -moz-max-content;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform .5s ease;
 }
 
 .a-adminMenu:hover{
-  .arrowNavAdmin{
-    transform: translateX(10px);
-    color: $black;
-    transition: transform .5s ease;
-  }
-}
-
-.arrowNavAdmin{
-  margin: 2.5px 0 0 30px;
-  color: #848383;
-  float: right;
-  transform: translateX(0px);
+  transform: scale(1.19);
   transition: transform .5s ease;
-}
-
-#leftPartMainSection{
-  background-color: rgba(230, 230, 230, 0.2);
-  padding-top: 20px;
- }
-
-.iconAdminMenu{
-  margin-right: 10px;
 }
 
 .titleMenu{
   font-family: $Roboto;
   margin: 1em 0em;
   font-size: 18px;
-  color: #4086bc;
+  color: $blue-light;
   font-weight: bold;
 }
 
-@media screen and (max-width: $small-container-width) {
+
+#navAdmin{
+  padding: 0 50px 0 40px;
+}
+
+
+@media screen and (max-width: $medium ){
+
+  .a-adminMenu{
+    padding: 0em 20px 0 20px;
+    text-align: center;
+  }
+
+  .titleMenu{
+    text-align: center;
+  }
+
+  .div-nav-admin-menu{
+    text-align: center;
+  }
+
+  #headerPartMainSection{
+    text-align: center;
+    padding: 0;
+  }
 
   #leftPartMainSection{
-    height: 20%;
+    height: calc(100vh - 100px);
   }
 
-  #rightPartMainSection{
-    height: 80%;
+  #headerPartMainSection{
+    justify-content: center;
+    display: flex;
   }
 
+}
+
+
+/*-------------- ADDPAGES SHOWPAGES --------------*/
+
+
+#add-PagesTitle{
+  margin: 60px 0 30px 0;
+  text-align: center;
+  color:#85858e;
+  font-size: 30px;
+  font-family: $Roboto;
+  letter-spacing: 15.5px;
+}
+
+
+.mainDivYourPages{
+  width: 50%;
+  margin: auto auto 30px auto;
+  background-color: #61636917;
+  cursor: pointer;
+  border-radius: 3px;
+  transform: scale(1) translateY(0px);
+  transition: transform .5s ease;
+}
+
+.mainDivYourPages:hover{
+  transform: scale(1.04) translateY(-10px);
+  transition: transform .5s ease;
+}
+
+.titleDivAddPages{
+  font-size: 25px;
+  font-family: $Lato;
+  letter-spacing: 3px;
+  padding: 10px;
+
+}
+
+.textDivAddPages{
+  font-family: $Lato;
+  font-size: 13px;
+  padding: 10px;
+  line-height: 25px;
+}
+
+.hr{
+  margin: 0 10px;
+}
+
+.inputAddPage{
+  width: 25%;
+  text-align: center;
+  height: 45px;
+  margin: 2em auto 2em auto;
+  font-family: $Hind;
+  font-size: 20px;
+  padding: 0 0 0 0.5em;
+  color: #A1A1A1;
+  border-bottom: solid 1px rgb(230,230,230);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.inputAddPage--click{
+  background-color: rgba(161,161,161,0.1);
+  border: none;
+  border-radius: 5px;
+}
+
+#formAddPages{
+  width: 100%;
+  margin: auto;
+}
+
+#textaeraAddPage{
+  width: 35%;
+  height: 150px;
+  line-height: 1.5;
+  border-radius: 5px;
+  margin: auto;
+  border: 1px solid #ccc;
+  box-shadow: 0.5px 0.5px 0.5px #999;
+}
+
+.label{
+  font-family: $Hind;
+  color:#85858e;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/*-------------- ADDPICTURE SHOWPICTURES --------------*/
+
+
+#sectionPicture{
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+
+}
+
+.label-file {
+  cursor: pointer;
+  color: $blue-light;
+  font-weight: bold;
+  margin: auto;
+}
+.label-file:hover {
+  color: #25a5c4;
+}
+
+// et on masque le input
+.input-file {
+  display: none;
 }
