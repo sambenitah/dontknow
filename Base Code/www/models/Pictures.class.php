@@ -32,6 +32,7 @@ class Pictures extends BaseSQL{
                 "id" => "form",
                 "submit" => "Insert",
                 "classSubmit" => "bouttonConfirmForm",
+                "idSubmit" => "idBouttonConfirmForm",
                 "cancelButton" => false
 
             ],
@@ -51,7 +52,7 @@ class Pictures extends BaseSQL{
                 ],
 
                 "name" => ["required" => true, "id" => "file", "class" => "input-file", "type" => "file", "value"=>"Choisir une image","classLabel"=>"label-file"
-                    ,"accept" => "image/png, image/jpeg" ],
+                    ,"accept" => "image/png,image/jpeg", "titleFile"=>"Download your picture" ],
 
             ]
 

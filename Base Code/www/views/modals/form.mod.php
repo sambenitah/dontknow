@@ -33,7 +33,6 @@
                    class="<?php echo $Form["class"];?>"
             >
             <?php elseif ($Form["type"] == null):?>
-
                 <label class="label"><?php echo $Form["value"];?></label>
                 <textarea id="<?php echo $Form["id"];?>"
                           class="<?php echo $Form["class"];?>"
@@ -41,12 +40,13 @@
             </textarea>
 
             <?php elseif ($Form["type"] == "file"):?>
-            <label class="<?php echo $Form["classLabel"];?>"><?php echo $Form["value"];?></label>
+            <label id="labelFile" class="label"><?php echo $Form["titleFile"];?></label>
+            <label for="file" class="<?php echo $Form["classLabel"];?>"><?php echo $Form["value"];?></label>
             <input  type="<?php echo $Form["type"];?>"
                     id="<?php echo $Form["id"];?>"
                     class="<?php echo $Form["class"];?>"
                     name="<?php echo $key;?>"
-                    accept=""<?php echo $Form["accept"];?>""
+                    accept="<?php echo $Form["accept"];?>"
             >
 
         <?php endif;?>
@@ -57,7 +57,7 @@
 
 
 
-    <input type="submit" class="<?php echo $config["config"]["classSubmit"];?>" value="<?php echo $config["config"]["submit"];?>">
+    <input type="submit" id="<?php echo $config["config"]["idSubmit"];?>" class="<?php echo $config["config"]["classSubmit"];?>" value="<?php echo $config["config"]["submit"];?>">
 
     <?php if ($config["config"]["cancelButton"] != false):?>
 
