@@ -54,4 +54,8 @@ class PagesController{
 
     }
 
+    public function yourWebSiteAction(){
+        $v = new View("listFrontPages", "adminFront");
+    }
+
 }

@@ -3,9 +3,15 @@
 class Pictures extends BaseSQL{
 
     public $id = null;
+    public $title;
     public $name;
     public $status=0;
 
+
+    public function setTitle($title): void
+    {
+        $this->title = $title;
+    }
 
     public function setId($id)
     {
@@ -53,7 +59,8 @@ class Pictures extends BaseSQL{
                 ],
 
                 "name" => ["required" => true, "id" => "file", "class" => "input-file", "type" => "file", "value"=>"Choisir une image","classLabel"=>"label-file"
-                    ,"accept" => "image/png,image/jpeg", "titleFile"=>"Download your picture" ],
+                    ,"accept" => "image/png,image/jpeg", "titleFile"=>"Download your picture", "errorExtension"=>"You must upload an image with png or jpeg or jpg format",
+                    "errorGlobal" => "Upload failure" ],
 
             ]
 

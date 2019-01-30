@@ -26,6 +26,10 @@
   controller: Pages
   action: showPages
 
+"/YourWebsite":
+  controller: Pages
+  action: yourWebSite
+
 "/singlePages":
   controller: Pages
   action: singleFrontPages

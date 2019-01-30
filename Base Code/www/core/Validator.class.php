@@ -5,18 +5,26 @@ class Validator{
 
     public function __construct( $config, $data ){
 
-        //1er vérification : le nb de champs
-        if(count($data) != count($config["data"])){
-            die("Tentative : faille XSS");
+        $test = get_called_class();
+
+
+
+        if (empty($test)){
+            //1er vérification : le nb de champs
+            if (count($data) != count($config["data"])) {
+                die("Tentative : faille XSS Validator");
+            }
         }
 
 
 
         foreach ($config["data"] as $name => $info) {
 
+            echo $data[$name];
+
             //Isset
             if( !isset($data[$name] )){
-                die("Tentative : faille XSS");
+                die("Tentative : faille XSS Validator 2");
             }else{
 
                 //!empty if required - method

@@ -40,7 +40,7 @@
                 <p class="titleMenu">Administration</p>
                 <div class="div-nav-admin-menu">
                     <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages", "yourWebSite"); ?>">Your
-                        website</a>
+                        website test</a>
                     <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages", "statistics"); ?>">Statistics</a>
                 </div>
                 <p class="titleMenu">Customizer</p>
@@ -116,19 +116,19 @@
                                         </div>
                                         <div class="socials">
                                             <a href="#" title="Behance">
-                                                <i class="fa fa-behance"></i>
+                                                <i class="fab fa-behance"></i>
                                             </a>
                                             <a href="#" title="Dribbble">
-                                                <i class="fa fa-dribbble"></i>
+                                                <i class="fab fa-dribbble"></i>
                                             </a>
                                             <a href="#" title="Facebook">
-                                                <i class="fa fa-facebook"></i>
+                                                <i class="fab fa-facebook"></i>
                                             </a>
                                             <a href="#" title="Google Plus">
-                                                <i class="fa fa-google-plus"></i>
+                                                <i class="fab fa-google-plus"></i>
                                             </a>
                                             <a href="#" title="Instagram">
-                                                <i class="fa fa-instagram"></i>
+                                                <i class="fab fa-instagram"></i>
                                             </a>
                                             <a href="#" title="Search this site">
                                                 <i class="fa fa-search"></i>
