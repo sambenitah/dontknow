@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Montserrat:400,600,700%7CLato:400,700' type='text/css' media='all' />
-    <link rel="stylesheet" type="text/css" href="../../public/css/Libs/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../public/css/Front-css/style.css">
     <link rel="stylesheet" type="text/css" href="../../public/css/Grid/style.css">
 </head>
@@ -65,19 +65,19 @@
                             </div>
                             <div class="socials">
                                 <a href="#" title="Behance">
-                                    <i class="fa fa-behance"></i>
+                                    <i class="fab fa-behance"></i>
                                 </a>
                                 <a href="#" title="Dribbble">
-                                    <i class="fa fa-dribbble"></i>
+                                    <i class="fab fa-dribbble"></i>
                                 </a>
                                 <a href="#" title="Facebook">
-                                    <i class="fa fa-facebook"></i>
+                                    <i class="fab fa-facebook"></i>
                                 </a>
                                 <a href="#" title="Google Plus">
-                                    <i class="fa fa-google-plus"></i>
+                                    <i class="fab fa-google-plus"></i>
                                 </a>
                                 <a href="#" title="Instagram">
-                                    <i class="fa fa-instagram"></i>
+                                    <i class="fab fa-instagram"></i>
                                 </a>
                                 <a href="#" title="Search this site">
                                     <i class="fa fa-search"></i>

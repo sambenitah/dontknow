@@ -49,7 +49,8 @@ class Pages extends BaseSQL{
                 "id"=>"form",
                 "submit"=>"Create",
                 "classSubmit" =>"bouttonConfirmForm",
-                "cancelButton"=>false
+                "cancelButton"=>false,
+                "enctype"=>false
 
             ],
 
