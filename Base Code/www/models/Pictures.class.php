@@ -27,13 +27,14 @@ class Pictures extends BaseSQL{
         return [
             "config" => [
                 "method" => "POST",
-                "action" => "",
+                "action" => Routing::getSlug("Pictures", "register"),
                 "class" => "",
                 "id" => "form",
                 "submit" => "Insert",
                 "classSubmit" => "bouttonConfirmForm",
                 "idSubmit" => "idBouttonConfirmForm",
-                "cancelButton" => false
+                "cancelButton" => false,
+                "enctype"=>true
 
             ],
 

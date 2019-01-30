@@ -42,7 +42,8 @@ class Users extends BaseSQL{
                 "id"=>"form",
                 "submit"=>"S'inscrire",
                 "classSubmit" =>"bouttonConfirmForm",
-                "cancelButton"=>false
+                "cancelButton"=>false,
+                "enctype"=>false
             ],
 
             "data"=>[
@@ -83,7 +84,8 @@ class Users extends BaseSQL{
                 "id"=>"form",
                 "submit"=>"Log in",
                 "classSubmit" =>"bouttonConfirmForm",
-                "cancelButton"=>false
+                "cancelButton"=>false,
+                "enctype"=>false
             ],
 
 

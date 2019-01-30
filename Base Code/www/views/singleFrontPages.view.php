@@ -34,19 +34,19 @@
                         <div class="post-share-wrap">
                             <div class="post-share">
                                 <a href="#">
-                                    <i class="fa fa-facebook"></i>
+                                    <i class="fab fa-facebook"></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-twitter"></i>
+                                    <i class="fab fa-twitter"></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-google-plus"></i>
+                                    <i class="fab fa-google-plus"></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-linkedin"></i>
+                                    <i class="fab fa-linkedin"></i>
                                 </a>
                                 <a href="#">
-                                    <i class="fa fa-pinterest"></i>
+                                    <i class="fab fa-pinterest"></i>
                                 </a>
                             </div>
                         </div>
