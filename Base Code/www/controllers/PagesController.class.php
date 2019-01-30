@@ -4,7 +4,7 @@ class PagesController{
 
     public function defaultAction(){
 
-        $v = new View("mainBack", "admin");
+        $v = new View("listFrontPages", "adminFront");
 
     }
 
