@@ -42,4 +42,16 @@ class PagesController{
 
     }
 
+    public function singleFrontPagesAction(){
+        $v = new View("singleFrontPages", "front");
+        //$v->assign("ListPage", $selectPage);
+
+    }
+
+    public function listFrontPagesAction(){
+        $v = new View("listFrontPages", "front");
+        //$v->assign("ListPage", $selectPage);
+
+    }
+
 }

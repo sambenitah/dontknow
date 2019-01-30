@@ -26,6 +26,14 @@
   controller: Pages
   action: showPages
 
+"/singlePages":
+  controller: Pages
+  action: singleFrontPages
+
+"/listPages":
+  controller: Pages
+  action: listFrontPages
+
 "/showPictures":
   controller: Pictures
   action: showPictures
