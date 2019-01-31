@@ -63,7 +63,7 @@
         </div>
         <div id="rightPartMainSection" class="col-12 col-m-9 col-l-10">
 
-            <body class="home">
+            <div class="front">
             <div id="main-content">
                 <div class="mobile">
                     <div class="container">
@@ -115,10 +115,10 @@
                                             </nav>
                                         </div>
                                         <div class="socials">
-                                            <a href="#" title="Behance">
+                                            <a href="#" title="Behance" onclick="displayFullScreen()">
                                                 <i class="fab fa-behance"></i>
                                             </a>
-                                            <a href="#" title="Dribbble">
+                                            <a href="#" title="Dribbble" onclick="displayRegularScreen()">
                                                 <i class="fab fa-dribbble"></i>
                                             </a>
                                             <a href="#" title="Facebook">
@@ -209,4 +209,21 @@
 <script src="../public/js/admin.tpl.js"></script>
 </body>
 </html>
+<script>
+    function displayFullScreen(){
+        $('#rightPartMainSection').attr('class',  'col-12 col-m-12 col-l-12');
+        $('#leftPartMainSection').toggle('slow')
+        $('#backgroundHeader').attr('style',  'display:none');
+        $('.home').attr('style',  'padding: 50px 0 0;');
+
+    }
+
+    function displayRegularScreen() {
+        $('#leftPartMainSection').toggle('slow')
+        $('#backgroundHeader').attr('style', 'display:display');
+        $('#rightPartMainSection').attr('class', 'col-12 col-m-9 col-l-10');
+        $('.home').attr('style', 'padding:0');
+    }
+</script>
+
 

@@ -3,10 +3,11 @@ $color: #EF5A31;
 
 .card{
   overflow: hidden;
+  height: 500px;
 }
 
 .card:hover{
-  box-shadow: 0px 0px 50px rgba(0,0,0,0.3);
+  //box-shadow: 0px 0px 50px rgba(0,0,0,0.3);
 }
 
 .card-thumb{
