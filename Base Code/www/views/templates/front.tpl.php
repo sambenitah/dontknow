@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../../public/css/Grid/style.css">
 </head>
 
-<body class="home">
+<body class="front">
 <div id="main-content">
     <div class="mobile">
         <div class="container">
