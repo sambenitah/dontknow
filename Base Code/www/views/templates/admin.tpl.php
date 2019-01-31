@@ -39,7 +39,7 @@
                     <p class="titleMenu">Manage</p>
                    <div class="div-nav-admin-menu">
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","addArticle");?>">Add Article</a>
-                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","showArticle");?>">Your Articles</a>
+                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","showArticles");?>">Your Articles</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","addPicture");?>">Add picture</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","showPictures");?>">Your pictures</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","addOptions");?>">Add options</a>

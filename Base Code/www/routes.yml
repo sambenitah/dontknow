@@ -24,7 +24,7 @@
 
 "/showArticles":
   controller: Articles
-  action: showArticle
+  action: showArticles
 
 "/YourWebsite":
   controller: Articles

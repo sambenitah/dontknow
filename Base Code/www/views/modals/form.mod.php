@@ -8,7 +8,6 @@
         </ul>
 <?php endif ?>
 
-
 <form
         action="<?php echo $config["config"]["action"];?>"
         method="<?php echo $config["config"]["method"];?>"
@@ -43,19 +42,25 @@
                           name="<?php echo $key;?>">
             </textarea>
 
-            <?php elseif ($Form["type"] == "file"):?>
-            <label id="labelFile" class="label"><?php echo $Form["titleFile"];?></label>
-            <label for="file" class="<?php echo $Form["classLabel"];?>"><?php echo $Form["value"];?></label>
-            <input  type="<?php echo $Form["type"];?>"
-                    id="<?php echo $Form["id"];?>"
-                    class="<?php echo $Form["class"];?>"
-                    name="<?php echo $key;?>"
-                    accept="<?php echo $Form["accept"];?>"
-            >
-
         <?php endif;?>
 
     <?php endforeach;?>
+
+    <?php if (array_key_exists('dataFile', $config)):?>
+        <?php foreach ($config["dataFile"] as $key => $files):?>
+
+            <label id="labelFile" class="label"><?php echo $files["titleFile"];?></label>
+            <label for="file" class="<?php echo $files["classLabel"];?>"><?php echo $files["value"];?></label>
+            <input  type="<?php echo $files["type"];?>"
+                    id="<?php echo $files["id"];?>"
+                    class="<?php echo $files["class"];?>"
+                    name="<?php echo $key;?>"
+                    accept="<?php echo $files["accept"];?>"
+            >
+
+        <?php endforeach;?>
+    <?php endif;?>
+
 
 
 

@@ -3,12 +3,12 @@
 class ValidatorFiles extends Validator{
 
 
-    public function __construct( $config,$data,$file ){
+    public function __construct($config,$data,$file ){
 
 
         parent::__construct($config , $data);
 
-        if(count($data)  != count($config["data"])){
+        if(count($file)  != count($config["dataFile"])){
             die("Tentative : faille XSS Validator Files");
         }
 
@@ -29,8 +29,5 @@ class ValidatorFiles extends Validator{
                 }
             }
         }
-
-        // Si j'apelle ma class parent a la fin je ne pourrais pas acceder ua tableau des erreurs lorsque je fais la verif ligne 29
     }
-
 }

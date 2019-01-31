@@ -25,7 +25,7 @@ class ArticlesController{
                 $addPage->setTitle($data["title"]);
                 $addPage->setRoute($data["route"]);
                 $addPage->save();
-                header('Location: '.Routing::getSlug("Articles","showPages").'');
+                header('Location: '.Routing::getSlug("Articles","showArticles").'');
                 exit;
             }
         }
@@ -34,7 +34,7 @@ class ArticlesController{
 
     }
 
-    public function showArticleAction(){
+    public function showArticlesAction(){
         $addPage = new Articles();
         $selectPage = $addPage ->getAll([],true);
         $v = new View("showArticle", "admin");

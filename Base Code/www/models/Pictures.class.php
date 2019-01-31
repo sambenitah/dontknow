@@ -24,8 +24,7 @@ class Pictures extends BaseSQL{
         /*$this->name = strtr($name,
             'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
             'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
-        $this->name = preg_replace('/([^.a-z0-9]+)/i', '-', $this->name );
-        */
+        $this->name = preg_replace('/([^.a-z0-9]+)/i', '-', $this->name );*/
     }
 
     public function getName()
@@ -70,14 +69,17 @@ class Pictures extends BaseSQL{
                     "error" => "Your title must be between two or fifteen characters",
                 ],
 
-                "name" => ["required" => false, "id" => "file", "class" => "input-file", "type" => "file", "value"=>"Choisir une image","classLabel"=>"label-file"
-                    ,"accept" => "image/png,image/jpeg", "titleFile"=>"Download your picture", "errorExtension"=>"You must upload an image with png or jpeg or jpg format",
-                    "error" => "Fail to upload your picture",
+            ],
+
+             "dataFile" => [
+
+                 "name" => ["required" => false, "id" => "file", "class" => "input-file", "type" => "file", "value"=>"Choisir une image","classLabel"=>"label-file"
+                     ,"accept" => "image/png,image/jpeg", "titleFile"=>"Download your picture", "errorExtension"=>"You must upload an image with png or jpeg or jpg format",
+                     "error" => "Fail to upload your picture",
 
 
-                     ],
-
-            ]
+                 ],
+             ]
 
         ];
     }
