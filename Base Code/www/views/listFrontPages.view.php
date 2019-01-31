@@ -1,7 +1,7 @@
 <div class="col-l-9">
     <div class="projects">
-        <article class="post">
-            <div class="post-media">
+        <article class="post card">
+            <div class="post-media card-thumb">
                 <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">
                     <img src="../public/images/Front/posts/Apple.jpg" alt="Post">
                 </a>

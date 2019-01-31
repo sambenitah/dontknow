@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cee0f292-5b2f-48df-8183-4c75a2ebcbc2" name="Default Changelist" comment="">
+    <list default="true" id="cee0f292-5b2f-48df-8183-4c75a2ebcbc2" name="Default Changelist" comment="commit 30/01 routes + views">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/PagesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/PagesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/mainBack.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/mainBack.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/views/listFrontPages.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/listFrontPages.view.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/views/templates/adminFront.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/templates/adminFront.tpl.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +46,7 @@
     <session id="-1332872623">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.2" value="1" />
@@ -59,29 +55,29 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="414" />
-          <entry key="txt" value="88" />
+          <entry key="php" value="437" />
+          <entry key="txt" value="115" />
           <entry key="yml" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="414" />
-          <entry key="PLAIN_TEXT" value="88" />
+          <entry key="PHP" value="437" />
+          <entry key="PLAIN_TEXT" value="115" />
           <entry key="YAML" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="jpg" value="1" />
-          <entry key="php" value="38" />
+          <entry key="php" value="45" />
           <entry key="yml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="1" />
-          <entry key="PHP" value="38" />
+          <entry key="PHP" value="45" />
           <entry key="YAML" value="3" />
         </counts>
       </usages-collector>
@@ -89,20 +85,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/controllers/PagesController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/www/views/templates/adminFront.tpl.php">
+        <entry file="file://$PROJECT_DIR$/www/views/listFrontPages.view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1168">
-              <caret line="78" column="22" lean-forward="true" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+            <state relative-caret-position="105">
+              <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -132,11 +119,11 @@
         <option value="$PROJECT_DIR$/www/routes.yml" />
         <option value="$PROJECT_DIR$/www/views/singleFrontPages.view.php" />
         <option value="$PROJECT_DIR$/www/views/templates/front.tpl.php" />
-        <option value="$PROJECT_DIR$/www/views/listFrontPages.view.php" />
         <option value="$PROJECT_DIR$/www/core/View.class.php" />
         <option value="$PROJECT_DIR$/www/views/mainBack.view.php" />
         <option value="$PROJECT_DIR$/www/controllers/PagesController.class.php" />
         <option value="$PROJECT_DIR$/www/views/templates/adminFront.tpl.php" />
+        <option value="$PROJECT_DIR$/www/views/listFrontPages.view.php" />
       </list>
     </option>
   </component>
@@ -224,6 +211,128 @@
       <recent name="$PROJECT_DIR$/www/controllers" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/dontknow/Pages.ibd</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ib_buffer_pool</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ib_logfile0</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ibdata1</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/db_data/ibtmp1</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/controllers/PicturesController.class.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/models/Pages.class.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/models/Pictures.class.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/models/Users.class.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/views/modals/form.mod.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/views/singleFrontPages.view.php</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/views/templates/front.tpl.php</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/www/public/css/Libs/font-awesome.min.css</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -251,7 +360,7 @@
       <workItem from="1548752733245" duration="2240000" />
       <workItem from="1548756675218" duration="474000" />
       <workItem from="1548805794714" duration="2714000" />
-      <workItem from="1548863846545" duration="2087000" />
+      <workItem from="1548863846545" duration="3206000" />
     </task>
     <task id="LOCAL-00001" summary="reset project">
       <created>1548753304095</created>
@@ -288,15 +397,28 @@
       <option name="project" value="LOCAL" />
       <updated>1548808678648</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commit 30/01 routes + views">
+      <created>1548868005238</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1548868005238</updated>
+    </task>
+    <task id="LOCAL-00007" summary="commit 30/01 routes + views">
+      <created>1548868160889</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1548868160889</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13534000" />
+    <option name="totallyTimeSpent" value="14653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1387" height="799" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19107807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -354,7 +476,8 @@
     <MESSAGE value="ceci est un test" />
     <MESSAGE value="test bdd" />
     <MESSAGE value="intégration templates front 30/01" />
-    <option name="LAST_COMMIT_MESSAGE" value="intégration templates front 30/01" />
+    <MESSAGE value="commit 30/01 routes + views" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 30/01 routes + views" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/www/core/BaseSql.php" />
@@ -413,31 +536,10 @@
     <entry file="file://$PROJECT_DIR$/www/views/showPages.view.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/views/templates/commercial.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/views/singleFrontPages.view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="69" selection-start-line="12" selection-start-column="69" selection-end-line="12" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/routes.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="33" column="19" lean-forward="true" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/views/listFrontPages.view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="70" column="18" lean-forward="true" selection-end-line="115" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -462,13 +564,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/views/templates/front.tpl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="152" lean-forward="true" selection-start-line="112" selection-start-column="8" selection-end-line="152" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/core/View.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="381">
@@ -479,14 +574,42 @@
     <entry file="file://$PROJECT_DIR$/www/controllers/PagesController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/templates/front.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-606">
+          <caret line="11" column="82" lean-forward="true" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/views/templates/adminFront.tpl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="78" column="22" lean-forward="true" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
+        <state relative-caret-position="1950">
+          <caret line="130" column="74" selection-start-line="130" selection-start-column="74" selection-end-line="130" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/templates/commercial.tpl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="44" lean-forward="true" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/singleFrontPages.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1014">
+          <caret line="3" column="11" lean-forward="true" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/views/listFrontPages.view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
         </state>
       </provider>
     </entry>
