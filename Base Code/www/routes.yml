@@ -15,27 +15,27 @@
   action: forgetPassword
 
 "/back_office":
-  controller: Pages
+  controller: Article
   action: default
 
 "/addPage":
-  controller: Pages
-  action: addPage
+  controller: Article
+  action: addArticle
 
 "/showPages":
-  controller: Pages
-  action: showPages
+  controller: Article
+  action: showArticle
 
 "/YourWebsite":
-  controller: Pages
+  controller: Article
   action: yourWebSite
 
 "/singlePages":
-  controller: Pages
+  controller: Article
   action: singleFrontPages
 
 "/listPages":
-  controller: Pages
+  controller: Article
   action: listFrontPages
 
 "/showPictures":

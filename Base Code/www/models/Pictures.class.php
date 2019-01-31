@@ -20,13 +20,25 @@ class Pictures extends BaseSQL{
 
     public function setName($name)
     {
-        $this->name = strtoupper(trim($name));
+        $this->name = urlencode($name);
+        /*$this->name = strtr($name,
+            'ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÒÓÔÕÖÙÚÛÜÝàáâãäåçèéêëìíîïðòóôõöùúûüýÿ',
+            'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy');
+        $this->name = preg_replace('/([^.a-z0-9]+)/i', '-', $this->name );
+        */
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
 
     public function setStatus(int $status)
     {
         $this->status = $status;
     }
+
 
     public function getAddPictureForm()
     {
@@ -58,9 +70,12 @@ class Pictures extends BaseSQL{
                     "error" => "Your title must be between two or fifteen characters",
                 ],
 
-                "name" => ["required" => true, "id" => "file", "class" => "input-file", "type" => "file", "value"=>"Choisir une image","classLabel"=>"label-file"
+                "name" => ["required" => false, "id" => "file", "class" => "input-file", "type" => "file", "value"=>"Choisir une image","classLabel"=>"label-file"
                     ,"accept" => "image/png,image/jpeg", "titleFile"=>"Download your picture", "errorExtension"=>"You must upload an image with png or jpeg or jpg format",
-                    "errorGlobal" => "Upload failure" ],
+                    "error" => "Fail to upload your picture",
+
+
+                     ],
 
             ]
 

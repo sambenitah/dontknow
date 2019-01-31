@@ -1,6 +1,6 @@
 <?php
 
-class PagesController{
+class ArticleController{
 
     public function defaultAction(){
 
@@ -8,9 +8,9 @@ class PagesController{
 
     }
 
-    public function addPageAction(){
-        $addPage = new Pages();
-        $form = $addPage->getAddPagesForm();
+    public function addArticleAction(){
+        $addPage = new Article();
+        $form = $addPage->getAddArticleForm();
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_".$method];
 
@@ -25,19 +25,19 @@ class PagesController{
                 $addPage->setTitle($data["title"]);
                 $addPage->setRoute($data["route"]);
                 $addPage->save();
-                header('Location: '.Routing::getSlug("Pages","showPages").'');
+                header('Location: '.Routing::getSlug("Article","showPages").'');
                 exit;
             }
         }
-            $v = new View("addPage", "admin");
+            $v = new View("addArticle", "admin");
             $v->assign("Form", $form);
 
     }
 
-    public function showPagesAction(){
-        $addPage = new Pages();
+    public function showArticleAction(){
+        $addPage = new Article();
         $selectPage = $addPage ->getAll([],true);
-        $v = new View("showPages", "admin");
+        $v = new View("showArticle", "admin");
         $v->assign("ListPage", $selectPage);
 
     }

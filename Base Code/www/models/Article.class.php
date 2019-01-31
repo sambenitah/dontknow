@@ -1,5 +1,5 @@
 <?php
-class Pages extends BaseSQL{
+class Article extends BaseSQL{
 
     public $id = null;
     public $title;
@@ -40,7 +40,7 @@ class Pages extends BaseSQL{
     }
 
 
-    public function getAddPagesForm(){
+    public function getAddArticleForm(){
         return [
             "config"=>[
                 "method"=>"POST",
