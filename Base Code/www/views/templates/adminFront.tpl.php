@@ -40,7 +40,7 @@
                 <p class="titleMenu">Administration</p>
                 <div class="div-nav-admin-menu">
                     <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages", "yourWebSite"); ?>">Your
-                        website</a>
+                        website test</a>
                     <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages", "statistics"); ?>">Statistics</a>
                 </div>
                 <p class="titleMenu">Customizer</p>
