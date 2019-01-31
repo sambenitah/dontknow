@@ -1,5 +1,5 @@
 <?php
-class Article extends BaseSQL{
+class Articles extends BaseSQL{
 
     public $id = null;
     public $title;

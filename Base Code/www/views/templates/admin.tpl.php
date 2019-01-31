@@ -29,7 +29,7 @@
                 <nav class="center" id="navAdmin">
                     <p class="titleMenu">Administration</p>
                     <div class="div-nav-admin-menu">
-                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article","yourWebSite");?>">Your website</a>
+                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","yourWebSite");?>">Your website</a>
                         <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","statistics");?>">Statistics</a>
                     </div>
                     <p class="titleMenu">Customizer</p>
@@ -38,8 +38,8 @@
                    </div>
                     <p class="titleMenu">Manage</p>
                    <div class="div-nav-admin-menu">
-                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article","addArticle");?>">Add Article</a>
-                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article","showArticle");?>">Your Articles</a>
+                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","addArticle");?>">Add Article</a>
+                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","showArticle");?>">Your Articles</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","addPicture");?>">Add picture</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","showPictures");?>">Your pictures</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","addOptions");?>">Add options</a>
