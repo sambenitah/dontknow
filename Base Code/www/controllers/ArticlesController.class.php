@@ -43,19 +43,12 @@ class ArticlesController{
     }
 
     public function singleFrontPagesAction(){
-        $v = new View("singleFrontPages", "front");
-        //$v->assign("ListPage", $selectPage);
+        new View("singleFrontPages", "front");
 
     }
 
-    public function listFrontPagesAction(){
-        $v = new View("listFrontPages", "front");
-        //$v->assign("ListPage", $selectPage);
-
-    }
-
-    public function yourWebSiteAction(){
-        $v = new View("listFrontPages", "adminFront");
+    public function yourWebsiteAction(){
+        new View("listFrontPages", "Front");
     }
 
 }

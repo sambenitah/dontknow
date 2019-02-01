@@ -3,13 +3,13 @@
 
         <article class="post card">
             <div class="post-media card-thumb">
-                <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">
+                <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">
                     <img src="../public/images/Front/posts/Apple.jpg" alt="Post">
                 </a>
             </div>
             <div class="post-content card-body">
                 <h2 class="title card-title">
-                    <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
+                    <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
                 </h2>
                 <div class="post-details card-subtitle">
                     <a href="#" class="post-date">January 30, 2019</a>
@@ -25,13 +25,13 @@
 
         <article class="post card">
             <div class="post-media card-thumb">
-                <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">
+                <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">
                     <img src="../public/images/Front/posts/Apple.jpg" alt="Post">
                 </a>
             </div>
             <div class="post-content card-body">
                 <h2 class="title card-title">
-                    <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
+                    <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
                 </h2>
                 <div class="post-details card-subtitle">
                     <a href="#" class="post-date">January 30, 2019</a>
@@ -47,13 +47,13 @@
 
         <article class="post card">
             <div class="post-media card-thumb">
-                <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">
+                <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">
                     <img src="../public/images/Front/posts/Apple.jpg" alt="Post">
                 </a>
             </div>
             <div class="post-content card-body">
                 <h2 class="title card-title">
-                    <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
+                    <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
                 </h2>
                 <div class="post-details card-subtitle">
                     <a href="#" class="post-date">January 30, 2019</a>
@@ -69,13 +69,13 @@
 
         <article class="post card">
             <div class="post-media card-thumb">
-                <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">
+                <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">
                     <img src="../public/images/Front/posts/Apple.jpg" alt="Post">
                 </a>
             </div>
             <div class="post-content card-body">
                 <h2 class="title card-title">
-                    <a href="<?php echo Routing::getSlug("Pages","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
+                    <a href="<?php echo Routing::getSlug("Article","singleFrontPages");?>">Apple Video lancé en avril aux États-Unis?</a>
                 </h2>
                 <div class="post-details card-subtitle">
                     <a href="#" class="post-date">January 30, 2019</a>
