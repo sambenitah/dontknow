@@ -4,7 +4,7 @@ class ArticlesController{
 
     public function defaultAction(){
 
-        $v = new View("listFrontPages", "adminFront");
+        $v = new View("listFrontPages", "admin");
 
     }
 

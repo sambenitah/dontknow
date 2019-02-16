@@ -34,25 +34,19 @@
             <nav class="center" id="navAdmin">
                 <p class="titleMenu">Administration</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article", "yourWebSite"); ?>">Your
-                        website</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article", "statistics"); ?>">Statistics</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","yourWebSite");?>">Your website</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","statistics");?>">Statistics</a>
                 </div>
                 <p class="titleMenu">Customizer</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article", "customizer"); ?>">Customizer</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","customizer");?>">Customizer</a>
                 </div>
                 <p class="titleMenu">Manage</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article", "addPage"); ?>">Add Article</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article", "showPages"); ?>">Your Articles</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures", "addPicture"); ?>">Add
-                        picture</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures", "showPictures"); ?>">Your
-                        pictures</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Article", "addOptions"); ?>">Add options</a>
-                    <a class="a-adminMenu"
-                       href="<?php echo Routing::getSlug("Pages", "adjustement"); ?>">Adjustement</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","addArticle");?>">Add Article</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","showArticles");?>">Your Articles</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","addPicture");?>">Add picture</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","showPictures");?>">Your pictures</a>
                 </div>
             </nav>
         </div>
