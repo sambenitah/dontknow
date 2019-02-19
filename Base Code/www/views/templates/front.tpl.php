@@ -202,7 +202,7 @@
     function displayRegularScreen() {
         $('#leftPartMainSection').toggle('slow')
         $('#backgroundHeader').attr('style', 'display:display');
-        $('#rightPartMainSection').attr('class', 'col-12 col-m-9 col-l-10');
+        $('#rightPartMainSection').attr('class', 'col-12 col-m-12 col-l-12');
     }
 </script>
 

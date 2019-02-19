@@ -1,3 +1,8 @@
+@media screen and (max-width: 1200px) {
+  .card-thumb {
+    height: 350px;
+  }
+}
 @media screen and (max-width: 1040px) {
   .preload {
     display: none;
@@ -18,8 +23,6 @@
     color: #ffffff;
   }
   .header.active{
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
     transform: translateX(0);
   }
   .main-menu{
@@ -51,6 +54,10 @@
     visibility: visible;
     opacity: 1;
   }
+
+  .card-thumb {
+    height: 380px;
+  }
 }
 @media screen and (max-width: 768px) {
   body {
@@ -58,6 +65,9 @@
   }
   .project-item {
     margin-bottom: 30px;
+  }
+  .card-thumb {
+    height: 270px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -74,6 +84,14 @@
     padding-left: 0;
   }
 }
+
+@media screen and (max-width: 567px) {
+  .card-thumb {
+    height: 200px;
+  }
+}
+
+
 @media screen and (max-width: 480px) {
   .projects {
     padding-left: 0;
@@ -136,3 +154,4 @@
     width: 1170px
   }
 }
+

@@ -42,8 +42,8 @@ class ArticlesController{
 
     }
 
-    public function singleFrontPagesAction(){
-        new View("singleFrontPages", "front");
+    public function singleArticleAction(){
+        new View("singleArticle", "front");
 
     }
 
