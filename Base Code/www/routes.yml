@@ -26,13 +26,13 @@
   controller: Articles
   action: yourWebSite
 
-"/singlePages":
+"/singleArticle":
   controller: Articles
-  action: singleFrontPages
+  action: singleArticle
 
-"/listPages":
+"/listArticles":
   controller: Articles
-  action: listFrontPages
+  action: yourWebsite
 
 "/showPictures":
   controller: Pictures
