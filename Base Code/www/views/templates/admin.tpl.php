@@ -42,8 +42,6 @@
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","showArticles");?>">Your Articles</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","addPicture");?>">Add picture</a>
                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","showPictures");?>">Your pictures</a>
-                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","addOptions");?>">Add options</a>
-                       <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","adjustement");?>">Adjustement</a>
                    </div>
                 </nav>
             </div>

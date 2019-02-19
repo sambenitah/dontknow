@@ -34,25 +34,19 @@
             <nav class="center" id="navAdmin">
                 <p class="titleMenu">Administration</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles", "yourWebSite"); ?>">Your
-                        website</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles", "statistics"); ?>">Statistics</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","yourWebSite");?>">Your website</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","statistics");?>">Statistics</a>
                 </div>
                 <p class="titleMenu">Customizer</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles", "customizer"); ?>">Customizer</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","customizer");?>">Customizer</a>
                 </div>
                 <p class="titleMenu">Manage</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles", "addArticle"); ?>">Add Article</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles", "showArticles"); ?>">Your Articles</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures", "addPicture"); ?>">Add
-                        picture</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures", "showPictures"); ?>">Your
-                        pictures</a>
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles", "addOptions"); ?>">Add options</a>
-                    <a class="a-adminMenu"
-                       href="<?php echo Routing::getSlug("Pages", "adjustement"); ?>">Adjustement</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","addArticle");?>">Add Article</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","showArticles");?>">Your Articles</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","addPicture");?>">Add picture</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pictures","showPictures");?>">Your pictures</a>
                 </div>
             </nav>
         </div>
@@ -68,7 +62,7 @@
                                 <span class="item item-3"></span>
                             </div>
                             <div class="logo">
-                                <a href="<?php echo Routing::getSlug("Articles", "yourWebsite"); ?>">IDK</a>
+                                <a href="<?php echo Routing::getSlug("Article", "listFrontPages"); ?>">IDK</a>
                             </div>
                         </div>
                     </div>
@@ -80,14 +74,13 @@
                                     <div class="table">
                                         <div class="table-cell">
                                             <div class="logo">
-                                                <a href="<?php echo Routing::getSlug("Articles", "yourWebsite"); ?>">IDK</a>
+                                                <a href="<?php echo Routing::getSlug("Article", "listFrontPages"); ?>">IDK</a>
                                             </div>
-                                            <div class="kd-close" onclick="displayRegularScreen()"></div>
                                             <div class="main-menu">
                                                 <nav>
                                                     <ul class="menu-list">
                                                         <li class="active">
-                                                            <a href="<?php echo Routing::getSlug("Articles", "yourWebsite"); ?>">Home</a>
+                                                            <a href="<?php echo Routing::getSlug("Article", "listFrontPages"); ?>">Home</a>
                                                         </li>
                                                         <li>
                                                             <a href="category.html">Branding</a>
@@ -111,10 +104,10 @@
                                                 </nav>
                                             </div>
                                             <div class="socials">
-                                                <a href="#" title="Behance">
+                                                <a href="#" title="Behance" onclick="displayFullScreen()">
                                                     <i class="fab fa-behance"></i>
                                                 </a>
-                                                <a href="#" title="Dribbble">
+                                                <a href="#" title="Dribbble" onclick="displayRegularScreen()">
                                                     <i class="fab fa-dribbble"></i>
                                                 </a>
                                                 <a href="#" title="Facebook">
@@ -209,9 +202,8 @@
     function displayRegularScreen() {
         $('#leftPartMainSection').toggle('slow')
         $('#backgroundHeader').attr('style', 'display:display');
-        $('#rightPartMainSection').attr('class', 'col-12 col-m-9 col-l-10 col-l-push-1');
+        $('#rightPartMainSection').attr('class', 'col-12 col-m-9 col-l-10');
     }
 </script>
-
 
 

@@ -1,18 +1,15 @@
 <?php
 class BaseSQL{
 
-    private $pdo;
     private $table;
+    private $instance;
+
 
     public function __construct(){
-        try{
-            $this->pdo = new PDO(DBDRIVER.":host=".DBHOST.";dbname=".DBNAME,DBUSER,DBPWD);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }catch(Exception $e){
-            die("Erreur SQL : ".$e->getMessage());
-        }
-
+        $this->instance = SPDO::getPDO();
         $this->table = get_called_class();
+        if(!$this->instance instanceof \PDO)
+            throw new \Exception('Aucune connection');
     }
 
 
@@ -32,15 +29,16 @@ class BaseSQL{
             }
 
             $sql = " SELECT * FROM " . $this->table . (!empty($where) ? 'WHERE': '') . implode(" AND ", $sqlWhere) . ";";
-            $query = $this->pdo->prepare($sql);
+            $query = $this->instance->prepare($sql);
+
 
 
             if ($object) {
                 //modifier l'objet $this avec le contenu de la bdd
-                $query->setFetchMode(PDO::FETCH_CLASS, get_called_class());
+                $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
             } else {
                 //on retourne un simple table php
-                $query->setFetchMode(PDO::FETCH_ASSOC);
+                $query->setFetchMode(Pdo::FETCH_ASSOC);
             }
 
             $query->execute($where);
@@ -61,14 +59,14 @@ class BaseSQL{
                 $sqlWhere[] = $key . "=:" . $key;
             }
             $sql = " SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
-            $query = $this->pdo->prepare($sql);
+            $query = $this->instance->prepare($sql);
 
             if ($object) {
                 //modifier l'objet $this avec le contenu de la bdd
-                $query->setFetchMode(PDO::FETCH_INTO, $this);
+                $query->setFetchMode(Pdo::FETCH_INTO, $this);
             } else {
                 //on retourne un simple table php
-                $query->setFetchMode(PDO::FETCH_ASSOC);
+                $query->setFetchMode(Pdo::FETCH_ASSOC);
             }
 
             $query->execute($where);
@@ -92,7 +90,8 @@ class BaseSQL{
                 implode(",", array_keys($dataChild) ) .") VALUES ( :".
                 implode(",:", array_keys($dataChild) ) .")";
 
-            $query = $this->pdo->prepare($sql);
+
+            $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
 
         }else{
@@ -105,13 +104,31 @@ class BaseSQL{
 
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
 
-            $query = $this->pdo->prepare($sql);
+            $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
 
         }
 
     }
 
+
+    public function saveFile($files)
+    {
+
+        $extension_upload = strtolower(substr(strrchr($files['name']['name'],'.'),1));
+        $dataObject = get_object_vars($this);
+        $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));
+        $dataChild["name"] = $dataChild["name"].".".$extension_upload;
+
+
+        $sql = "INSERT INTO ".$this->table."( " .
+            implode(",", array_keys($dataChild)) . ") VALUES ( :" .
+            implode(",:", array_keys($dataChild)) . ")";
+
+        $query = $this->instance->prepare($sql);
+        $query->execute($dataChild);
+        move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name.".".$extension_upload);
+    }
 }
 
 
