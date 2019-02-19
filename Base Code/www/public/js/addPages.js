@@ -1,6 +1,4 @@
 $( document ).ready(function () {
-
-
     $( ".inputAddPage" ).click(function() {
 
         $(".inputAddPage").attr("class", "inputAddPage")
@@ -8,8 +6,6 @@ $( document ).ready(function () {
         $("#"+clss+"").attr("class", "inputAddPage inputAddPage--click");
 
     });
-
-
 });
 
 

@@ -10,10 +10,6 @@
   controller: Users
   action: login
 
-"/mot_de_passe_oublie":
-  controller: Users
-  action: forgetPassword
-
 "/back_office":
   controller: Articles
   action: default
@@ -45,3 +41,7 @@
 "/addPictures":
   controller: Pictures
   action: addPicture
+
+"/deletePicture":
+  controller: Pictures
+  action: deletePicture

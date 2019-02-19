@@ -13,15 +13,16 @@ class BaseSQL{
     }
 
 
-    public function setId($id){
+    public function setId($id, $delete = false){
         $this->id = $id;
         //va récupérer en base de données les élements pour alimenter l'objet
         $this->getOneBy(["id"=>$id], true);
+        if ($delete == true)
+            $this->deleteOneBy(["id"=>$id]);
 
     }
 
     public function getAll(array $where, $object = false){
-
 
             $sqlWhere = [];
             foreach ($where as $key => $value) {
@@ -30,8 +31,6 @@ class BaseSQL{
 
             $sql = " SELECT * FROM " . $this->table . (!empty($where) ? 'WHERE': '') . implode(" AND ", $sqlWhere) . ";";
             $query = $this->instance->prepare($sql);
-
-
 
             if ($object) {
                 //modifier l'objet $this avec le contenu de la bdd
@@ -43,9 +42,17 @@ class BaseSQL{
 
             $query->execute($where);
             return $query->fetchAll();
+    }
 
-
-
+    public function deleteOneBy(array $where){
+        $sqlWhere = [];
+        foreach ($where as $key => $value) {
+            $sqlWhere[] = $key . "=:" . $key;
+        }
+        $sql = " DELETE  FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
+        $query = $this->instance->prepare($sql);
+        $query->execute($where);
+        return $query->fetch();
     }
 
 
@@ -76,14 +83,16 @@ class BaseSQL{
 
 
 
-    public function save(){
+    public function save($files = array()){
 
-        //Array ( [id] => [firstname] => Yves [lastname] => SKRZYPCZYK [email] => y.skrzypczyk@gmail.com [pwd] => $2y$10$tdmxlGf.zP.3dd7K/kRtw.jzYh2CnSbFuXaUkDNl3JtDJ05zCI7AG [role] => 1 [status] => 0 [pdo] => PDO Object ( ) [table] => Users )
+        if (!empty($files))
+            $extension_upload = strtolower(substr(strrchr($files['name']['name'],'.'),1));
         $dataObject = get_object_vars($this);
-        //Array ( [id] => [firstname] => Yves [lastname] => SKRZYPCZYK [email] => y.skrzypczyk@gmail.com [pwd] => $2y$10$tdmxlGf.zP.3dd7K/kRtw.jzYh2CnSbFuXaUkDNl3JtDJ05zCI7AG [role] => 1 [status] => 0)
         $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));
+        if (!empty($files))
+            $dataChild["name"] = $dataChild["name"].".".$extension_upload;
 
-        if( is_null($dataChild["id"])){
+            if( is_null($dataChild["id"])){
             //INSERT
             //array_keys($dataChild) -> [id, firstname, lastname, email]
             $sql ="INSERT INTO ".$this->table." ( ".
@@ -93,8 +102,12 @@ class BaseSQL{
 
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
+        if (!empty($files))
+            move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name.".".$extension_upload);
 
-        }else{
+
+
+            }else{
             //UPDATE
             $sqlUpdate = [];
             foreach ($dataChild as $key => $value) {
@@ -109,25 +122,6 @@ class BaseSQL{
 
         }
 
-    }
-
-
-    public function saveFile($files)
-    {
-
-        $extension_upload = strtolower(substr(strrchr($files['name']['name'],'.'),1));
-        $dataObject = get_object_vars($this);
-        $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));
-        $dataChild["name"] = $dataChild["name"].".".$extension_upload;
-
-
-        $sql = "INSERT INTO ".$this->table."( " .
-            implode(",", array_keys($dataChild)) . ") VALUES ( :" .
-            implode(",:", array_keys($dataChild)) . ")";
-
-        $query = $this->instance->prepare($sql);
-        $query->execute($dataChild);
-        move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name.".".$extension_upload);
     }
 }
 

@@ -134,7 +134,7 @@ input:focus{
 
 
 #add-PagesTitle{
-  margin: 60px 0 30px 0;
+  margin: 60px 0 5px 0;
   text-align: center;
   color:#85858e;
   font-size: 30px;
@@ -225,12 +225,10 @@ input:focus{
 
 
 #sectionPicture{
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 30px;
-
 }
 
 .label-file {
@@ -239,11 +237,65 @@ input:focus{
   font-weight: bold;
   margin: auto;
 }
+
 .label-file:hover {
   color: $blue-petrol;
 }
 
-// et on masque le input
 .input-file {
   display: none;
+}
+
+.pictures{
+  background-size:cover;
+  background-position: center;
+  height: 300px;
+  width: 100%;
+  position: relative;
+}
+
+.test figure img {
+  opacity: 1;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+.test figure:hover img {
+  opacity: .5;
+}
+
+.figurePicture{
+  background: #fff;
+  overflow: hidden;
+  width: 100%;
+}
+
+.divDeletePicture{
+  width: 97%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.crossDeletePicture{
+  position: absolute;
+  padding-top: 7px;
+  text-decoration: none;
+  z-index: 1;
+  visibility: hidden;
+}
+
+.symbolCross{
+  font-size: 20px;
+  color: black;
+}
+
+.textAlert{
+  text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.titleAlert{
+  text-align:center;
+  font-weight: bold;
+  font-size: 25px;
+  font-family: "Lato", sans-serif;
 }

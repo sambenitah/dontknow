@@ -9,7 +9,8 @@ class Pictures extends BaseSQL{
 
     public function setName($name)
     {
-        $this->name = urlencode($name);
+        $name= urlencode($name);
+        $this->name = str_replace('%','-', $name);
     }
 
     public function setStatus(int $status)

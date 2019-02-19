@@ -11,6 +11,7 @@ Class PicturesController{
         $pathFile = ["pathFile" => "public/imagesUpload/"];
         $array = array_merge($data, $file , $pathFile);
 
+
         if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) && !empty($file) ){
 
             $validator = new ValidatorFiles($form,$data,$file);
@@ -20,7 +21,7 @@ Class PicturesController{
 
                 $file = new Pictures();
                 $file->setName($array["title"]);
-                $file->saveFile($array);
+                $file->save($array);
                 header('Location: '.Routing::getSlug("Pictures","addPicture").'');
                 exit;
             }
@@ -35,7 +36,18 @@ Class PicturesController{
         $pictures = $showPicture->getAll([], true);
         $v = new View("showPictures", "admin");
         $v->assign("ListPicture", $pictures);
+        exit;
 
     }
+
+    public  function deletePictureAction(){
+
+        $data = $GLOBALS["_POST"];
+        $id = $data["id"];
+        $deletePicture = new Pictures();
+        $deletePicture->setId($id, true);
+        unlink(substr($data["url"],1));
+    }
+
 
 }
