@@ -39,8 +39,16 @@ class ArticlesController{
         $selectPage = $addPage ->getAll([],true);
         $v = new View("showArticle", "admin");
         $v->assign("ListPage", $selectPage);
-
     }
+
+
+    public function detailArticlesAction(){
+        $addPage = new Articles();
+        $selectPage = $addPage ->getAll([],true);
+        $v = new View("showArticle", "admin");
+        $v->assign("ListPage", $selectPage);
+    }
+
 
     public function singleArticleAction(){
         new View("singleArticle", "front");

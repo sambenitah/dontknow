@@ -9,7 +9,9 @@ class Pictures extends BaseSQL{
 
     public function setName($name)
     {
-        $name= urlencode($name);
+        $date = new DateTime();
+        $date = $date->format('Y-m-d H:i:s');
+        $name= urlencode($name . $date);
         $this->name = str_replace('%','-', $name);
     }
 

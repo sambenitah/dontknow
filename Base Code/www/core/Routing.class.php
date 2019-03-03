@@ -5,7 +5,24 @@ class Routing{
 
     public static function getRoute($slug){
 
-        // /creation_de_compte_allocine
+        echo $slug;
+        echo "<br>";
+        $test = explode("/", $slug);
+        echo "<br>";
+        var_dump($test);
+        echo"<br>";
+        echo"<br>";
+
+        if(!isset($test[2])){
+           // code existant
+        }else{
+
+            // creer nouveau parametre sur getroute( pour passer une methode )
+
+        }
+
+
+        //creation_de_compte_allocine
         //récuperer toutes les routes dans le fichier yml
         $routes = yaml_parse_file(self::$routeFile);
         if( isset($routes[$slug])){
