@@ -42,11 +42,18 @@ class ArticlesController{
     }
 
 
-    public function detailArticlesAction(){
-        $addPage = new Articles();
-        $selectPage = $addPage ->getAll([],true);
-        $v = new View("showArticle", "admin");
-        $v->assign("ListPage", $selectPage);
+    public function detailArticlesAction($param){
+
+        $detailArticle = new Articles();
+        $selectArticle = $detailArticle->getAll(["route"=> $param],true);
+        if (empty($selectArticle)){
+
+        }
+        //die("L'article que vous avez selectioné n'existe pas");
+        else{
+            $v = new View("detailArticle", "admin");
+            $v->assign("DetailArticle", $selectArticle);
+        }
     }
 
 

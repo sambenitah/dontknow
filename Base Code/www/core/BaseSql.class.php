@@ -28,7 +28,7 @@ class BaseSQL{
                 $sqlWhere[] = $key . "=:" . $key;
             }
 
-            $sql = " SELECT * FROM " . $this->table . (!empty($where) ? 'WHERE': '') . implode(" AND ", $sqlWhere) . ";";
+            $sql = " SELECT * FROM " . $this->table . (!empty($where) ? ' WHERE ': '') . implode(" AND ", $sqlWhere) . ";";
             $query = $this->instance->prepare($sql);
 
             if ($object) {
@@ -40,7 +40,8 @@ class BaseSQL{
             }
 
             $query->execute($where);
-            return $query->fetchAll();
+
+        return $query->fetchAll();
     }
 
     public function deleteOneBy(array $where){
@@ -65,6 +66,8 @@ class BaseSQL{
             }
             $sql = "SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
             $query = $this->instance->prepare($sql);
+
+            echo $sql;
 
             if ($object) {
                 //modifier l'objet $this avec le contenu de la bdd
