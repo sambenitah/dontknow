@@ -11,7 +11,7 @@
                 <div style="margin: 10px;"  class="test col-10 col-m-8 col-l-5">
                     <figure id="<?php echo $picture->id?>" class="figurePicture">
                             <div class="divDeletePicture">
-                                <a id="cross<?php echo $picture->id?>" class="crossDeletePicture" href="#"><i class="symbolCross fas fa-times"></i></a>
+                                <a id="cross<?php echo $picture->id?>" class="crossDeletePicture" ><i class="symbolCross fas fa-times"></i></a>
                             </div>
                             <img id="img<?php echo $picture->id?>" class="pictures"  src="../public/imagesUpload/<?php echo $picture->name?>">
                     </figure>

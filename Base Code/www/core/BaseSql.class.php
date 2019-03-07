@@ -12,7 +12,6 @@ class BaseSQL{
             throw new \Exception('Aucune connection');
     }
 
-
     public function setId($id, $delete = false){
         $this->id = $id;
         //va récupérer en base de données les élements pour alimenter l'objet
@@ -55,7 +54,6 @@ class BaseSQL{
         return $query->fetch();
     }
 
-
     // $where -> tableau pour créer notre requête sql
     // $object -> si vrai aliment l'objet $this sinon retourn un tableau
     public function getOneBy(array $where, $object = false){
@@ -65,7 +63,7 @@ class BaseSQL{
             foreach ($where as $key => $value) {
                 $sqlWhere[] = $key . "=:" . $key;
             }
-            $sql = " SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
+            $sql = "SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
             $query = $this->instance->prepare($sql);
 
             if ($object) {
@@ -78,10 +76,7 @@ class BaseSQL{
 
             $query->execute($where);
             return $query->fetch();
-
     }
-
-
 
     public function save($files = array()){
 
@@ -105,21 +100,16 @@ class BaseSQL{
         if (!empty($files))
             move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name.".".$extension_upload);
 
-
-
-            }else{
-            //UPDATE
-            $sqlUpdate = [];
-            foreach ($dataChild as $key => $value) {
-                if( $key != "id")
-                    $sqlUpdate[]=$key."=:".$key;
+        }else{
+        //UPDATE
+        $sqlUpdate = [];
+        foreach ($dataChild as $key => $value) {
+            if( $key != "id")
+                $sqlUpdate[]=$key."=:".$key;
             }
-
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
-
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
-
         }
 
     }

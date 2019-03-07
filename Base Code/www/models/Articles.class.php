@@ -36,7 +36,7 @@ class Articles extends BaseSQL{
 
     public function setRoute($route)
     {
-        $this->route = trim($route);
+        $this->route = urlencode(trim($route));
     }
 
 
