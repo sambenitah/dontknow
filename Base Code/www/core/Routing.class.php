@@ -5,34 +5,39 @@ class Routing{
 
     public static function getRoute($slug){
 
-        $slug = explode("/", $slug);
+        echo $slug;
+        echo "<br>";
+        $test = explode("/", $slug);
+        echo "<br>";
+        var_dump($test);
+        echo"<br>";
+        echo"<br>";
 
-        if(!isset($slug[3])){
-            $slug = "/".$slug[1];
-            $routes = yaml_parse_file(self::$routeFile);
-            if( isset($routes[$slug])){
-                if(empty($routes[$slug]["controller"]) || empty($routes[$slug]["action"])){
-                    die("Il y a une erreur dans le fichier routes.yml");
-                }
-                $c = ucfirst($routes[$slug]["controller"])."Controller";
-                $a = $routes[$slug]["action"]."Action";
-                $cPath = "controllers/".$c.".class.php";
-                $param = null;
-
-            }else{
-                return ["c"=>null, "a"=>null,"cPath"=>null ];
-            }
-
+        if(!isset($test[2])){
+           // code existant
         }else{
 
-            $c = ucfirst($slug[1])."Controller";
-            $a = $slug[2]."Action";
-            $cPath = "controllers/".$c.".class.php";
-            $param = end($slug);
+            // creer nouveau parametre sur getroute( pour passer une methode )
 
         }
 
-        return ["c"=>$c, "a"=>$a,"cPath"=>$cPath, "param" => $param ];
+
+        //creation_de_compte_allocine
+        //récuperer toutes les routes dans le fichier yml
+        $routes = yaml_parse_file(self::$routeFile);
+        if( isset($routes[$slug])){
+            if(empty($routes[$slug]["controller"]) || empty($routes[$slug]["action"])){
+                die("Il y a une erreur dans le fichier routes.yml");
+            }
+            $c = ucfirst($routes[$slug]["controller"])."Controller";
+            $a = $routes[$slug]["action"]."Action";
+            $cPath = "controllers/".$c.".class.php";
+
+        }else{
+            return ["c"=>null, "a"=>null,"cPath"=>null ];
+        }
+
+        return ["c"=>$c, "a"=>$a,"cPath"=>$cPath ];
     }
 
 

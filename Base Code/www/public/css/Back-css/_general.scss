@@ -3,6 +3,10 @@ body,main,p,hr{
   margin: 0;
 }
 
+hr{
+  border:solid black 0.5px;
+}
+
 input:focus{
   outline: none;
 }

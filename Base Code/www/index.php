@@ -42,8 +42,8 @@ if( file_exists($cPath) ){
 		$cObject = new $c();
 		//vérifier que la méthode (l'action) existe
 		if( method_exists($cObject, $a) ){
-			//appel dynamique de la méthode
-			$cObject->$a($param);
+			//appel dynamique de la méthode	
+			$cObject->$a();
 		}else{
 			die("La methode ".$a." n'existe pas");
 		}
