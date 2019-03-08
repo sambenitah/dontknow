@@ -1,0 +1,47 @@
+"/":
+  controller: Users
+  action: default
+
+"/inscription":
+  controller: Users
+  action: register
+
+"/connexion":
+  controller: Users
+  action: login
+
+"/back_office":
+  controller: Articles
+  action: default
+
+"/addArticle":
+  controller: Articles
+  action: addArticle
+
+"/showArticles":
+  controller: Articles
+  action: showArticles
+
+"/YourWebsite":
+  controller: Articles
+  action: yourWebSite
+
+"/singleArticle":
+  controller: Articles
+  action: singleArticle
+
+"/listArticles":
+  controller: Articles
+  action: yourWebsite
+
+"/showPictures":
+  controller: Pictures
+  action: showPictures
+
+"/addPictures":
+  controller: Pictures
+  action: addPicture
+
+"/deletePicture":
+  controller: Pictures
+  action: deletePicture
