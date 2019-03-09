@@ -2,17 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cee0f292-5b2f-48df-8183-4c75a2ebcbc2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/ArticlesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/ArticlesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/BaseSql.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/BaseSql.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/Routing.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/Routing.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/showArticle.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/showArticle.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/templates/admin.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/templates/admin.tpl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Articles.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Articles.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Pictures.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Pictures.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +61,7 @@
     <session id="-1332872623">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="18" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.0" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="2" />
@@ -155,7 +148,7 @@
         <entry file="file://$PROJECT_DIR$/www/views/showArticle.view.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -267,10 +260,10 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
-    <option name="width" value="1237" />
-    <option name="height" value="697" />
+    <option name="width" value="1391" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -536,7 +529,7 @@
       <workItem from="1550570895187" duration="66000" />
       <workItem from="1550578293205" duration="844000" />
       <workItem from="1550582668583" duration="191000" />
-      <workItem from="1551968699398" duration="5335000" />
+      <workItem from="1551968699398" duration="5929000" />
     </task>
     <task id="LOCAL-00001" summary="reset project">
       <created>1548753304095</created>
@@ -636,15 +629,21 @@
       <option name="project" value="LOCAL" />
       <updated>1550579152469</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="commit 19/02 pre soutenance">
+      <created>1551977123128</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1551977123128</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40361000" />
+    <option name="totallyTimeSpent" value="40955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1391" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22461082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -912,7 +911,7 @@
     <entry file="file://$PROJECT_DIR$/www/views/showArticle.view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>
