@@ -84,13 +84,13 @@ class BaseSQL{
     public function save($files = array()){
 
         if (!empty($files))
-            $extension_upload = strtolower(substr(strrchr($files['name']['name'],'.'),1));
+        $extension_upload = strtolower(substr(strrchr($files['name']['name'],'.'),1));
         $dataObject = get_object_vars($this);
         $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));
         if (!empty($files))
             $dataChild["name"] = $dataChild["name"].".".$extension_upload;
 
-            if( is_null($dataChild["id"])){
+        if( is_null($dataChild["id"])){
             //INSERT
             //array_keys($dataChild) -> [id, firstname, lastname, email]
             $sql ="INSERT INTO ".$this->table." ( ".
@@ -111,6 +111,10 @@ class BaseSQL{
                 $sqlUpdate[]=$key."=:".$key;
             }
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
+
+
+            echo $sql;
+
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
         }

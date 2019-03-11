@@ -51,7 +51,6 @@ $( document ).ready(function() {
 //---------------------------------//
 
 
-
 $( document ).ready(function() {
     $(".Article").click(function () {
         var id = this.id;

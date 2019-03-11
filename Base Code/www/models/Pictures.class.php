@@ -26,7 +26,7 @@ class Pictures extends BaseSQL{
         return [
             "config" => [
                 "method" => "POST",
-                "action" => Routing::getSlug("Pictures", "register"),
+                "action" => Routing::getSlug("Articles", "detailArticles"),
                 "class" => "",
                 "id" => "form",
                 "submit" => "Insert",

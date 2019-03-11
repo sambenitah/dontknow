@@ -2,9 +2,10 @@
 class Articles extends BaseSQL{
 
     public $id = null;
-    public $title;
-    public $description;
-    public $route;
+    //public $title;
+    //public $description;
+    //public $route;
+   // public $content;
 
     public function __construct(){
         parent::__construct();
@@ -23,6 +24,12 @@ class Articles extends BaseSQL{
     }
     */
 
+    public function setIDBIS($id)
+    {
+        $this->id = $id;
+        //  $this->getOneBy(["title"=>"$title"], false);
+    }
+
     public function setTitle($title)
     {
         $this->title = mb_strtoupper(trim($title));
@@ -37,6 +44,12 @@ class Articles extends BaseSQL{
     public function setRoute($route)
     {
         $this->route = urlencode(trim($route));
+    }
+
+    public function setContent($content){
+
+        echo $content;
+        $this->content = $content;
     }
 
 
@@ -73,6 +86,31 @@ class Articles extends BaseSQL{
 
                 "route"=>["type"=>"text","placeholder"=>"Your url of your page", "required"=>true, "class"=>"inputAddPage", "id"=>"i2--AddPage","maxlength"=>20,
                     "error"=>"Your road exceeds twenty characters"]
+            ]
+
+        ];
+    }
+
+    public function getDetailArticleForm(){
+        return [
+            "config"=>[
+                "method"=>"POST",
+                "action" => Routing::getSlug("Article", "register"),
+                "class"=>"",
+                "id"=>"form",
+                "submit"=>"Update",
+                "classSubmit" =>"bouttonConfirmForm",
+                "cancelButton"=>false,
+                "enctype"=>false
+
+            ],
+
+
+            "data"=>[
+
+                "content"=>["value"=>"Your main content", "required"=>true, "id"=>"test", "class"=>"","minlength"=>2,"maxlength"=>2000,
+                    "error"=>"Your content must be between two or one thousand characters","type"=>""],
+
             ]
 
         ];
