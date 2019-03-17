@@ -67,8 +67,6 @@ class BaseSQL{
             $sql = "SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
             $query = $this->instance->prepare($sql);
 
-            echo $sql;
-
             if ($object) {
                 //modifier l'objet $this avec le contenu de la bdd
                 $query->setFetchMode(Pdo::FETCH_INTO, $this);

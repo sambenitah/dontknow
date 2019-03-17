@@ -44,10 +44,10 @@ Class PicturesController{
 
         $data = $GLOBALS["_POST"];
         $id = $data["id"];
-        echo $id;
         $deletePicture = new Pictures();
         $deletePicture->setId($id, true);
         unlink(substr($data["url"],1));
+        echo json_encode("Delete");
         exit;
     }
 

@@ -48,26 +48,22 @@ class ArticlesController{
         $method = strtoupper($formArticle["config"]["method"]);
         $data = $GLOBALS["_".$method];
 
+        $id = array_shift($data);
+
+
+
         if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
 
             $validator = new Validator($formArticle,$data);
             $form["errors"] = $validator->errors;
 
             if(empty($form["errors"])){
-
-                $id = 9;
                 $detailArticle->setIDBIS($id);
                 $detailArticle->setContent($data["content"]);
-
-                var_dump($detailArticle);
-
-
                 $detailArticle->save();
                 //header('Location: '.Routing::getSlug("Articles","showArticles").'');
                 exit;
             }
-
-
         }
 
         $detail = $detailArticle ->getAll(["route"=>$param],true);

@@ -35,8 +35,8 @@ $( document ).ready(function() {
                             data: {id : idfinal, url : url},
                             type : 'POST',
                             dataType: "json",
-                            success : function(){
-                                document.location.reload(true);
+                            success : function(data){
+                                window.location.reload(true);
                             }
                         });
                     }
@@ -48,20 +48,31 @@ $( document ).ready(function() {
     });
 });
 
-//---------------------------------//
+//---------------   Show article  ------------------//
 
 
-$( document ).ready(function() {
-    $(".Article").click(function () {
-        var id = this.id;
-        $.ajax({
-            url : '/deletePicture',
-            data: {id : idfinal, url : url},
-            type : 'POST',
-            dataType: "json",
-            success : function(){
-                document.location.reload(true);
-            }
-        });
+
+//---------------  Articledetail  ------------------//
+
+$("#bouttonDetailArticle").click(function (e) {
+    e.preventDefault();
+    var id = $(".post").attr("id")
+    tinyMCE.triggerSave();
+    var content = tinyMCE.get('textareaUpdateArticle').getContent();
+    $.ajax({
+        url : 'Articles/detailArticles',
+        data: {id : id, content : content},
+        type : 'POST',
+        dataType: "json",
+        success : function(data){
+
+            console.log("ok");
+            //window.location.reload(true);
+        }
     });
 });
+
+var test = $("#test").val();
+console.log(test);
+$("#textareaUpdateArticle").val(test);
+
