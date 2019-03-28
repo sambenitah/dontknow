@@ -6,7 +6,7 @@ class ValidatorFiles extends Validator{
     public function __construct($form,$data,$file){
 
 
-        parent::__construct($form , $data);
+        parent::__construct($form , $data,$nbParam = null);
 
         if(count($file)  != count($form["dataFile"])){
             die("Tentative : faille XSS Validator Files");

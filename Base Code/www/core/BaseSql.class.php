@@ -86,7 +86,7 @@ class BaseSQL{
         $dataObject = get_object_vars($this);
         $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));
         if (!empty($files))
-            $dataChild["name"] = $dataChild["name"].".".$extension_upload;
+            $dataChild["name_id"] = $dataChild["name_id"].".".$extension_upload;
 
         if( is_null($dataChild["id"])){
             //INSERT
@@ -95,11 +95,11 @@ class BaseSQL{
                 implode(",", array_keys($dataChild) ) .") VALUES ( :".
                 implode(",:", array_keys($dataChild) ) .")";
 
-
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
+
         if (!empty($files))
-            move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name.".".$extension_upload);
+            move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name_id.".".$extension_upload);
 
         }else{
         //UPDATE
@@ -109,9 +109,6 @@ class BaseSQL{
                 $sqlUpdate[]=$key."=:".$key;
             }
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
-
-
-            echo $sql;
 
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );

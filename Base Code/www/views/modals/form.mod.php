@@ -18,7 +18,9 @@
         <?php endif;?>
 >
 
-
+    <?php foreach ($config["data"] as $key => $Form):?>
+    <?php if(empty($Form)){unset($config["data"][$key]);}?>
+    <?php endforeach;?>
 
 
     <?php foreach ($config["data"] as $key => $Form):?>
@@ -26,7 +28,6 @@
         <?php if($Form["type"]=="text" || $Form["type"]=="email" || $Form["type"]=="password" ):?>
 
             <?php if($Form["type"]=="password" ) unset($data[$key]); ?>
-
 
             <input type="<?php echo $Form["type"];?>"
                    name="<?php echo $key;?>"

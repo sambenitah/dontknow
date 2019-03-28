@@ -20,6 +20,7 @@ Class PicturesController{
             if(empty($form["errors"])){
 
                 $file = new Pictures();
+                $file->setNameId($array["title"]);
                 $file->setName($array["title"]);
                 $file->save($array);
                 header('Location: '.Routing::getSlug("Pictures","addPicture").'');
@@ -30,12 +31,25 @@ Class PicturesController{
         $v->assign("addPicture", $form);
     }
 
-    public function showPicturesAction(){
+    public function setShowPicturesAction(){
+
+        $ajax = $GLOBALS["_POST"];
+        $ajax = $ajax["ajax"];
+        $this->showPicturesAction($ajax);
+        exit;
+    }
+
+    public function showPicturesAction($ajax = false){
 
         $showPicture = new Pictures();
-        $pictures = $showPicture->getAll([], true);
-        $v = new View("showPictures", "admin");
-        $v->assign("ListPicture", $pictures);
+        if($ajax == false) {
+            $pictures = $showPicture->getAll([], true);
+            $v = new View("showPictures", "admin");
+            $v->assign("ListPicture", $pictures);
+        }else {
+            $pictures = $showPicture->getAll([], false);
+            echo json_encode($pictures);
+        }
         exit;
 
     }

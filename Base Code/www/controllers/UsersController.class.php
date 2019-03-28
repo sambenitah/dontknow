@@ -45,7 +45,6 @@ class UsersController{
 
         $user = new Users();
         $form = $user->getLoginForm();
-
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_".$method];
         if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){

@@ -5,13 +5,18 @@ class Validator{
 
     public function __construct( $config, $data ){
 
-
             //1er vérification : le nb de champs
             if (count($data) != count($config["data"])) {
                 die("Tentative : faille XSS Validator");
             }
 
+        foreach ($config["data"] as $key => $Form){
+            if(empty($Form)) {
+                unset($config["data"][$key]);
+            }
+        }
 
+        var_dump($config["data"]);
         foreach ($config["data"] as $name => $info) {
 
             //Isset
@@ -23,7 +28,6 @@ class Validator{
                 if( ($info["required"]??false) && !self::notEmpty( $data[$name] ) ){
                     $this->errors[]=$info["error"];
                 }
-
 
                 //minlength  - method
                 if(isset($info["minlength"]) && !self::minLength($data[$name], $info["minlength"])){
