@@ -10,13 +10,14 @@ class Validator{
                 die("Tentative : faille XSS Validator");
             }
 
+
         foreach ($config["data"] as $key => $Form){
             if(empty($Form)) {
                 unset($config["data"][$key]);
             }
         }
 
-        var_dump($config["data"]);
+
         foreach ($config["data"] as $name => $info) {
 
             //Isset

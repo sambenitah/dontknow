@@ -3,7 +3,7 @@
 <?php if( !empty($config["errors"])):?>
         <ul>
             <?php foreach ($config["errors"] as $errors):?>
-            <li><?php echo $errors;?>
+            <p id="error"><?php echo $errors;?></p>
                 <?php endforeach ?>
         </ul>
 <?php endif ?>

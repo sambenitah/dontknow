@@ -114,12 +114,18 @@ class Articles extends BaseSQL{
 
             "data"=>[
 
-                "content"=>["value"=> "", "required"=>true, "id"=>"textareaUpdateArticle", "class"=>"","minlength"=>8,"maxlength"=>10000,
-                    "error"=>"Your content must be between two or ten thousand characters","type"=>""],
+                "content"=>["value"=> "",
+                    "required"=>true,
+                    "id"=>"textareaUpdateArticle",
+                    "class"=>"",
+                    "minlength"=>8,
+                    "maxlength"=>10000,
+                    "error"=>"Your content must be between two or ten thousand characters","type"=>""
+                ],
 
                 "main_picture"=>[],
 
-            ],
+            ]
 
         ];
     }

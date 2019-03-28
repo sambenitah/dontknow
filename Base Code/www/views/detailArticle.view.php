@@ -57,22 +57,17 @@
         var contentTynmce = $("#inputHiddenContent").val();
         $("#textareaUpdateArticle").val(contentTynmce);
     });
-
-
+    
     $(".select-css").change(function () {
         var picture = $('.select-css option:selected').attr('id');
         $("#inputHiddenPicture").val(picture)
     });
 
 
-
-
     $("#bouttonDetailArticle").click(function (e) {
         e.preventDefault();
         tinyMCE.triggerSave();
         var content = tinyMCE.get('textareaUpdateArticle').getContent();
-
-
 
         var id = $(".post").attr('id');
         var picturetest = $("#inputHiddenPicture").val();

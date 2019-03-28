@@ -64,7 +64,7 @@ class ArticlesController{
         $data = $GLOBALS["_".$method];
         $id = array_shift($data);
         if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
-            
+
             $validator = new Validator($formArticle,$data);
             $form["errors"] = $validator->errors;
             echo json_encode($form["errors"]);

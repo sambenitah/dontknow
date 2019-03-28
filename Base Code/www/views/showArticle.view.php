@@ -27,3 +27,35 @@
 
 
 
+<script>
+    $(".crossDeleteArticle").click( function () {
+        var id = this.id.substr(5);
+        $.confirm({
+            title: false,
+            boxWidth: '500px',
+            useBootstrap: false,
+            content: '<p class="titleAlert">Are you sur ?</p><br><p class="textAlert">Do you want to delete this article ?</p>',
+            type: 'dark',
+            typeAnimated: true,
+            buttons: {
+                Delete: {
+                    text: 'Delete',
+                    btnClass: 'btn-dark',
+                    action: function(){
+                        $.ajax({
+                            url : 'Articles/deleteArticle',
+                            data: {id : id},
+                            type : 'POST',
+                            dataType: "json",
+                            success : function(data){
+                                window.location.reload(true);
+                            }
+                        });
+                    }
+                },
+                close: function () {
+                }
+            }
+        });
+    });
+</script>
