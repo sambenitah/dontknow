@@ -55,8 +55,8 @@
     </section>
         <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-        <script src="../public/js/addPages.js"></script>
-        <script src="../public/js/admin.tpl.js"></script>
+        <script src="/public/js/addPages.js"></script>
+        <script src="/public/js/admin.tpl.js"></script>
     </body>
 </html>
 
