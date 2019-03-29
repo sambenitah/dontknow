@@ -38,8 +38,11 @@
     </div>
 </div>
 <?php endforeach;?>
-<script>
 
+
+
+
+<script>
     $(document).ready( function () {
 
         $.ajax({
@@ -57,12 +60,12 @@
         var contentTynmce = $("#inputHiddenContent").val();
         $("#textareaUpdateArticle").val(contentTynmce);
     });
-    
+
+
     $(".select-css").change(function () {
         var picture = $('.select-css option:selected').attr('id');
         $("#inputHiddenPicture").val(picture)
     });
-
 
     $("#bouttonDetailArticle").click(function (e) {
         e.preventDefault();
@@ -89,5 +92,4 @@
             }
         });
     });
-
 </script>

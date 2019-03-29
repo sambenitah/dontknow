@@ -2,15 +2,10 @@
 
 class ArticlesController{
 
-    public function defaultAction(){
-
-        $v = new View("listFrontPages", "front");
-
-    }
 
     public function addArticleAction(){
-        $addPage = new Articles();
-        $form = $addPage->getAddArticleForm();
+        $addArticle = new Articles();
+        $form = $addArticle->getAddArticleForm();
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_".$method];
 
@@ -21,10 +16,10 @@ class ArticlesController{
             $form["errors"] = $validator->errors;
 
             if(empty($form["errors"])){
-                $addPage->setDescription($data["description"]);
-                $addPage->setTitle($data["title"]);
-                $addPage->setRoute($data["route"]);
-                $addPage->save();
+                $addArticle->setDescription($data["description"]);
+                $addArticle->setTitle($data["title"]);
+                $addArticle->setRoute($data["route"]);
+                $addArticle->save();
                 header('Location: '.Routing::getSlug("Articles","showArticles").'');
                 exit;
             }
@@ -35,10 +30,10 @@ class ArticlesController{
     }
 
     public function showArticlesAction(){
-        $addPage = new Articles();
-        $selectPage = $addPage ->getAll([],true);
+        $showArticle = new Articles();
+        $selectArticle = $showArticle ->getAll([],true);
         $v = new View("showArticle", "admin");
-        $v->assign("ListPage", $selectPage);
+        $v->assign("ListPage", $selectArticle);
     }
 
 
@@ -91,13 +86,22 @@ class ArticlesController{
     }
 
 
-    public function singleArticleAction(){
-        new View("singleArticle", "front");
-
+    public function singleArticleAction($param){
+        $showDetailArticle = new Articles();
+        $selectDetailArticle = $showDetailArticle ->getAll(["route"=>$param],true);
+        if (empty($selectDetailArticle)) {
+            die("Page introuvable");
+        }else {
+            $v = new View("singleArticle", "basic");
+            $v->assign("ListPage", $selectDetailArticle);
+        }
     }
 
     public function yourWebsiteAction(){
-        new View("listFrontPages", "front");
+        $showArticle = new Articles();
+        $selectArticle = $showArticle ->getAll([],true);
+        $v = new View("listFrontPages", "front");
+        $v->assign("ListPage", $selectArticle);
     }
 
 }
