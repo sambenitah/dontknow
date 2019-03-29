@@ -3,22 +3,22 @@
 class Pictures extends BaseSQL{
 
     public $id = null;
-    public $name;
-    public $status=0;
 
 
-    public function setName($name)
+    public function setNameId($name)
     {
         $date = new DateTime();
         $date = $date->format('Y-m-d H:i:s');
         $name= urlencode($name . $date);
-        $this->name = str_replace('%','-', $name);
+        $this->name_id = str_replace('%','-', $name);
     }
 
-    public function setStatus(int $status)
+    public function setName($title)
     {
-        $this->status = $status;
+        $this->name = $title ;
     }
+
+
 
 
     public function getAddPictureForm()

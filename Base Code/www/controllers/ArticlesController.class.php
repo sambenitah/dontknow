@@ -45,39 +45,49 @@ class ArticlesController{
     public function detailArticlesAction($param){
         $detailArticle = new Articles();
         $formArticle = $detailArticle->getDetailArticleForm();
-        $method = strtoupper($formArticle["config"]["method"]);
-        $data = $GLOBALS["_".$method];
-
-        if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
-
-            $validator = new Validator($formArticle,$data);
-            $form["errors"] = $validator->errors;
-
-            if(empty($form["errors"])){
-
-                $id = 9;
-                $detailArticle->setIDBIS($id);
-                $detailArticle->setContent($data["content"]);
-
-                var_dump($detailArticle);
-
-
-                $detailArticle->save();
-                //header('Location: '.Routing::getSlug("Articles","showArticles").'');
-                exit;
-            }
-
-
-        }
-
         $detail = $detailArticle ->getAll(["route"=>$param],true);
         if (empty($detail)) {
             die("Page introuvable");
         }else {
             $v = new View("detailArticle", "admin");
-            $v->assign("test", $formArticle);
             $v->assign("DetailArticle", $detail);
+            $v->assign("formArticle", $formArticle);
+            json_encode($detail);
         }
+    }
+
+    public function updateArticleAction(){
+
+        $updateArticle = new Articles();
+        $formArticle = $updateArticle->getDetailArticleForm();
+        $method = strtoupper($formArticle["config"]["method"]);
+        $data = $GLOBALS["_".$method];
+        $id = array_shift($data);
+        if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
+
+            $validator = new Validator($formArticle,$data);
+            $form["errors"] = $validator->errors;
+            echo json_encode($form["errors"]);
+
+
+            if(empty($form["errors"])){
+                $updateArticle->setIDBIS($id);
+                $updateArticle->setContent($data["content"]);
+                $updateArticle->setMainPicture($data["main_picture"]);
+                $updateArticle->save();
+                echo json_encode("Update");
+                exit;
+            }
+        };
+    }
+
+    public function deleteArticleAction(){
+        $data = $GLOBALS["_POST"];
+        $id = $data["id"];
+        $deletePicture = new Articles();
+        $deletePicture->setId($id, true);
+        echo json_encode("Delete");
+        exit;
     }
 
 

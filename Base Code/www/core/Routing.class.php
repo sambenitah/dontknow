@@ -9,7 +9,6 @@ class Routing{
 
         if(!isset($slug[3])){
             $slugPartOne = "/".$slug[1];
-
             $routes = yaml_parse_file(self::$routeFile);
             if( isset($routes[$slugPartOne])){
                 if(empty($routes[$slugPartOne]["controller"]) || empty($routes[$slugPartOne]["action"])){
@@ -20,12 +19,17 @@ class Routing{
                 $cPath = "controllers/".$c.".class.php";
                 $param = null;
 
+            }else if(isset($slug[1]) && isset($slug[2])){
+                $c = ucfirst($slug[1])."Controller";
+                $a = $slug[2]."Action";
+                $cPath = "controllers/".$c.".class.php";
+                $param = null;
             }else{
+
                 return ["c"=>null, "a"=>null,"cPath"=>null ];
             }
 
         }else{
-
             $c = ucfirst($slug[1])."Controller";
             $a = $slug[2]."Action";
             $cPath = "controllers/".$c.".class.php";
@@ -48,11 +52,8 @@ class Routing{
                 $cAndA["action"] == $a){
                 return $slug;
             }
-
         }
-
         return null;
-
     }
 
 }

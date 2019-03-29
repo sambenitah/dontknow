@@ -14,9 +14,8 @@ $( document ).ready(function() {
 
     $(".crossDeletePicture").click(function () {
 
-        var id = this.id;
-        var idfinal = id.substr(5);
-        var url = $("#img"+idfinal+"").attr('src');
+        var id = this.id.substr(5);
+        var url = $("#img"+id+"").attr('src');
 
         $.confirm({
             title: false,
@@ -31,12 +30,12 @@ $( document ).ready(function() {
                     btnClass: 'btn-dark',
                     action: function(){
                         $.ajax({
-                            url : '/deletePicture',
-                            data: {id : idfinal, url : url},
+                            url : 'Pictures/deletePicture',
+                            data: {id : id, url : url},
                             type : 'POST',
                             dataType: "json",
-                            success : function(){
-                                document.location.reload(true);
+                            success : function(data){
+                                window.location.reload(true);
                             }
                         });
                     }
@@ -48,20 +47,29 @@ $( document ).ready(function() {
     });
 });
 
-//---------------------------------//
+//---------------   Show article  ------------------//
 
 
-$( document ).ready(function() {
-    $(".Article").click(function () {
-        var id = this.id;
-        $.ajax({
-            url : '/deletePicture',
-            data: {id : idfinal, url : url},
-            type : 'POST',
-            dataType: "json",
-            success : function(){
-                document.location.reload(true);
-            }
-        });
-    });
+
+
+
+
+//---------------  Articledetail  ------------------//
+
+
+tinymce.init({
+    selector: '#textareaUpdateArticle',
+    plugins: "autoresize",
+    min_height: 500,
 });
+
+
+
+
+
+
+
+
+
+
+

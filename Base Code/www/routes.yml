@@ -42,6 +42,3 @@
   controller: Pictures
   action: addPicture
 
-"/deletePicture":
-  controller: Pictures
-  action: deletePicture

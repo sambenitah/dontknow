@@ -48,8 +48,12 @@ class Articles extends BaseSQL{
 
     public function setContent($content){
 
-        echo $content;
-        $this->content = $content;
+        $this->content = str_replace('"', "'", $content);
+    }
+
+    public function setMainPicture($picture)
+    {
+        $this->main_picture = $picture;
     }
 
 
@@ -61,6 +65,7 @@ class Articles extends BaseSQL{
                 "class"=>"",
                 "id"=>"form",
                 "submit"=>"Create",
+                "idSubmit" => "bouttonAddArticle",
                 "classSubmit" =>"bouttonConfirmForm",
                 "cancelButton"=>false,
                 "enctype"=>false
@@ -95,9 +100,10 @@ class Articles extends BaseSQL{
         return [
             "config"=>[
                 "method"=>"POST",
-                "action" => Routing::getSlug("Article", "register"),
+                "action" => "",
                 "class"=>"",
                 "id"=>"form",
+                "idSubmit" => "bouttonDetailArticle",
                 "submit"=>"Update",
                 "classSubmit" =>"bouttonConfirmForm",
                 "cancelButton"=>false,
@@ -108,8 +114,16 @@ class Articles extends BaseSQL{
 
             "data"=>[
 
-                "content"=>["value"=>"Your main content", "required"=>true, "id"=>"test", "class"=>"","minlength"=>2,"maxlength"=>2000,
-                    "error"=>"Your content must be between two or one thousand characters","type"=>""],
+                "content"=>["value"=> "",
+                    "required"=>true,
+                    "id"=>"textareaUpdateArticle",
+                    "class"=>"",
+                    "minlength"=>8,
+                    "maxlength"=>10000,
+                    "error"=>"Your content must be between two or ten thousand characters","type"=>""
+                ],
+
+                "main_picture"=>[],
 
             ]
 

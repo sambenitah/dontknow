@@ -3,7 +3,7 @@
 <?php if( !empty($config["errors"])):?>
         <ul>
             <?php foreach ($config["errors"] as $errors):?>
-            <li><?php echo $errors;?>
+            <p id="error"><?php echo $errors;?></p>
                 <?php endforeach ?>
         </ul>
 <?php endif ?>
@@ -18,7 +18,9 @@
         <?php endif;?>
 >
 
-
+    <?php foreach ($config["data"] as $key => $Form):?>
+    <?php if(empty($Form)){unset($config["data"][$key]);}?>
+    <?php endforeach;?>
 
 
     <?php foreach ($config["data"] as $key => $Form):?>
@@ -26,7 +28,6 @@
         <?php if($Form["type"]=="text" || $Form["type"]=="email" || $Form["type"]=="password" ):?>
 
             <?php if($Form["type"]=="password" ) unset($data[$key]); ?>
-
 
             <input type="<?php echo $Form["type"];?>"
                    name="<?php echo $key;?>"
