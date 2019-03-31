@@ -57,7 +57,7 @@ class Articles extends BaseSQL{
     }
 
     public function setCategory($category){
-        $this->category = $category;
+        $this->category = ucfirst($category);
     }
 
 
@@ -86,15 +86,15 @@ class Articles extends BaseSQL{
                     "class"=>"inputAddPage",
                     "id"=>"i1--AddPage",
                     "minlength"=>2,
-                    "maxlength"=>20,
-                    "error"=>"Your title must be between two or fifteen characters",
+                    "maxlength"=>100,
+                    "error"=>"Your title must be between two or one hundred characters",
                 ],
 
                 "description"=>["value"=>"Your description", "required"=>true, "id"=>"textaeraAddPage", "class"=>"","minlength"=>2,"maxlength"=>310,
                     "error"=>"Your description must be between two or three hundred ten characters","type"=>""],
 
-                "route"=>["type"=>"text","placeholder"=>"Your url of your page", "required"=>true, "class"=>"inputAddPage", "id"=>"i2--AddPage","maxlength"=>20,
-                    "error"=>"Your road exceeds twenty characters"]
+                "route"=>["type"=>"text","placeholder"=>"Your url of your page", "required"=>true, "class"=>"inputAddPage", "id"=>"i2--AddPage","maxlength"=>50,
+                    "error"=>"Your road exceeds one hundred characters"]
             ]
 
         ];

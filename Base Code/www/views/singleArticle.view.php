@@ -3,7 +3,7 @@
         <article class="post">
             <div class="post-media">
         <?php foreach ($ListPage as $key => $detail):?>
-            <img src="/public/imagesUpload/<?php echo $detail->main_picture?>">
+            <img id="imgDetailArticle" src="/public/imagesUpload/<?php echo $detail->main_picture?>">
             </div>
             <div class="post-content">
 
