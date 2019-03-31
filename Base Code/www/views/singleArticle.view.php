@@ -41,7 +41,7 @@
                         </div>
 
                         <div class="cat">
-                            <strong>Category:</strong><a href="#" rel="category tag">Friendly</a>
+                            <strong>Category:</strong><a href="#" rel="category tag"><?php echo $detail->category?></a>
                         </div>
 
                     </div>

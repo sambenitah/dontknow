@@ -39,7 +39,7 @@
                 </div>
                 <p class="titleMenu">Customizer</p>
                 <div class="div-nav-admin-menu">
-                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","customizer");?>">Customizer</a>
+                    <a class="a-adminMenu" href="<?php echo Routing::getSlug("Customizer","default");?>">Customizer</a>
                 </div>
                 <p class="titleMenu">Manage</p>
                 <div class="div-nav-admin-menu">

@@ -10,7 +10,6 @@
   controller: Users
   action: login
 
-
 "/addArticle":
   controller: Articles
   action: addArticle
@@ -39,3 +38,10 @@
   controller: Pictures
   action: addPicture
 
+"/customizer":
+  controller: Customizer
+  action: default
+
+"/addCategory":
+  controller: Categories
+  action: addCategory

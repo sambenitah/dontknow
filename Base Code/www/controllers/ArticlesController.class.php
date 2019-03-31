@@ -26,7 +26,6 @@ class ArticlesController{
         }
             $v = new View("addArticle", "admin");
             $v->assign("Form", $form);
-
     }
 
     public function showArticlesAction(){
@@ -69,6 +68,7 @@ class ArticlesController{
                 $updateArticle->setIDBIS($id);
                 $updateArticle->setContent($data["content"]);
                 $updateArticle->setMainPicture($data["main_picture"]);
+                $updateArticle->setCategory($data["category"]);
                 $updateArticle->save();
                 echo json_encode("Update");
                 exit;

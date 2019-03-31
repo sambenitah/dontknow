@@ -1,6 +1,6 @@
 <div class="row">
     <div  class="col-12 col-m-12 col-l-12">
-        <p id="add-PagesTitle">Your Pictures</p>
+        <p style="margin-left: 100px;" id="add-PagesTitle">Your Pictures</p>
     </div>
 </div>
 

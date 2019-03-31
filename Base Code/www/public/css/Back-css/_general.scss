@@ -30,7 +30,7 @@ input:focus{
   background-color:rgb(49,49,49);
   padding: .8em;
   font-size: 15px;
-  margin: 1em auto 0em auto;
+  margin: 0em auto 0em auto;
   width: 25%;
   border: none;
   border-radius: 7px;
@@ -38,9 +38,6 @@ input:focus{
   font-weight: bold;
 }
 
-#idBouttonConfirmForm{
-  margin-top: 3em;
-}
 
 .bouttonConfirmForm:hover{
   background-color: black;
@@ -145,7 +142,7 @@ input:focus{
 
 
 #add-PagesTitle{
-  margin: 60px 0 25px 100px;
+  margin: 60px 0 25px 0;
   text-align: center;
   color:#85858e;
   font-size: 30px;
@@ -262,6 +259,7 @@ input:focus{
   color: $blue-light;
   font-weight: bold;
   margin: auto;
+  margin-bottom: 20px;
 }
 
 .label-file:hover {
@@ -340,7 +338,7 @@ input:focus{
   letter-spacing: 1px;
 }
 
-#inputHiddenContent, #inputHiddenPicture{
+#inputHiddenContent, #inputHiddenPicture, #inputHiddenCategory{
   visibility: hidden;
 }
 
@@ -401,7 +399,7 @@ span.choose {
   color: #222;
   outline: none;
 }
-.select-css option {
+.select-css  option {
   font-weight:normal;
 }
 
@@ -440,4 +438,110 @@ span.choose {
 
 .post{
   width: 100%;
+}
+
+/*-------------- Customizer --------------*/
+
+#leftPartCustomizer{
+  height: auto;
+  border-right: #85858e 1px solid;
+}
+
+.a-Customizer{
+  text-decoration: none;
+  margin-left: 20%;
+  margin-right: 20%;
+  display: block;
+  color: $black;
+  margin-bottom: 25px;
+  font-family: $Lato;
+
+}
+
+.a-Customizer:hover .arrowCustomizer{
+  padding-left: 25px;
+  transition: padding-left 0.5s;
+}
+
+.arrowCustomizer{
+  font-size: 13px;
+  padding-left: 15px;
+  transition: padding-left 0.5s;
+}
+
+#sectionOneCustomizer{
+  margin-top: 40px;
+}
+
+@media screen and (max-width: $medium ){
+
+  #leftPartCustomizer{
+    border-right: none;
+  }
+
+  .a-Customizer{
+    text-align: center;
+    margin-bottom: 30px;
+    transition: none;
+  }
+
+  #rightPartCustomizer{
+    margin-top: 20px;
+  }
+
+  .arrowCustomizer{
+    visibility: hidden;
+    font-size: 25px;
+    transition: none;
+    padding-left: 0px;
+  }
+
+  .a-Customizer:hover .arrowCustomizer{
+    padding-left: 0px;
+    transition: none;
+  }
+
+}
+
+#a-deleteCategory{
+  display: flex;
+  justify-content: center;
+  color: #bdb9b9;
+  margin-top: 20px;
+  transition: color 0.5s;
+}
+
+#a-deleteCategory:hover{
+  color: #85858e;
+  transition: color 0.5s;
+}
+
+.textCategoryForDelete{
+  text-align: left;
+  font-family: $Lato;
+  margin-top: 10px;
+  border-bottom: 1px #A1A1A1 solid;
+  padding-bottom: 5px;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  padding-left: 5px;
+}
+
+#CategoryDelete{
+  margin: 20px auto auto auto;
+  width: 18%;
+  display: none;
+
+}
+
+.crossDeleteCategory{
+  display: flex;
+  float: right;
+  font-size: 13px;
+  margin-top: 7px;
+  margin-right: 5px;
+}
+
+#divExtCategory{
+  background-color: #f9f9f9; ;
 }

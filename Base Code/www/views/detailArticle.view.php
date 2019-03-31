@@ -12,27 +12,37 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 center col-m-5 m-center col-l-5 l-center">
                         <div id="divLabelSelect">
                             <label id="labelSelect" class="label">Select your picture</label>
                         </div>
-                        <select class="select-css">
+                        <select id="selectPicture"  class="select-css">
                             <option id="-">-</option>
                         </select>
                     </div>
                 </div>
-
-                <input id="inputHiddenPicture" value="<?php echo $detail->main_picture?>">
-                <input id="inputHiddenContent" value="<?php echo $detail->content ?>">
-
+                <div class="row">
+                    <div class="col-12 center col-m-5 m-center col-l-5 l-center">
+                        <div id="divLabelSelect">
+                            <label id="labelSelect" class="label">Select your category</label>
+                        </div>
+                        <select id="selectCategory" class="select-css">
+                            <option id="-">-</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="post-content">
                     <div class="the-content">
                         <p id="errorContent"></p>
                         <?php $this->addModal("form", $formArticle);?>
                     </div>
                 </div>
+
+                <input id="inputHiddenCategory" value="<?php echo $detail->category?>">
+                <input id="inputHiddenPicture" value="<?php echo $detail->main_picture?>">
+                <input id="inputHiddenContent" value="<?php echo $detail->content ?>">
+
             </article>
         </div>
     </div>
@@ -53,7 +63,18 @@
             success : function(data){
 
                 for(i=0 ; i<data.length; i++)
-                    $(".select-css").append('<option id= "'+data[i].name_id+'">' + data[i].name + '</option>')
+                    $("#selectPicture").append('<option id= "'+data[i].name_id+'">' + data[i].name + '</option>')
+            }
+        });
+
+        $.ajax({
+            url: '/Categories/showCategory',
+            type: 'POST',
+            data: {},
+            dataType: "json",
+            success: function (category) {
+                for(i=0 ; i<category.length; i++)
+                    $("#selectCategory").append('<option id= "'+category[i].id+'">' + category[i].name + '</option>')
             }
         });
 
@@ -62,10 +83,18 @@
     });
 
 
-    $(".select-css").change(function () {
-        var picture = $('.select-css option:selected').attr('id');
+    $("#selectPicture").change(function () {
+        var picture = $('#selectPicture option:selected').attr('id');
         $("#inputHiddenPicture").val(picture)
     });
+
+
+    $("#selectCategory").change(function () {
+        var picture = $('#selectCategory option:selected').text();
+        $("#inputHiddenCategory").val(picture)
+    });
+
+
 
     $("#bouttonDetailArticle").click(function (e) {
         e.preventDefault();
@@ -73,15 +102,23 @@
         var content = tinyMCE.get('textareaUpdateArticle').getContent();
 
         var id = $(".post").attr('id');
-        var picturetest = $("#inputHiddenPicture").val();
-        if (picturetest == '-')
+        var picturebis = $("#inputHiddenPicture").val();
+        if (picturebis == '-')
             var picture = $('img').attr('id');
         else
             var picture = $("#inputHiddenPicture").val();
 
+
+        var categorybis = $("#inputHiddenCategory").val();
+        if (categorybis == '-')
+            var category = $('#inputHiddenCategory').val();
+        else
+            var category = $("#inputHiddenCategory").val();
+
+
         $.ajax({
             url : '/Articles/updateArticle',
-            data: {id : id, content : content, main_picture : picture },
+            data: {id : id, content : content, main_picture : picture, category : category },
             type : 'POST',
             dataType: "json",
             success : function(data){

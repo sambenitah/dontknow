@@ -56,6 +56,10 @@ class Articles extends BaseSQL{
         $this->main_picture = $picture;
     }
 
+    public function setCategory($category){
+        $this->category = $category;
+    }
+
 
     public function getAddArticleForm(){
         return [
@@ -124,6 +128,9 @@ class Articles extends BaseSQL{
                 ],
 
                 "main_picture"=>[],
+
+                "category"=>[],
+
 
             ]
 
