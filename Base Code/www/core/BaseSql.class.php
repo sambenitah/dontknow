@@ -104,14 +104,19 @@ class BaseSQL{
         }else{
         //UPDATE
         $sqlUpdate = [];
+            echo '<pre>';
+        var_dump($dataChild);
+            echo '</pre>';
         foreach ($dataChild as $key => $value) {
             if( $key != "id")
                 $sqlUpdate[]=$key."=:".$key;
             }
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
-
             $query = $this->instance->prepare($sql);
-            $query->execute( $dataChild );
+            echo '<pre>';
+            var_dump($query);
+            echo '</pre>';
+            $query->execute($dataChild);
         }
 
     }

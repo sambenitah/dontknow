@@ -75,7 +75,7 @@
                                     <li class="comment">
                                         <div class="comment-body">
                                             <div class="comment-avatar image" style="background-image: url(../public/images/avatar-150px.jpg);">
-                                                <img alt="avatar" src="../public/images/Front/avatar-150px.jpg">
+                                                <img alt="avatar" src="/public/images/Front/avatar-150px.jpg">
                                             </div>
                                             <div class="comment-context">
                                                 <div class="comment-head">
@@ -98,15 +98,6 @@
                     <div id="respond" class="comment-respond">
                         <h2 class="title">Leave a Reply</h2>
                         <form action="#" method="post" class="comment-form contact">
-                            <div class="contact-item form-name">
-                                <input name="author" value="" type="text" placeholder="Your Name *">
-                            </div>
-                            <div class="contact-item form-email">
-                                <input name="email" value="" type="text" placeholder="Your Email *">
-                            </div>
-                            <div class="contact-item form-url">
-                                <input id="url" name="url" value="" type="text" placeholder="Website URL">
-                            </div>
                             <div class="contact-item field-full form-message">
                                 <textarea name="comment" placeholder="Your Comment ..."></textarea>
                             </div>

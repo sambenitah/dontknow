@@ -6,6 +6,7 @@ class Users extends BaseSQL{
     public $lastname;
     public $email;
     public $pwd;
+    public $token;
     public $role=1;
     public $status=0;
 
@@ -25,6 +26,9 @@ class Users extends BaseSQL{
     }
     public function setPwd($pwd){
         $this->pwd = password_hash($pwd, PASSWORD_DEFAULT);
+    }
+    public function setToken($token){
+        $this->token = $token;
     }
     public function setRole($role){
         $this->role = $role;
@@ -94,8 +98,8 @@ class Users extends BaseSQL{
                 "email"=>["type"=>"email","placeholder"=>"Votre email", "required"=>true, "class"=>"inputAddLogUser", "id"=>"i1--AddLogUser",
                     "error"=>"L'email n'est pas valide"],
 
-                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"inputAddLogUser", "id"=>"pwd",
-                    "error"=>"Veuillez préciser un mot de passe"]
+                "pwd"=>["type"=>"password","placeholder"=>"Votre mot de passe", "required"=>true, "class"=>"inputAddLogUser", "id"=>"pwd","pwdLogin"=>"pwd",
+                    "error"=>"Mot de passe invalide"]
 
 
             ]

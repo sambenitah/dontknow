@@ -50,7 +50,7 @@ class Validator{
                     $this->errors[]=$info["error"];
                 }
                 //password : maj min et chiffres - method
-                else if($info["type"]=="password" && !self::checkPassword($data[$name])){
+                else if($info["type"]=="password" && !isset($info["pwdLogin"]) && !self::checkPassword($data[$name])){
                     $this->errors[]=$info["error"];
                 }
 

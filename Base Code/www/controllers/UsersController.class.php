@@ -53,12 +53,27 @@ class UsersController{
             $form["errors"] = $validator->errors;
 
             if(empty($form["errors"] )){
+                $allUsers = $user->getAll(["email"=>$data["email"]],false);
+                if(count($allUsers) > 0 && password_verify($data["pwd"],$allUsers[0]["pwd"])){
+                    $token = self::generateToken();
+                    $user->setId($allUsers[0]["id"]);
+                    $user->setToken($token);
+                    $user->save();
+                    echo "connection done";
+                }
 
+                else
+                    echo "email ou mot de passe incorrect";
             }
         }
 
         $v = new View("loginUser", "commercial");
         $v->assign("form", $form);
 
+    }
+
+    public static function generateToken(){
+        $token = sha1(uniqid(rand(),true)).date('YmdHis');
+        return $token;
     }
 }
