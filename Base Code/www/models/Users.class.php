@@ -105,4 +105,31 @@ class Users extends BaseSQL{
             ]
         ];
     }
+
+    public function generateToken(){
+        $token = sha1(uniqid(rand(),true)).date('YmdHis');
+        return $token;
+    }
+
+    public function loginVerify(Users $user, array $data)
+    {
+        $allUsers = $user->getAll(["email" => $data["email"]], false);
+
+        if (count($allUsers) > 0 && password_verify($data["pwd"], $allUsers[0]["pwd"])) {
+            $token = $user->generateToken();
+            $user->setId($allUsers[0]["id"]);
+            $user->setToken($token);
+            //$user->save();
+
+            $_SESSION['auth'] = $user->email;
+
+            return true;
+        }
+
+        return false;
+    }
+
+    public  function logged(){
+       return isset($_SESSION['auth']);
+    }
 }

@@ -19,6 +19,8 @@ class Routing{
                 $cPath = "controllers/".$c.".class.php";
                 $param = null;
 
+
+
             }else if(isset($slug[1]) && isset($slug[2])){
                 $c = ucfirst($slug[1])."Controller";
                 $a = $slug[2]."Action";
