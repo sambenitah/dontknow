@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class ArticlesController{
 
 
@@ -30,7 +32,7 @@ class ArticlesController{
 
     public function showArticlesAction(){
         $showArticle = new Articles();
-        $selectArticle = $showArticle ->getAll([],true);
+        $selectArticle = $showArticle->selectObject([]);
         $v = new View("showArticle", "admin");
         $v->assign("ListPage", $selectArticle);
     }
@@ -39,7 +41,7 @@ class ArticlesController{
     public function detailArticlesAction($param){
         $detailArticle = new Articles();
         $formArticle = $detailArticle->getDetailArticleForm();
-        $detail = $detailArticle ->getAll(["route"=>$param],true);
+        $detail = $detailArticle ->selectObject(["route"=>$param],true);
         if (empty($detail)) {
             die("Page introuvable");
         }else {
@@ -61,8 +63,6 @@ class ArticlesController{
 
             $validator = new Validator($formArticle,$data);
             $form["errors"] = $validator->errors;
-            echo json_encode($form["errors"]);
-
 
             if(empty($form["errors"])){
                 $updateArticle->setIDBIS($id);
@@ -73,7 +73,9 @@ class ArticlesController{
                 echo json_encode("Update");
                 exit;
             }
-        };
+
+            echo json_encode($form["errors"]);
+        }
     }
 
     public function deleteArticleAction(){
@@ -88,7 +90,7 @@ class ArticlesController{
 
     public function singleArticleAction($param){
         $showDetailArticle = new Articles();
-        $selectDetailArticle = $showDetailArticle ->getAll(["route"=>$param],true);
+        $selectDetailArticle = $showDetailArticle ->selectObject(["route"=>$param],true);
         if (empty($selectDetailArticle)) {
             die("Page introuvable");
         }else {

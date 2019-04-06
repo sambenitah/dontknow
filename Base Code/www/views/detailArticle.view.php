@@ -12,33 +12,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 center col-m-5 m-center col-l-5 l-center">
-                        <div id="divLabelSelect">
-                            <label id="labelSelect" class="label">Select your picture</label>
-                        </div>
-                        <select id="selectPicture"  class="select-css">
-                            <option id="-">-</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 center col-m-5 m-center col-l-5 l-center">
-                        <div id="divLabelSelect">
-                            <label id="labelSelect" class="label">Select your category</label>
-                        </div>
-                        <select id="selectCategory" class="select-css">
-                            <option id="-">-</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="post-content">
                     <div class="the-content">
                         <p id="errorContent"></p>
                         <?php $this->addModal("form", $formArticle);?>
                     </div>
                 </div>
-
                 <input id="inputHiddenCategory" value="<?php echo $detail->category?>">
                 <input id="inputHiddenPicture" value="<?php echo $detail->main_picture?>">
                 <input id="inputHiddenContent" value="<?php echo $detail->content ?>">

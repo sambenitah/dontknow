@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 Class CategoriesController{
 
 
@@ -28,7 +30,7 @@ Class CategoriesController{
 
     public function showCategoryAction(){
         $showCategory = new Categories();
-        $selectCategory = $showCategory ->getAll([],true);
+        $selectCategory = $showCategory ->selectObject([],true);
         echo json_encode($selectCategory);
         exit;
     }

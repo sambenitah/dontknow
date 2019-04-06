@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 class Articles extends BaseSQL{
 
     public $id = null;
@@ -7,11 +10,9 @@ class Articles extends BaseSQL{
     //public $route;
    // public $content;
 
-    public function __construct(){
-        parent::__construct();
-    }
-
-
+    //public function __construct(){
+    //    parent::__construct();
+    //}
     /*public function __get($property) {
         if (property_exists($this, $property)) {
             if('date_inserted' === $property) {
@@ -117,23 +118,33 @@ class Articles extends BaseSQL{
 
 
             "data"=>[
-
                 "content"=>["value"=> "",
-                    "required"=>true,
                     "id"=>"textareaUpdateArticle",
                     "class"=>"",
                     "minlength"=>8,
                     "maxlength"=>10000,
                     "error"=>"Your content must be between two or ten thousand characters","type"=>""
                 ],
+            ],
 
-                "main_picture"=>[],
+            "select" =>[
 
-                "category"=>[],
+                "main_picture"=>[
+                    "id"=>"selectPicture",
+                    "class"=>"select-css",
+                    "label"=>"Select your picture",
+                    "option"=>[
+                        "id"=>"test",
+                        "text"=>"guhejkzl"
+                    ],
+                ],
 
-
-            ]
-
+                "category"=>[
+                    "id"=>"selectCategory",
+                    "class"=>"select-css",
+                    "label"=>"Select your category"
+                ],
+            ],
         ];
     }
 }

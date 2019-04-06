@@ -18,9 +18,25 @@
         <?php endif;?>
 >
 
-    <?php foreach ($config["data"] as $key => $Form):?>
-    <?php if(empty($Form)){unset($config["data"][$key]);}?>
-    <?php endforeach;?>
+
+    <?php if (array_key_exists('select', $config)):?>
+        <?php foreach ($config["select"] as $key => $select):?>
+            <div class="row">
+                <div class="col-12 center col-m-5 m-center col-l-5 l-center">
+                    <div id="divLabelSelect">
+                        <label id="labelSelect" class="label"><?php echo $select["label"];?></label>
+                    </div>
+                    <select id="<?php echo $select["id"];?>" class="<?php echo $select["class"];?>">
+                        <option id="-">-</option>
+                        <?php foreach ($select["option"] as $test => $test):?>
+
+                        <?php echo "1";?>
+                        <?php endforeach;?>
+                    </select>
+                </div>
+            </div>
+        <?php endforeach;?>
+    <?php endif;?>
 
 
     <?php foreach ($config["data"] as $key => $Form):?>
@@ -61,10 +77,6 @@
 
         <?php endforeach;?>
     <?php endif;?>
-
-
-
-
 
 
     <input type="submit" id="<?php echo $config["config"]["idSubmit"];?>" class="<?php echo $config["config"]["classSubmit"];?>" value="<?php echo $config["config"]["submit"];?>">

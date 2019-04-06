@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 class Comments extends BaseSQL{
 
     public $id = null;
@@ -62,6 +65,7 @@ class Comments extends BaseSQL{
                     "class"=>"inputAddPage",
                     "id"=>"i1--AddPage",
                     "minlength"=>2,
+
                     "maxlength"=>100,
                     "error"=>"Your title must be between two or one hundred characters",
                 ],

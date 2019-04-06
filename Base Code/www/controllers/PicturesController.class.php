@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 Class PicturesController{
 
     public function addPictureAction(){
@@ -43,11 +45,11 @@ Class PicturesController{
 
         $showPicture = new Pictures();
         if($ajax == false) {
-            $pictures = $showPicture->getAll([], true);
+            $pictures = $showPicture->selectObject([], true);
             $v = new View("showPictures", "admin");
             $v->assign("ListPicture", $pictures);
         }else {
-            $pictures = $showPicture->getAll([], false);
+            $pictures = $showPicture->selectArray([], false);
             echo json_encode($pictures);
         }
         exit;

@@ -44,20 +44,38 @@ class BaseSQL{
         return $query->fetchAll();
     }
 
-    public function deleteOneBy(array $where){
+
+    public function select(array $where){
+
         $sqlWhere = [];
         foreach ($where as $key => $value) {
             $sqlWhere[] = $key . "=:" . $key;
         }
-        $sql = " DELETE  FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
+        $sql = " SELECT * FROM " . $this->table . (!empty($where) ? ' WHERE ': '') . implode(" AND ", $sqlWhere) . ";";
         $query = $this->instance->prepare($sql);
-        $query->execute($where);
-        return $query->fetch();
+        return $query;
     }
 
-    // $where -> tableau pour créer notre requête sql
-    // $object -> si vrai aliment l'objet $this sinon retourn un tableau
-    public function getOneBy(array $where, $object = false){
+
+    public function selectObject(array $where){
+        $query = $this->select($where);
+        $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
+        $query->execute($where);
+        return $query->fetchAll();
+    }
+
+    public function selectArray(array $where){
+        $query = $this->select($where);
+        $query->setFetchMode(Pdo::FETCH_ASSOC);
+        $query->execute($where);
+        return $query->fetchAll();
+    }
+
+
+
+
+
+    public function getOneBy(array $where){
 
             // $where = ["id"=>$id, "email"=>"y.skrzypczyk@gmail.com"];
             $sqlWhere = [];
@@ -66,15 +84,7 @@ class BaseSQL{
             }
             $sql = "SELECT * FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
             $query = $this->instance->prepare($sql);
-
-            if ($object) {
-                //modifier l'objet $this avec le contenu de la bdd
-                $query->setFetchMode(Pdo::FETCH_INTO, $this);
-            } else {
-                //on retourne un simple table php
-                $query->setFetchMode(Pdo::FETCH_ASSOC);
-            }
-
+            $query->setFetchMode(Pdo::FETCH_INTO, $this);
             $query->execute($where);
             return $query->fetch();
     }
@@ -89,8 +99,7 @@ class BaseSQL{
             $dataChild["name_id"] = $dataChild["name_id"].".".$extension_upload;
 
         if( is_null($dataChild["id"])){
-            //INSERT
-            //array_keys($dataChild) -> [id, firstname, lastname, email]
+
             $sql ="INSERT INTO ".$this->table." ( ".
                 implode(",", array_keys($dataChild) ) .") VALUES ( :".
                 implode(",:", array_keys($dataChild) ) .")";
@@ -100,25 +109,28 @@ class BaseSQL{
 
         if (!empty($files))
             move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name_id.".".$extension_upload);
-
         }else{
-        //UPDATE
+
         $sqlUpdate = [];
-            echo '<pre>';
-        var_dump($dataChild);
-            echo '</pre>';
         foreach ($dataChild as $key => $value) {
             if( $key != "id")
                 $sqlUpdate[]=$key."=:".$key;
             }
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
             $query = $this->instance->prepare($sql);
-            echo '<pre>';
-            var_dump($query);
-            echo '</pre>';
             $query->execute($dataChild);
         }
+    }
 
+    public function deleteOneBy(array $where){
+        $sqlWhere = [];
+        foreach ($where as $key => $value) {
+            $sqlWhere[] = $key . "=:" . $key;
+        }
+        $sql = " DELETE  FROM " . $this->table . " WHERE  " . implode(" AND ", $sqlWhere) . ";";
+        $query = $this->instance->prepare($sql);
+        $query->execute($where);
+        return $query->fetch();
     }
 }
 

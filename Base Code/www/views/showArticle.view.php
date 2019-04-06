@@ -8,7 +8,6 @@
         <div  class="col-12 center col-m-12 m-center col-l-12 l-center">
 
         <?php foreach ($ListPage as $key => $page):?>
-
             <article class="mainDivYourPages">
                 <p class="sectionTopArticle"><i id="cross<?php echo $page->id?>" class="crossDeleteArticle symbolShowArticles fas fa-times"></i></p>
                 <a style="text-decoration: none; color: black;" id="<?php echo $page->id?>" class="Article" href="<?php echo "Articles/detailArticles/".$page->route?>">

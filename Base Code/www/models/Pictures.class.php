@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Pictures extends BaseSQL{
 
     public $id = null;

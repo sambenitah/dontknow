@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 class Categories extends BaseSQL{
 
     public function setName($name)
