@@ -15,7 +15,7 @@ class Routing{
             $routes = yaml_parse_file(self::$routeFile);
             if( isset($routes[$slugPartOne])){
                 if(empty($routes[$slugPartOne]["controller"]) || empty($routes[$slugPartOne]["action"])){
-                    die("Il y a une erreur dans le fichier routes.yml");
+                    header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
                 }
                 $c = ucfirst($routes[$slugPartOne]["controller"])."Controller";
                 $a = $routes[$slugPartOne]["action"]."Action";

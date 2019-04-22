@@ -15,7 +15,7 @@ class BaseSQL{
     public function setId($id, $delete = false){
         $this->id = $id;
         //va récupérer en base de données les élements pour alimenter l'objet
-        $this->getOneBy(["id"=>$id], true);
+        $this->getOneBy(["id"=>$id]);
         if ($delete == true)
             $this->deleteOneBy(["id"=>$id]);
 
@@ -73,10 +73,7 @@ class BaseSQL{
 
 
 
-
-
     public function getOneBy(array $where){
-
             // $where = ["id"=>$id, "email"=>"y.skrzypczyk@gmail.com"];
             $sqlWhere = [];
             foreach ($where as $key => $value) {

@@ -45,3 +45,11 @@
 "/addCategory":
   controller: Categories
   action: addCategory
+
+"/customizeErrorPage":
+  controller: ErrorPage
+  action: updateErrorPage
+
+"/Error":
+  controller: ErrorPage
+  action: showErrorPage

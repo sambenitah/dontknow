@@ -18,7 +18,7 @@ class View{
         if( file_exists($viewPath)){
             $this->v=$viewPath;
         }else{
-            die("Attention le fichier view n'existe pas ".$viewPath);
+            header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }
     }
 
@@ -27,7 +27,7 @@ class View{
         if( file_exists($templatePath)){
             $this->t=$templatePath;
         }else{
-            die("Attention le fichier template n'existe pas ".$templatePath);
+            header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }
 
     }
@@ -41,7 +41,7 @@ class View{
         if( file_exists($modalPath)){
             include $modalPath;
         }else{
-            die("Attention le fichier modal n'existe pas ".$modalPath);
+            header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }
     }
 

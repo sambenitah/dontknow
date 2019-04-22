@@ -45,14 +45,14 @@ if( file_exists($cPath) ){
 			//appel dynamique de la méthode	
 			$cObject->$a($param);
 		}else{
-			die("La methode ".$a." n'existe pas");
+            header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
 		}
 		
 	}else{
-		die("La class controller ".$c." n'existe pas");
+        header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
 	}
 }else{
-	die("Le fichier controller ".$c." n'existe pas");
+    header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
 }
 
 

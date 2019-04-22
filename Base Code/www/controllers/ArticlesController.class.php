@@ -43,7 +43,7 @@ class ArticlesController{
         $formArticle = $detailArticle->getDetailArticleForm();
         $detail = $detailArticle ->selectObject(["route"=>$param],true);
         if (empty($detail)) {
-            die("Page introuvable");
+            header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }else {
             $v = new View("detailArticle", "admin");
             $v->assign("DetailArticle", $detail);
@@ -92,7 +92,7 @@ class ArticlesController{
         $showDetailArticle = new Articles();
         $selectDetailArticle = $showDetailArticle ->selectObject(["route"=>$param],true);
         if (empty($selectDetailArticle)) {
-            die("Page introuvable");
+            header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }else {
             $v = new View("singleArticle", "basic");
             $v->assign("ListPage", $selectDetailArticle);

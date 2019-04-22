@@ -14,7 +14,7 @@ class Categories extends BaseSQL{
         return [
             "config" => [
                 "method" => "POST",
-                "action" => Routing::getSlug("Articles", "detailArticles"),
+                "action" => "",
                 "class" => "",
                 "id" => "form",
                 "submit" => "Insert",

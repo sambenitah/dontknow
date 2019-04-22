@@ -8,17 +8,19 @@ class Validator{
 
     public function __construct( $config, $data ){
 
+            $select = 0;
+
+            if (array_key_exists('select', $config))
+                $select = count($config["select"]);
+
             //1er vérification : le nb de champs
-            if (count($data) != count($config["data"])) {
+            if (count($data) != count($config["data"]) + $select ) {
+                var_dump($data);
+                echo count($config["data"]);
+
                 die("Tentative : faille XSS Validator");
             }
 
-
-        foreach ($config["data"] as $key => $Form){
-            if(empty($Form)) {
-                unset($config["data"][$key]);
-            }
-        }
 
 
         foreach ($config["data"] as $name => $info) {

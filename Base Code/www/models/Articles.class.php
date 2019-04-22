@@ -128,23 +128,38 @@ class Articles extends BaseSQL{
             ],
 
             "select" =>[
-
                 "main_picture"=>[
                     "id"=>"selectPicture",
                     "class"=>"select-css",
                     "label"=>"Select your picture",
-                    "option"=>[
-                        "id"=>"test",
-                        "text"=>"guhejkzl"
-                    ],
+                    /*"option"=>[
+                        [
+                            "class" => "tata",
+                            "value" => "toto"
+                        ],
+                        [
+                            "class" => "efhgzjk",
+                            "value" => "test"
+                        ]
+                    ],*/
                 ],
 
                 "category"=>[
                     "id"=>"selectCategory",
                     "class"=>"select-css",
-                    "label"=>"Select your category"
-                ],
-            ],
+                    "label"=>"Select your category",
+                    /*"option"=>[
+                        [
+                            "class" => "tata",
+                            "value" => "toto"
+                        ],
+                        [
+                            "class" => "efhgzjk",
+                            "value" => "test"
+                        ]
+                    ]*/
+                ]
+            ]
         ];
     }
 }

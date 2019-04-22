@@ -30,7 +30,7 @@ Class CategoriesController{
 
     public function showCategoryAction(){
         $showCategory = new Categories();
-        $selectCategory = $showCategory ->selectObject([],true);
+        $selectCategory = $showCategory ->selectObject([]);
         echo json_encode($selectCategory);
         exit;
     }

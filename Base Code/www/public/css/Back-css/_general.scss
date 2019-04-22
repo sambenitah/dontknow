@@ -546,3 +546,44 @@ span.choose {
 #divExtCategory{
   background-color: #f9f9f9; ;
 }
+
+/*-------------- addErrorPage --------------*/
+
+#inputYourTexte{
+    margin: 0.5em auto 1em auto !important;
+}
+
+/*-------------- ErrorPage --------------*/
+
+#partSupErrorPage{
+  height: 75px;
+  position: relative;
+  top: 0;
+  width: 100%;
+}
+
+#partInfErrorPage{
+  height: 75px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+#textErrorPage{
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+  font-size: 30px;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+#returnErrorPage{
+  text-decoration: underline;
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-top: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}

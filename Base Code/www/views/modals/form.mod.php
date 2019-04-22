@@ -27,10 +27,8 @@
                         <label id="labelSelect" class="label"><?php echo $select["label"];?></label>
                     </div>
                     <select id="<?php echo $select["id"];?>" class="<?php echo $select["class"];?>">
-                        <option id="-">-</option>
-                        <?php foreach ($select["option"] as $test => $test):?>
-
-                        <?php echo "1";?>
+                        <?php foreach ( $select["option"] as $key => $detailSelect ):?>
+                            <option id="<?php echo $detailSelect["class"];?>"><?php echo $detailSelect["value"];?></option>
                         <?php endforeach;?>
                     </select>
                 </div>
@@ -38,10 +36,23 @@
         <?php endforeach;?>
     <?php endif;?>
 
+    <?php foreach ($config["data"] as $key => $Form):?>
+        <?php if($Form["type"]=="color" ):?>
+            <label class="label"><?php echo $Form["label"];?></label>
+            <input type="<?php echo $Form["type"];?>"
+                   name="<?php echo $key;?>"
+                <?php echo ($Form["required"])?'required="required"':'';?>
+                   id="<?php echo $Form["id"];?>"
+                   class="<?php echo $Form["class"];?>"
+                   value="<?php echo $Form["value"];?>"
+            >
+        <?php endif;?>
+    <?php endforeach;?>
+
 
     <?php foreach ($config["data"] as $key => $Form):?>
 
-        <?php if($Form["type"]=="text" || $Form["type"]=="email" || $Form["type"]=="password" ):?>
+        <?php if($Form["type"]=="text" || $Form["type"]=="email" || $Form["type"]=="password"):?>
 
             <?php if($Form["type"]=="password" ) unset($data[$key]); ?>
 
@@ -51,16 +62,15 @@
                 <?php echo ($Form["required"])?'required="required"':'';?>
                    id="<?php echo $Form["id"];?>"
                    class="<?php echo $Form["class"];?>"
+                   value="<?php echo(!empty($Form["value"])) ? $Form["value"] : '' ;?>"
             >
             <?php elseif ($Form["type"] == null):?>
                 <label class="label"><?php echo $Form["value"];?></label>
                 <textarea id="<?php echo $Form["id"];?>"
                           class="<?php echo $Form["class"];?>"
                           name="<?php echo $key;?>">
-            </textarea>
-
+                </textarea>
         <?php endif;?>
-
     <?php endforeach;?>
 
     <?php if (array_key_exists('dataFile', $config)):?>
