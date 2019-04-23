@@ -4,6 +4,14 @@ declare(strict_types=1);
 
 class ArticlesController{
 
+    public function defaultAction(){
+
+        $showArticle = new Articles();
+        $selectArticle = $showArticle ->getAll([],true);
+        $v = new View("listFrontPages", "basic");
+        $v->assign("ListPage", $selectArticle);
+
+    }
 
     public function addArticleAction(){
         $addArticle = new Articles();

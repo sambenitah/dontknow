@@ -16,17 +16,16 @@
     <script src="/public/js/addPages.js"></script>
     <script src="/public/js/admin.tpl.js"></script>
 </head>
-
 <body>
 <header>
     <div class="row">
-        <div id="backgroundHeader" class="col-12 col-m-12 col-l-12">
-            <a href="<?php echo Routing::getSlug("Articles","yourWebSite");?>" id="headerPartMainSection">
+<!--        <div id="backgroundHeader" class="col-12 col-m-12 col-l-12">
+            <a href="<?php /*echo Routing::getSlug("Articles","yourWebSite");*/?>" id="headerPartMainSection">
 
                 Dont Kn?w
 
             </a>
-        </div>
+        </div>-->
     </div>
 </header>
 
@@ -40,7 +39,7 @@
                     <span class="item item-3"></span>
                 </div>
                 <div class="logo">
-                    <a href="<?php echo Routing::getSlug("Article", "listFrontPages"); ?>">IDK</a>
+                    <a href="<?php echo Routing::getSlug("Articles", "default"); ?>">IDK</a>
                 </div>
             </div>
         </div>
@@ -52,13 +51,13 @@
                         <div class="table">
                             <div class="table-cell">
                                 <div class="logo">
-                                    <a href="<?php echo Routing::getSlug("Article", "listFrontPages"); ?>">IDK</a>
+                                    <a href="<?php echo Routing::getSlug("Articles", "default"); ?>">IDK</a>
                                 </div>
                                 <div class="main-menu">
                                     <nav>
                                         <ul class="menu-list">
                                             <li class="active">
-                                                <a href="<?php echo Routing::getSlug("Article", "listFrontPages"); ?>">Home</a>
+                                                <a href="<?php echo Routing::getSlug("Articles", "default"); ?>">Home</a>
                                             </li>
                                             <li>
                                                 <a href="category.html">Branding</a>
@@ -77,6 +76,14 @@
                                             </li>
                                             <li>
                                                 <a href="#">Contact</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php echo Routing::getSlug("Users", "register"); ?>">Sign Up</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php
+                                                echo isset($_SESSION['auth']) ? '#' :  Routing::getSlug("Users", "loginFront");
+                                                ?>"><?php   echo isset($_SESSION['auth']) ? 'My Profile' :  'Sign In'; ?></a>
                                             </li>
                                         </ul>
                                     </nav>

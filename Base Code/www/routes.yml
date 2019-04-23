@@ -1,14 +1,26 @@
 "/":
   controller: Users
   action: default
+  connexion : false
+  role : 0
 
 "/inscription":
   controller: Users
   action: register
+  connexion : false;
+  role : 0;
 
 "/connexion":
   controller: Users
   action: login
+  connexion: false
+  role: 0
+
+"/connexionFront":
+  controller: Users
+  action: loginFront
+  connexion: false
+  role: 0
 
 "/addArticle":
   controller: Articles
@@ -21,6 +33,14 @@
 "/back_office":
   controller: Articles
   action: yourWebSite
+  connexion: true
+  role: 3
+
+"/front":
+  controller: Articles
+  action: default
+  connexion: true
+  role: 1
 
 "/singlePages":
   controller: Articles
@@ -53,3 +73,5 @@
 "/Error":
   controller: ErrorPage
   action: showErrorPage
+  connexion: false
+  role: 0

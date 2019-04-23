@@ -101,8 +101,14 @@ class BaseSQL{
                 implode(",", array_keys($dataChild) ) .") VALUES ( :".
                 implode(",:", array_keys($dataChild) ) .")";
 
+            echo $sql;
+            echo "<pre>";
+            var_dump($dataChild);
+            echo "</pre>";
+
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
+
 
         if (!empty($files))
             move_uploaded_file($files["name"]['tmp_name'], $files["pathFile"].$this->name_id.".".$extension_upload);
@@ -114,6 +120,7 @@ class BaseSQL{
                 $sqlUpdate[]=$key."=:".$key;
             }
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
+            echo $sql;
             $query = $this->instance->prepare($sql);
             $query->execute($dataChild);
         }

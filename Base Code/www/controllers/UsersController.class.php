@@ -31,13 +31,13 @@ class UsersController{
                 $user->setEmail($data["email"]);
                 $user->setPwd($data["pwd"]);
                 $user->save();
-                header('Location: '.Routing::getSlug("Users","default").'');
+                header('Location: '.Routing::getSlug("Articles","default").'');
                 exit;
             }
 
         }
 
-        $v = new View("addUser", "commercial");
+        $v = new View("addUser", "basic");
         $v->assign("form", $form);
 
     }
@@ -54,12 +54,41 @@ class UsersController{
             $validator = new Validator($form,$data);
             $form["errors"] = $validator->errors;
 
-            if(empty($form["errors"] ))
+            if(empty($form["errors"] )){
                 if($user->loginVerify($user,$data))
-                    echo "connection done";
+                    header('Location: '.Routing::getSlug("Articles","yourWebSite").'');
+                else
+                    echo "toto";
+            }
+
         }
 
-        $v = new View("loginUser", "commercial");
+        $v = new View("loginUser", "login");
+        $v->assign("form", $form);
+
+    }
+
+    public function loginFrontAction(){
+
+        $user = new Users();
+        $form = $user->getLoginForm();
+        $method = strtoupper($form["config"]["method"]);
+        $data = $GLOBALS["_".$method];
+        if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
+
+            $validator = new Validator($form,$data);
+            $form["errors"] = $validator->errors;
+
+            if(empty($form["errors"] )){
+                if($user->loginVerify($user,$data))
+                    header('Location: '.Routing::getSlug("Articles","default").'');
+                else
+                    echo "toto";
+            }
+
+        }
+
+        $v = new View("loginUser", "basic");
         $v->assign("form", $form);
 
     }

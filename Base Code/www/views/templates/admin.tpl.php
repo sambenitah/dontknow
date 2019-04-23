@@ -15,7 +15,6 @@
         <script src="/public/js/addPages.js"></script>
         <script src="/public/js/admin.tpl.js"></script>
     </head>
-
     <body>
     <header>
         <div class="row">

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "conf.inc.php";
 
 
@@ -33,17 +33,31 @@ $slug = $slugExploded[0];
 $routes = Routing::getRoute($slug);
 extract($routes);
 
-
 //vérifier l'existence du fichier et de la class controller
-if( file_exists($cPath) ){
-	include $cPath;
-	if( class_exists($c)){
+if( file_exists($controllerPath) ){
+	include $controllerPath;
+	if( class_exists($controller)){
 		//instancier dynamiquement le controller
-		$cObject = new $c();
+		$cObject = new $controller();
 		//vérifier que la méthode (l'action) existe
-		if( method_exists($cObject, $a) ){
-			//appel dynamique de la méthode	
-			$cObject->$a($param);
+		if( method_exists($cObject, $action) ){
+		    if($connexion){
+		        $user = new Users();
+		        if($user->logged()) {
+		            $userRole = $user->getRole($_SESSION['auth']);
+		            if($userRole >= $role)
+                        $cObject->$action($param);
+		            else
+                        header('Location: '.Routing::getSlug("Users","login").'');
+                }
+                else{
+                    header('Location: '.Routing::getSlug("Users","login").'');
+                }
+            }
+            else{
+                $cObject->$action($param);
+            }
+
 		}else{
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
 		}

@@ -17,17 +17,19 @@ class Routing{
                 if(empty($routes[$slugPartOne]["controller"]) || empty($routes[$slugPartOne]["action"])){
                     header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
                 }
-                $c = ucfirst($routes[$slugPartOne]["controller"])."Controller";
-                $a = $routes[$slugPartOne]["action"]."Action";
-                $cPath = "controllers/".$c.".class.php";
+                $controller = ucfirst($routes[$slugPartOne]["controller"])."Controller";
+                $action = $routes[$slugPartOne]["action"]."Action";
+                $controllerPath = "controllers/".$controller.".class.php";
+                $connexion =  $routes[$slugPartOne]["connexion"];
+                $role =  $routes[$slugPartOne]["role"];
                 $param = null;
 
 
 
             }else if(isset($slug[1]) && isset($slug[2])){
-                $c = ucfirst($slug[1])."Controller";
-                $a = $slug[2]."Action";
-                $cPath = "controllers/".$c.".class.php";
+                $controller = ucfirst($slug[1])."Controller";
+                $action = $slug[2]."Action";
+                $controllerPath = "controllers/".$controller.".class.php";
                 $param = null;
             }else{
 
@@ -35,14 +37,16 @@ class Routing{
             }
 
         }else{
-            $c = ucfirst($slug[1])."Controller";
-            $a = $slug[2]."Action";
-            $cPath = "controllers/".$c.".class.php";
+            $controller = ucfirst($slug[1])."Controller";
+            $action = $slug[2]."Action";
+            $controllerPath = "controllers/".$controller.".class.php";
             $param = $slug[3];
+            $connexion = null;
+            $role = null;
 
         }
 
-        return ["c"=>$c, "a"=>$a,"cPath"=>$cPath, "param"=>$param ];
+        return ["controller"=>$controller, "action"=>$action,"controllerPath"=>$controllerPath, "param"=>$param,"connexion"=>$connexion,"role"=>$role ];
     }
 
 

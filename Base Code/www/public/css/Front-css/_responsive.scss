@@ -154,4 +154,65 @@
     width: 1170px
   }
 }
+/*--------------------- AddUser ---------------------*/
+
+#SectionOneAddUser{
+  width: 100%!important;
+  height: auto!important;
+  margin: 10em  0!important;
+}
+
+#SectionOneLogUser{
+  width: 100%!important;
+  height: auto!important;
+  margin: 11em  0 18em 0!important;
+}
+
+
+.inputAddLogUser{
+  width: 20%!important;
+  height: 45px!important;
+  margin: auto auto 1em auto!important;
+  font-family: 'Hind', sans-serif!important;
+  font-size: 20px!important;
+  padding: 0 0 0 0.5em!important;
+  color: #A1A1A1!important;
+  border-bottom: solid 1px rgb(230,230,230)!important;
+  border-top: none!important;
+  border-left: none!important;
+  border-right: none!important;
+}
+
+#TitleAddLogUser{
+  font-size: 40px!important;
+  letter-spacing: 6.5px!important;
+  text-align: center!important;
+  font-weight: bold!important;
+  font-family: 'Hind', sans-serif!important;
+  margin: 0.5em 0 0em 0!important;
+}
+
+#t1--AddLogUser{
+  text-align: center!important;
+  font-family: 'Hind', sans-serif!important;
+  font-size: 20px!important;
+  color: #A1A1A1!important;
+  margin: 0 0 1.5em 0!important;
+}
+
+#a1--AddLogUser{
+  text-decoration: underline;
+  color: #A1A1A1;
+}
+
+#a1--AddLogUser:hover{
+  color: #7863A1!important;
+  opacity: 50%!important;
+}
+
+.inputAddLogUser--click{
+  background-color: rgba(161,161,161,0.1)!important;
+  border: none!important;
+  border-radius: 5px!important;
+}
 

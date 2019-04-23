@@ -14,7 +14,6 @@
           type='text/css' media='all'/>
     <link rel="stylesheet" type="text/css" href="../../public/css/Front-css/style.css">
 </head>
-
 <body>
 <header>
     <div class="row">

@@ -5,11 +5,11 @@ declare(strict_types=1);
 class Users extends BaseSQL{
 
     public $id = null;
-    public $firstname;
+    /*public $firstname;
     public $lastname;
     public $email;
+    public $token;*/
     public $pwd;
-    public $token;
     public $role=1;
     public $status=0;
 
@@ -17,6 +17,10 @@ class Users extends BaseSQL{
         parent::__construct();
     }
 
+    public function setIDBIS($id)
+    {
+        $this->id = $id;
+    }
 
     public function setFirstname($firstname){
         $this->firstname = ucwords(strtolower(trim($firstname)));
@@ -39,6 +43,12 @@ class Users extends BaseSQL{
     public function setStatus($status){
         $this->status = $status;
     }
+
+
+
+
+
+
 
     public function getRegisterForm(){
         return [
@@ -116,16 +126,15 @@ class Users extends BaseSQL{
 
     public function loginVerify(Users $user, array $data)
     {
-        $allUsers = $user->getAll(["email" => $data["email"]], false);
 
-        if (count($allUsers) > 0 && password_verify($data["pwd"], $allUsers[0]["pwd"])) {
-            $token = $user->generateToken();
-            $user->setId($allUsers[0]["id"]);
+        $user->getOneBy(["email" => $data["email"]]);
+        if ($user->id != null && password_verify($data["pwd"],$user->pwd)) {
+            /*$token = "test";
+            $user->setIDBIS("");
             $user->setToken($token);
-            //$user->save();
-
-            $_SESSION['auth'] = $user->email;
-
+            $user->setPwd($user->pwd);
+            $user->save();*/
+            $_SESSION['auth'] = $data["email"];
             return true;
         }
 
@@ -134,5 +143,11 @@ class Users extends BaseSQL{
 
     public  function logged(){
        return isset($_SESSION['auth']);
+    }
+
+    public function getRole(string $email){
+        $user = new Users();
+        $user->getOneBy(["email" => $email]);
+        return $user->role;
     }
 }
