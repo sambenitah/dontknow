@@ -7,8 +7,8 @@
 "/inscription":
   controller: Users
   action: register
-  connexion : false;
-  role : 0;
+  connexion : false
+  role : 0
 
 "/connexion":
   controller: Users
@@ -34,7 +34,7 @@
   controller: Articles
   action: yourWebSite
   connexion: true
-  role: 3
+  role: 2
 
 "/front":
   controller: Articles
@@ -45,30 +45,44 @@
 "/singlePages":
   controller: Articles
   action: singleArticle
+  connexion: false
+  role: 0
 
 "/listPages":
   controller: Articles
   action: listFrontPages
+  connexion: false
+  role: 0
 
 "/showPictures":
   controller: Pictures
   action: showPictures
+  connexion: true
+  role: 2
 
 "/addPictures":
   controller: Pictures
   action: addPicture
+  connexion: true
+  role: 2
 
 "/customizer":
   controller: Customizer
   action: default
+  connexion: true
+  role: 2
 
 "/addCategory":
   controller: Categories
   action: addCategory
+  connexion: true
+  role: 2
 
 "/customizeErrorPage":
   controller: ErrorPage
   action: updateErrorPage
+  connexion: true
+  role: 2
 
 "/Error":
   controller: ErrorPage
