@@ -39,8 +39,8 @@
 "/front":
   controller: Articles
   action: default
-  connexion: true
-  role: 1
+  connexion: false
+  role: 0
 
 "/singlePages":
   controller: Articles
