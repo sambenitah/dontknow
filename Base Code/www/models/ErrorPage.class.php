@@ -41,8 +41,8 @@ class ErrorPage extends BaseSQL{
 
             "data"=>[
 
-                "content"=>["type"=>"text","placeholder"=>"Your error text", "required"=>false, "class"=>"inputAddPage", "id"=>"inputYourTexte","maxlength"=>100,
-                    "error"=>"Your road exceeds one hundred characters", "value"=>"$content"],
+                "content"=>["type"=>"text","placeholder"=>"Your error text", "required"=>false, "class"=>"inputAddPage", "id"=>"inputYourTexte","maxlength"=>100,"minlenght"=>5,
+                    "error"=>"Your content must be between five or hundred characters", "value"=>"$content"],
 
                 "background_color"=>["type"=>"color","label"=>"Choose your background color", "required"=>false, "class"=>"inputAddPage", "id"=>"button_change_background_color", "minlenght"=>7,"maxlength"=>7,
                     "error"=>"An error has occured", "value"=>"$background_color"],
