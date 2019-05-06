@@ -35,7 +35,7 @@
                     <p class="titleMenu">Administration</p>
                     <div class="div-nav-admin-menu">
                         <a class="a-adminMenu" href="<?php echo Routing::getSlug("Articles","yourWebSite");?>">Your website</a>
-                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Pages","statistics");?>">Statistics</a>
+                        <a class="a-adminMenu" href="<?php echo Routing::getSlug("Statistics","default");?>">Statistics</a>
                     </div>
                     <p class="titleMenu">Customizer</p>
                    <div class="div-nav-admin-menu">

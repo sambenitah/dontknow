@@ -15,7 +15,6 @@ class SPDO {
             self::$instance = new PDO(DBDRIVER . ":host=" . DBHOST . ";dbname=" . DBNAME, DBUSER, DBPWD);
         }
         return self::$instance;
-
     }
 
 }

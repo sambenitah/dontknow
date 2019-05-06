@@ -64,13 +64,15 @@ class BaseSQL{
         return $query->fetchAll();
     }
 
-    public function selectArray(array $where){
+    public function selectArray(array $where = null){
+        if (isset($where))
         $query = $this->select($where);
+
+        echo"isnull";
         $query->setFetchMode(Pdo::FETCH_ASSOC);
         $query->execute($where);
         return $query->fetchAll();
     }
-
 
 
     public function getOneBy(array $where){
