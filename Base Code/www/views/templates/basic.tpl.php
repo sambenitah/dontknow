@@ -83,7 +83,7 @@
                                             <li>
                                                 <a href="<?php
                                                 echo isset($_SESSION['auth']) ? '#' :  Routing::getSlug("Users", "loginFront");
-                                                ?>"><?php   echo isset($_SESSION['auth']) ? 'My Profile' :  'Sign In'; ?></a>
+                                                ?>"><?php   echo isset($_SESSION['authFront']) ? 'My Profile' :  'Sign In'; ?></a>
                                             </li>
                                         </ul>
                                     </nav>

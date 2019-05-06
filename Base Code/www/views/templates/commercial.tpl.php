@@ -20,7 +20,7 @@
                     <a class="m-link" href="#">OUR CUSTOMERS</a>
                 </div>
                 <div class="m-right">
-                    <a class="m-link" href="<?php echo Routing::getSlug("Users","login");?>">SIGN IN</a></li>
+<!--                    <a class="m-link" href="--><?php //echo Routing::getSlug("Users","login");?><!--">SIGN IN</a></li>-->
                     <a class="m-link" href="<?php echo Routing::getSlug("Users","register");?>">CREATE A SITE</a></li>
                 </div>
 
@@ -39,7 +39,7 @@
                 <a class="m-link m-link-bis" href="#premium">Templates</a>
                 <a class="m-link m-link-bis" href="#aide">Pricing</a>
                 <a class="m-link m-link-bis" href="#">Our Customers</a>
-                <a class="m-link m-link-bis" href="#inscrire">Sign in</a></li>
+<!--                <a class="m-link m-link-bis" href="#inscrire">Sign in</a></li>-->
                 <a class="m-link m-link-bis" href="#connecter">Create a site</a></li>
             </div>
         </nav>

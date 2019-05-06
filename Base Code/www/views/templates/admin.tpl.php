@@ -24,6 +24,7 @@
                     Dont Kn?w
 
                 </a>
+                <a href="#"><i class="far fa-user-circle"></i></a>
             </div>
         </div>
     </header>

@@ -23,6 +23,7 @@
                 Dont Kn?w
 
             </a>
+            <a href="#" style="float: right;margin: 0.5em; margin-right: 1em; font-size: 1.5em; color: #FFF;"><i class="far fa-user-circle"></i></a>
         </div>
     </div>
 </header>
