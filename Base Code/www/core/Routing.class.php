@@ -13,7 +13,7 @@ class Routing{
         if(!isset($slug[3])){
             $slugPartOne = "/".$slug[1];
             $routes = yaml_parse_file(self::$routeFile);
-            if( isset($routes[$slugPartOne])){
+            if(isset($routes[$slugPartOne])){
                 if(empty($routes[$slugPartOne]["controller"]) || empty($routes[$slugPartOne]["action"])){
                     header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
                 }
@@ -25,15 +25,17 @@ class Routing{
                 $param = null;
 
 
-
             }else if(isset($slug[1]) && isset($slug[2])){
                 $controller = ucfirst($slug[1])."Controller";
                 $action = $slug[2]."Action";
                 $controllerPath = "controllers/".$controller.".class.php";
+                $connexion = null;
+                $role = null;
                 $param = null;
-            }else{
 
+            }else{
                 return ["c"=>null, "a"=>null,"cPath"=>null ];
+
             }
 
         }else{
@@ -45,7 +47,6 @@ class Routing{
             $role = null;
 
         }
-
         return ["controller"=>$controller, "action"=>$action,"controllerPath"=>$controllerPath, "param"=>$param,"connexion"=>$connexion,"role"=>$role ];
     }
 
