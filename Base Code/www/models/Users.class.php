@@ -44,7 +44,13 @@ class Users extends BaseSQL{
         $this->status = $status;
     }
 
-
+    public function addUser(){
+        $addUser = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $addUser->table("Users")->insert($arguments);
+        $query = $addUser->instance->prepare((string)$query);
+        $query->execute($arguments);
+    }
 
 
 

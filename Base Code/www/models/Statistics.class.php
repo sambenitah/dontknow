@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-class Statistics extends BaseSQL{
+class Statistics{
 
     public function querySelectCountUser(){
 
-        $queryConstructor = new QueryConstructor();
-        $query = $queryConstructor->from('Users')->select("Count(id)");
-        $result = $this->selectArray($query);
+        $selectCountUser = new QueryConstructor();
+        $query = $selectCountUser->from('Users')->select("Count(id)");
+        $result = $selectCountUser->instance->selectArray((string)$query);
         return $result;
     }
 }

@@ -4,16 +4,16 @@ declare(strict_types=1);
 
 class ArticlesController{
 
-    public function defaultAction(){
+    public function defaultAction(){ //ok
 
         $showArticle = new Articles();
-        $selectArticle = $showArticle ->getAll([],true);
+        $selectArticle = $showArticle->selectAllArticle();
         $v = new View("listFrontPages", "basic");
         $v->assign("ListPage", $selectArticle);
 
     }
 
-    public function addArticleAction(){
+    public function addArticleAction(){ //ok
         $addArticle = new Articles();
         $form = $addArticle->getAddArticleForm();
         $method = strtoupper($form["config"]["method"]);
@@ -26,41 +26,44 @@ class ArticlesController{
             $form["errors"] = $validator->errors;
 
             if(empty($form["errors"])){
+
                 $addArticle->setDescription($data["description"]);
                 $addArticle->setTitle($data["title"]);
                 $addArticle->setRoute($data["route"]);
-                $addArticle->save();
-                header('Location: '.Routing::getSlug("Articles","showArticles").'');
-                exit;
+                $addArticle->addArticle();
+
+               //header('Location: '.Routing::getSlug("Articles","showArticles").'');
+               exit;
             }
         }
             $v = new View("addArticle", "admin");
             $v->assign("Form", $form);
     }
 
-    public function showArticlesAction(){
+    public function showArticlesAction(){ //ok
         $showArticle = new Articles();
-        $selectArticle = $showArticle->selectObject([]);
+        $selectArticle = $showArticle->selectAllArticle();
         $v = new View("showArticle", "admin");
         $v->assign("ListPage", $selectArticle);
+        exit;
     }
 
 
-    public function detailArticlesAction($param){
+    public function detailArticlesAction($param){ //ok
         $detailArticle = new Articles();
         $formArticle = $detailArticle->getDetailArticleForm();
-        $detail = $detailArticle ->selectObject(["route"=>$param],true);
+        $detail = $detailArticle->selectSingleArticle(["route"=>$param]);
         if (empty($detail)) {
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }else {
-            $v = new View("detailArticle", "admin");
-            $v->assign("DetailArticle", $detail);
-            $v->assign("formArticle", $formArticle);
-            json_encode($detail);
+           $v = new View("detailArticle", "admin");
+           $v->assign("DetailArticle", $detail);
+           $v->assign("formArticle", $formArticle);
+           exit;
         }
     }
 
-    public function updateArticleAction(){
+    public function updateArticleAction(){ //pasok
 
         $updateArticle = new Articles();
         $formArticle = $updateArticle->getDetailArticleForm();
@@ -71,47 +74,51 @@ class ArticlesController{
 
             $validator = new Validator($formArticle,$data);
             $form["errors"] = $validator->errors;
+            if (!empty($form["errors"]))
+                echo json_encode($form["errors"]);
+
 
             if(empty($form["errors"])){
                 $updateArticle->setIDBIS($id);
                 $updateArticle->setContent($data["content"]);
                 $updateArticle->setMainPicture($data["main_picture"]);
                 $updateArticle->setCategory($data["category"]);
-                $updateArticle->save();
+                $updateArticle->updateArticle();
                 echo json_encode("Update");
                 exit;
             }
-
-            echo json_encode($form["errors"]);
         }
     }
 
-    public function deleteArticleAction(){
+    public function deleteArticleAction(){ //ok
         $data = $GLOBALS["_POST"];
         $id = $data["id"];
         $deletePicture = new Articles();
-        $deletePicture->setId($id, true);
+        $deletePicture->deleteArticle(['id'=>$id]);
         echo json_encode("Delete");
         exit;
     }
 
 
-    public function singleArticleAction($param){
+    public function singleArticleAction($param){ // ok
         $showDetailArticle = new Articles();
-        $selectDetailArticle = $showDetailArticle ->selectObject(["route"=>$param],true);
+        $selectDetailArticle = $showDetailArticle->selectSingleArticle(["route"=>$param]);
         if (empty($selectDetailArticle)) {
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
-        }else {
+        }else{
+
             $v = new View("singleArticle", "basic");
             $v->assign("ListPage", $selectDetailArticle);
+            exit;
         }
     }
 
-    public function yourWebsiteAction(){
+    public function yourWebsiteAction(){ //ok
         $showArticle = new Articles();
-        $selectArticle = $showArticle ->getAll([],true);
+        $selectArticle = $showArticle ->selectAllArticle();
         $v = new View("listFrontPages", "front");
         $v->assign("ListPage", $selectArticle);
+        exit;
     }
 
 }

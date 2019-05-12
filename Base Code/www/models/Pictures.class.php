@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-class Pictures extends BaseSQL{
-
-    public $id = null;
+class Pictures{
 
 
     public function setNameId($name)
@@ -19,6 +17,44 @@ class Pictures extends BaseSQL{
     {
         $this->name = $title ;
     }
+
+    public function deletePicture(array $delete){
+        $deletePicture = new QueryConstructor();
+        $query = $deletePicture->delete('Pictures')->where($delete);
+        $query = $deletePicture->instance->prepare((string)$query);
+        $query->execute($delete);
+        return $query->fetch();
+    }
+
+    public function selectAllPictureObject(){
+        $selectPicture = new QueryConstructor();
+        $query = $selectPicture->select()->from('Pictures');
+        $query = $selectPicture->instance->prepare((string)$query);
+        $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function selectAllPictureArray(){
+        $selectPicture = new QueryConstructor();
+        $query = $selectPicture->select()->from('Pictures');
+        $query = $selectPicture->instance->prepare((string)$query);
+        $query->setFetchMode(Pdo::FETCH_ASSOC);
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function insertPicture(array $param){
+        $insertPicture = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $extension_upload = strtolower(substr(strrchr($param['name']['name'],'.'),1));
+        $arguments["name_id"] = $arguments["name_id"].".".$extension_upload;
+        $query = $insertPicture->table("Pictures")->insert($arguments);
+        $query = $insertPicture->instance->prepare((string)$query);
+        $query->execute($arguments);
+        move_uploaded_file($param["name"]['tmp_name'], $param["pathFile"].$this->name_id.".".$extension_upload);
+    }
+
 
 
 

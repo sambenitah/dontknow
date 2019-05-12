@@ -14,11 +14,9 @@ class UsersController{
 
         $user = new Users();
         $form = $user->getRegisterForm();
-
         //Est ce qu'il y a des données dans POST ou GET($form["config"]["method"])
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_".$method];
-
 
         if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
 
@@ -30,13 +28,11 @@ class UsersController{
                 $user->setLastname($data["lastname"]);
                 $user->setEmail($data["email"]);
                 $user->setPwd($data["pwd"]);
-                $user->save();
+                $user->addUser();
                 header('Location: '.Routing::getSlug("Articles","default").'');
                 exit;
             }
-
         }
-
         $v = new View("addUser", "basic");
         $v->assign("form", $form);
 

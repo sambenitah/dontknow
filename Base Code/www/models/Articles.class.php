@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-class Articles extends BaseSQL{
+class Articles{
 
-    public $id = null;
     //public $title;
     //public $description;
     //public $route;
@@ -62,6 +61,51 @@ class Articles extends BaseSQL{
     }
 
 
+    public function addArticle(){
+        $addArticle = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $addArticle->table("Articles")->insert($arguments);
+        $query = $addArticle->instance->prepare((string)$query);
+        $query->execute($arguments);
+    }
+
+    public function selectAllArticle(){
+        $selectArticle = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $selectArticle->select($arguments)->from('Articles');
+        $query = $selectArticle->instance->prepare((string)$query);
+        $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
+        $query->execute();
+        return $query->fetchAll();
+    }
+
+    public function selectSingleArticle(array $where){
+        $selectSingleArticle = new QueryConstructor();
+        $query = $selectSingleArticle->select()->from('Articles')->where($where);
+        $query = $selectSingleArticle->instance->prepare((string)$query);
+        $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
+        $query->execute($where);
+        return $query->fetchAll();
+    }
+
+    public function deleteArticle(array $delete){
+        $deleteArticle = new QueryConstructor();
+        $query = $deleteArticle->delete('Articles')->where($delete);
+        $query = $deleteArticle->instance->prepare((string)$query);
+        $query->execute($delete);
+        return $query->fetch();
+    }
+
+    public function updateArticle(){
+        $updateArticle = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $updateArticle->table('Articles')->update($arguments);
+        $query = $updateArticle->instance->prepare((string)$query);
+        $query->execute($arguments);
+    }
+
+
+
     public function getAddArticleForm(){
         return [
             "config"=>[
@@ -74,7 +118,6 @@ class Articles extends BaseSQL{
                 "classSubmit" =>"bouttonConfirmForm",
                 "cancelButton"=>false,
                 "enctype"=>false
-
             ],
 
 
@@ -132,32 +175,31 @@ class Articles extends BaseSQL{
                     "id"=>"selectPicture",
                     "class"=>"select-css",
                     "label"=>"Select your picture",
-                    /*"option"=>[
+                    "option"=>[
                         [
-                            "class" => "tata",
-                            "value" => "toto"
-                        ],
+                            "class" => "-",
+                            "value" => "-"
+                        ]
+
+                        /*,
                         [
                             "class" => "efhgzjk",
                             "value" => "test"
-                        ]
-                    ],*/
+                        ]*/
+                    ],
                 ],
 
                 "category"=>[
                     "id"=>"selectCategory",
                     "class"=>"select-css",
                     "label"=>"Select your category",
-                    /*"option"=>[
+                    "option"=>[
+
                         [
-                            "class" => "tata",
-                            "value" => "toto"
-                        ],
-                        [
-                            "class" => "efhgzjk",
-                            "value" => "test"
+                            "id" => "-",
+                            "value" => "-"
                         ]
-                    ]*/
+                    ]
                 ]
             ]
         ];

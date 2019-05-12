@@ -12,6 +12,8 @@ class BaseSQL{
             throw new \Exception('Aucune connection');
     }
 
+
+
     public function setId($id, $delete = false){
         $this->id = $id;
         //va récupérer en base de données les élements pour alimenter l'objet
@@ -67,8 +69,6 @@ class BaseSQL{
     public function selectArray(array $where = null){
         if (isset($where))
         $query = $this->select($where);
-
-        echo"isnull";
         $query->setFetchMode(Pdo::FETCH_ASSOC);
         $query->execute($where);
         return $query->fetchAll();
@@ -92,8 +92,10 @@ class BaseSQL{
 
         if (!empty($files))
         $extension_upload = strtolower(substr(strrchr($files['name']['name'],'.'),1));
+
         $dataObject = get_object_vars($this);
         $dataChild = array_diff_key($dataObject, get_class_vars(get_class()));
+
         if (!empty($files))
             $dataChild["name_id"] = $dataChild["name_id"].".".$extension_upload;
 
@@ -102,11 +104,6 @@ class BaseSQL{
             $sql ="INSERT INTO ".$this->table." ( ".
                 implode(",", array_keys($dataChild) ) .") VALUES ( :".
                 implode(",:", array_keys($dataChild) ) .")";
-
-            echo $sql;
-            echo "<pre>";
-            var_dump($dataChild);
-            echo "</pre>";
 
             $query = $this->instance->prepare($sql);
             $query->execute( $dataChild );
@@ -122,7 +119,6 @@ class BaseSQL{
                 $sqlUpdate[]=$key."=:".$key;
             }
             $sql ="UPDATE ".$this->table." SET ".implode(",", $sqlUpdate)." WHERE id=:id";
-            echo $sql;
             $query = $this->instance->prepare($sql);
             $query->execute($dataChild);
         }
@@ -138,6 +134,9 @@ class BaseSQL{
         $query->execute($where);
         return $query->fetch();
     }
+
 }
+
+
 
 

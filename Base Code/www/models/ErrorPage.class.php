@@ -1,6 +1,6 @@
 <?php
 
-class ErrorPage extends BaseSQL{
+class ErrorPage{
 
     public function setIdBis($id)
     {
@@ -21,6 +21,36 @@ class ErrorPage extends BaseSQL{
     {
         $this->text_color = $textColor;
     }
+
+
+    public function selectDataErrorPage(){
+        $selectDataErrorPage = new QueryConstructor();
+        $query = $selectDataErrorPage->select()->from('ErrorPage')->where(["id"=>1]);
+        $query = $selectDataErrorPage->instance->prepare((string)$query);
+        $query->setFetchMode(Pdo::FETCH_ASSOC);
+        $query->execute(["id"=>1]);
+        return $query->fetch();
+    }
+
+    public function updateErrorPage(){
+        $updateArticle = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $updateArticle->table('ErrorPage')->update($arguments);
+        $query = $updateArticle->instance->prepare((string)$query);
+        $query->execute($arguments);
+    }
+
+
+    public function showErrorPage(array $where){
+        $selectSingleArticle = new QueryConstructor();
+        $query = $selectSingleArticle->select()->from('ErrorPage')->where($where);
+        $query = $selectSingleArticle->instance->prepare((string)$query);
+        $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
+        $query->execute($where);
+        return $query->fetchAll();
+    }
+
+
 
 
 

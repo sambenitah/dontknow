@@ -28,7 +28,7 @@
                     </div>
                     <select id="<?php echo $select["id"];?>" class="<?php echo $select["class"];?>">
                         <?php foreach ( $select["option"] as $key => $detailSelect ):?>
-                            <option id="<?php echo $detailSelect["class"];?>"><?php echo $detailSelect["value"];?></option>
+                            <option id="<?php echo $detailSelect["id"];?>"><?php echo $detailSelect["value"];?></option>
                         <?php endforeach;?>
                     </select>
                 </div>

@@ -5,7 +5,7 @@ declare(strict_types=1);
 Class CategoriesController{
 
 
-    public function addCategoryAction(){
+    public function addCategoryAction(){ //ok
         $addCategory = new Categories();
         $form = $addCategory->getAddCategoryForm();
         $method = strtoupper($form["config"]["method"]);
@@ -19,7 +19,7 @@ Class CategoriesController{
 
             if(empty($form["errors"])){
                 $addCategory->setName($data["name"]);
-                $addCategory->save();
+                $addCategory->insertCategory();
                 header('Location: '.Routing::getSlug("Customizer","default").'');
                 exit;
             }
@@ -30,7 +30,7 @@ Class CategoriesController{
 
     public function showCategoryAction(){
         $showCategory = new Categories();
-        $selectCategory = $showCategory ->selectObject([]);
+        $selectCategory = $showCategory->selectCategory();
         echo json_encode($selectCategory);
         exit;
     }
@@ -39,7 +39,7 @@ Class CategoriesController{
         $data = $GLOBALS["_POST"];
         $id = $data["id"];
         $deletePicture = new Categories();
-        $deletePicture->setId($id, true);
+        $deletePicture->deleteCategory(["id"=>$id]);
         echo json_encode("Delete");
         exit;
     }

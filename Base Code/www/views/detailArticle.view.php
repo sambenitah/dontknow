@@ -1,4 +1,6 @@
+
 <?php foreach ($DetailArticle as $key => $detail):?>
+
 
 <div class="row">
     <div class="col-6 center col-m-6 m-center col-l-8 l-center">
@@ -35,7 +37,7 @@
     $(document).ready( function () {
 
         $.ajax({
-            url : '/Pictures/setShowPictures',
+            url : '/Pictures/showPictureInSelecte',
             type : 'POST',
             data: {ajax : true },
             dataType: "json",
@@ -53,12 +55,13 @@
             dataType: "json",
             success: function (category) {
                 for(i=0 ; i<category.length; i++)
-                    $("#selectCategory").append('<option id= "'+category[i].id+'">' + category[i].name + '</option>')
+                    $("#selectCategory").append('<option id= "'+category[i].name+'">' + category[i].name + '</option>')
             }
         });
 
         var contentTynmce = $("#inputHiddenContent").val();
         $("#textareaUpdateArticle").val(contentTynmce);
+
     });
 
 
@@ -69,8 +72,8 @@
 
 
     $("#selectCategory").change(function () {
-        var picture = $('#selectCategory option:selected').text();
-        $("#inputHiddenCategory").val(picture)
+        var category = $('#selectCategory option:selected').text();
+        $("#inputHiddenCategory").val(category)
     });
 
 
@@ -81,18 +84,14 @@
         var content = tinyMCE.get('textareaUpdateArticle').getContent();
 
         var id = $(".post").attr('id');
-        var picturebis = $("#inputHiddenPicture").val();
-        if (picturebis == '-')
+        var picture = $("#inputHiddenPicture").val();
+        if (picture == '-')
             var picture = $('img').attr('id');
-        else
-            var picture = $("#inputHiddenPicture").val();
 
-
-        var categorybis = $("#inputHiddenCategory").val();
-        if (categorybis == '-')
+        var category = $("#inputHiddenCategory").val();
+        if (category == '-')
             var category = $('#inputHiddenCategory').val();
-        else
-            var category = $("#inputHiddenCategory").val();
+
 
 
         $.ajax({

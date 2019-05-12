@@ -24,7 +24,7 @@ Class PicturesController{
                 $file = new Pictures();
                 $file->setNameId($array["title"]);
                 $file->setName($array["title"]);
-                $file->save($array);
+                $file->insertPicture($array);
                 header('Location: '.Routing::getSlug("Pictures","addPicture").'');
                 exit;
             }
@@ -33,27 +33,21 @@ Class PicturesController{
         $v->assign("addPicture", $form);
     }
 
-    public function setShowPicturesAction(){
 
-        $ajax = $GLOBALS["_POST"];
-        $ajax = $ajax["ajax"];
-        $this->showPicturesAction($ajax);
+    public function showPicturesAction(){
+
+        $showPicture = new Pictures();
+        $pictures = $showPicture->selectAllPictureObject();
+        $v = new View("showPictures", "admin");
+        $v->assign("ListPicture", $pictures);
         exit;
     }
 
-    public function showPicturesAction($ajax = false){
-
+    public function showPictureInSelecteAction(){
         $showPicture = new Pictures();
-        if($ajax == false) {
-            $pictures = $showPicture->selectObject([], true);
-            $v = new View("showPictures", "admin");
-            $v->assign("ListPicture", $pictures);
-        }else {
-            $pictures = $showPicture->selectArray([], false);
-            echo json_encode($pictures);
-        }
+        $pictures = $showPicture->selectAllPictureArray();
+        echo json_encode($pictures);
         exit;
-
     }
 
     public  function deletePictureAction(){
@@ -61,7 +55,7 @@ Class PicturesController{
         $data = $GLOBALS["_POST"];
         $id = $data["id"];
         $deletePicture = new Pictures();
-        $deletePicture->setId($id, true);
+        $deletePicture->deletePicture(["id"=>$id]);
         unlink(substr($data["url"],1));
         echo json_encode("Delete");
         exit;
