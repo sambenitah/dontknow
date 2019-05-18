@@ -8,13 +8,15 @@ class View{
     private $t;
     private $data = [];
 
-    public function __construct($v, $t="back"){
-        $this->setView($v);
+    public function __construct($v,$class, $t="back" ){
+        $this->setView($v, $class);
         $this->setTemplate($t);
     }
 
-    public function setView($v){
-        $viewPath = "views/".$v.".view.php";
+    public function setView($v,$class){
+
+        $viewPath = "views/".$class."/".$v.".view.php";
+
         if( file_exists($viewPath)){
             $this->v=$viewPath;
         }else{

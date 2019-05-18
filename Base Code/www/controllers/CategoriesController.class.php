@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 Class CategoriesController{
 
+    const nameClass = "Categories";
 
     public function addCategoryAction(){ //ok
         $addCategory = new Categories();
@@ -24,7 +25,7 @@ Class CategoriesController{
                 exit;
             }
         }
-        $v = new View("addCategory", "admin");
+        $v = new View("addCategory",self::nameClass, "admin");
         $v->assign("ListForm", $form);
     }
 

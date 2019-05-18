@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 class UsersController{
 
+    const nameClass = "Users";
+
     public function defaultAction(){
 
-        $v = new View("homepage", "commercial");
+        $v = new View("homepage",self::nameClass, "commercial");
 
     }
 
@@ -33,7 +35,7 @@ class UsersController{
                 exit;
             }
         }
-        $v = new View("addUser", "basic");
+        $v = new View("addUser",self::nameClass, "basic");
         $v->assign("form", $form);
 
     }
@@ -59,7 +61,7 @@ class UsersController{
 
         }
 
-        $v = new View("loginUser", "login");
+        $v = new View("loginUser",self::nameClass, "login");
         $v->assign("form", $form);
 
     }
@@ -84,7 +86,7 @@ class UsersController{
 
         }
 
-        $v = new View("loginUser", "basic");
+        $v = new View("loginUser",self::nameClass, "basic");
         $v->assign("form", $form);
 
     }

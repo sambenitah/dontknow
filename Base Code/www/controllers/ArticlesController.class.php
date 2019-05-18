@@ -2,13 +2,16 @@
 
 declare(strict_types=1);
 
+
 class ArticlesController{
+
+    const nameClass = "Articles";
 
     public function defaultAction(){ //ok
 
         $showArticle = new Articles();
         $selectArticle = $showArticle->selectAllArticle();
-        $v = new View("listFrontPages", "basic");
+        $v = new View("listFrontPages",self::nameClass, "basic");
         $v->assign("ListPage", $selectArticle);
 
     }
@@ -31,19 +34,18 @@ class ArticlesController{
                 $addArticle->setTitle($data["title"]);
                 $addArticle->setRoute($data["route"]);
                 $addArticle->addArticle();
-
                //header('Location: '.Routing::getSlug("Articles","showArticles").'');
                exit;
             }
         }
-            $v = new View("addArticle", "admin");
+            $v = new View("addArticle", self::nameClass, "admin");
             $v->assign("Form", $form);
     }
 
     public function showArticlesAction(){ //ok
         $showArticle = new Articles();
         $selectArticle = $showArticle->selectAllArticle();
-        $v = new View("showArticle", "admin");
+        $v = new View("showArticle", self::nameClass, "admin");
         $v->assign("ListPage", $selectArticle);
         exit;
     }
@@ -56,7 +58,7 @@ class ArticlesController{
         if (empty($detail)) {
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }else {
-           $v = new View("detailArticle", "admin");
+           $v = new View("detailArticle", self::nameClass, "admin");
            $v->assign("DetailArticle", $detail);
            $v->assign("formArticle", $formArticle);
            exit;
@@ -107,7 +109,7 @@ class ArticlesController{
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }else{
 
-            $v = new View("singleArticle", "basic");
+            $v = new View("singleArticle", self::nameClass , "basic");
             $v->assign("ListPage", $selectDetailArticle);
             exit;
         }
@@ -116,7 +118,7 @@ class ArticlesController{
     public function yourWebsiteAction(){ //ok
         $showArticle = new Articles();
         $selectArticle = $showArticle ->selectAllArticle();
-        $v = new View("listFrontPages", "front");
+        $v = new View("listFrontPages", self::nameClass, "front");
         $v->assign("ListPage", $selectArticle);
         exit;
     }

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 class StatisticsController{
 
+    const nameClass = "Statistics";
+
     public function defaultAction(){
         $queryBuilder = new Statistics();
         $countUsers = $queryBuilder->querySelectCountUser();

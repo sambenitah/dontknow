@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 Class ErrorPageController{
 
+    const nameClass = "Errors";
+
     public function updateErrorPageAction(){
         $updateErrorPage = new ErrorPage();
 
@@ -28,7 +30,7 @@ Class ErrorPageController{
             }
         }
 
-        $v = new View("updatePageError", "admin");
+        $v = new View("updatePageError", "admin", self::nameClass);
         $v->assign("ErrorPage", $selectErrorPageForm);
         exit;
     }
@@ -36,7 +38,7 @@ Class ErrorPageController{
     public function showErrorPageAction(){
         $showErrorPage = new ErrorPage();
         $errorPage = $showErrorPage ->showErrorPage(["id"=>1]);
-        $v = new View("errorPage", "errorPage");
+        $v = new View("errorPage", self::nameClass,  "errorPage");
         $v->assign("ErrorPage", $errorPage);
         exit;
     }

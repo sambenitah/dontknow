@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 Class PicturesController{
 
+    const nameClass = "Pictures";
+
     public function addPictureAction(){
         $addPicture = new Pictures();
         $form = $addPicture->getAddPictureForm();
@@ -29,7 +31,7 @@ Class PicturesController{
                 exit;
             }
         }
-        $v = new View("addPicture", "admin");
+        $v = new View("addPicture",self::nameClass, "admin");
         $v->assign("addPicture", $form);
     }
 
@@ -38,7 +40,7 @@ Class PicturesController{
 
         $showPicture = new Pictures();
         $pictures = $showPicture->selectAllPictureObject();
-        $v = new View("showPictures", "admin");
+        $v = new View("showPictures",self::nameClass, "admin");
         $v->assign("ListPicture", $pictures);
         exit;
     }

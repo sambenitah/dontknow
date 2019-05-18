@@ -19,7 +19,7 @@ class QueryConstructor{
 
 
 
-    public function select(array ...$select):self
+    public function select(array ...$select):self //principe fluente  retourne une instance de la class
     {
         $this->requestType = self::SELECT;
         $this->select = $select;
