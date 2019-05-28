@@ -43,6 +43,7 @@ class View{
         if( file_exists($modalPath)){
             include $modalPath;
         }else{
+            echo"fhgsqjodjhknsnc";
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }
     }

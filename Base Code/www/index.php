@@ -30,6 +30,7 @@ if( file_exists($controllerPath) ){
 		        $user = new Users();
 		        if($user->logged()) {
 		            $userRole = $user->getRole($_SESSION['auth']);
+		            $_SESSION["role"] = $userRole;
 		            if($userRole >= $role)
                         $cObject->$action($param);
 		            else

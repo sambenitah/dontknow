@@ -104,6 +104,15 @@ class Articles{
         $query->execute($arguments);
     }
 
+    public function selectCommentArticle(array $where){
+        $selectComment = new QueryConstructor();
+        $query = $selectComment->instance->prepare("SELECT * FROM Comments, Users WHERE Comments.userId = Users.email AND Comments.articleId = :idArticle ORDER BY Comments.date_inserted DESC");
+        $query->setFetchMode(Pdo::FETCH_CLASS, get_called_class());
+        $query->execute($where);
+        return $query->fetchAll();
+    }
+
+
 
 
     public function getAddArticleForm(){

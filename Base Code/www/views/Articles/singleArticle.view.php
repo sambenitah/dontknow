@@ -47,64 +47,33 @@
                     </div>
                 </div>
         <?php endforeach;?>
-
-
                 <div id="comments">
-                    <h2 class="title">04 Comments</h2>
+        <?php foreach ($Messages as $key => $detail):?>
                     <div class="comments-inner">
                         <ul class="comment-list">
                             <li class="comment">
                                 <div class="comment-body">
-                                    <div class="comment-avatar image" style="background-image: url(../public/images/avatar-150px.jpg);">
-                                        <img alt="avatar" src="/public/images/Front/avatar-150px.jpg">
-                                    </div>
                                     <div class="comment-context">
                                         <div class="comment-head">
-                                            <h2 class="title">Kendy</h2>
-                                            <span class="comment-date">July 6, 2017</span>
+                                            <h2 class="title"><?php echo $detail->firstname; echo " "; echo $detail->lastname;?> </h2>
+                                            <span class="comment-date"><?php echo $detail->date_inserted?></span>
                                         </div>
                                         <div class="comment-content">
-                                            <p>Design works within constraints. The Columban monks who crafted the Book</p>
-                                        </div>
-                                        <div class="reply">
-                                            <span class="comment-reply"><a class="comment-reply-link" href="#">Reply</a></span>
+                                            <p>
+                                                <?php echo $detail->content?>
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
-                                <ul class="children">
-                                    <li class="comment">
-                                        <div class="comment-body">
-                                            <div class="comment-avatar image" style="background-image: url(../public/images/avatar-150px.jpg);">
-                                                <img alt="avatar" src="/public/images/Front/avatar-150px.jpg">
-                                            </div>
-                                            <div class="comment-context">
-                                                <div class="comment-head">
-                                                    <h2 class="title">Kendy</h2>
-                                                    <span class="comment-date">July 6, 2017</span>
-                                                </div>
-                                                <div class="comment-content">
-                                                    <p>Design works within constraints. The Columban monks who crafted the Book</p>
-                                                </div>
-                                                <div class="reply">
-                                                    <span class="comment-reply"><a class="comment-reply-link" href="#">Reply</a></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+
                             </li>
                         </ul>
                     </div>
+        <?php endforeach;?>
+
                     <div id="respond" class="comment-respond">
                         <h2 class="title">Leave a Reply</h2>
-                        <form action="#" method="post" class="comment-form contact">
-                            <div class="contact-item field-full form-message">
-                                <textarea name="comment" placeholder="Your Comment ..."></textarea>
-                            </div>
-                            <div class="contact-item form-submit">
-                                <input name="submit" type="submit" id="submit" class="submit" value="POST Comment">
-                            </div>
-                        </form>
+                        <?php $this->addModal("form", $CommentForm);?>
                     </div>
                 </div>
             </div>

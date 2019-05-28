@@ -135,11 +135,6 @@ class Users extends BaseSQL{
 
         $user->getOneBy(["email" => $data["email"]]);
         if ($user->id != null && password_verify($data["pwd"],$user->pwd)) {
-            /*$token = "test";
-            $user->setIDBIS("");
-            $user->setToken($token);
-            $user->setPwd($user->pwd);
-            $user->save();*/
             $_SESSION['auth'] = $data["email"];
             return true;
         }

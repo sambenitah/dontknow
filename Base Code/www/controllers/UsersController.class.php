@@ -53,10 +53,11 @@ class UsersController{
             $form["errors"] = $validator->errors;
 
             if(empty($form["errors"] )){
-                if($user->loginVerify($user,$data))
+                if($user->loginVerify($user,$data)) {
                     header('Location: '.Routing::getSlug("Articles","yourWebSite").'');
-                else
-                    echo "toto";
+                }else{
+
+                }
             }
 
         }

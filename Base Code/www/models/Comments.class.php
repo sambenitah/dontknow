@@ -4,11 +4,6 @@ declare(strict_types=1);
 
 class Comments extends BaseSQL{
 
-    public $id = null;
-    public $content;
-    public $userId;
-    public $articleId;
-    public $commentId;
 
     public function __construct(){
         parent::__construct();
@@ -40,16 +35,27 @@ class Comments extends BaseSQL{
         $this->commentId = $commentId;
     }
 
-    public function getAddCommentForm(){
+    public function addComment(){
+        $addArticle = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $addArticle->table("Comments")->insert($arguments);
+        $query = $addArticle->instance->prepare((string)$query);
+        $query->execute($arguments);
+    }
+
+
+    public function getAddCommentForm($idArticle, $idUser){
+
+
         return [
             "config"=>[
                 "method"=>"POST",
-                "action"=>"",
+                "action"=> "",
                 "class"=>"",
                 "id"=>"form",
-                "submit"=>"Create",
-                "idSubmit" => "buttonAddComment",
-                "classSubmit" =>"buttonConfirmForm",
+                "submit"=>"Post Comment",
+                "idSubmit" => "submitAddComment",
+                "classSubmit" =>"bouttonConfirmForm",
                 "cancelButton"=>false,
                 "enctype"=>false
 
@@ -58,23 +64,12 @@ class Comments extends BaseSQL{
 
             "data"=>[
 
-                "title"=>[
-                    "type"=>"text",
-                    "placeholder"=>"Title of your page",
-                    "required"=>true,
-                    "class"=>"inputAddPage",
-                    "id"=>"i1--AddPage",
-                    "minlength"=>2,
+                "articleId"=>["type"=>"text","placeholder"=>"", "required"=>true, "id"=>"inputHiddenContent", "value"=>"$idArticle"],
 
-                    "maxlength"=>100,
-                    "error"=>"Your title must be between two or one hundred characters",
-                ],
+                "userId"=>["type"=>"text","placeholder"=>"", "required"=>true, "id"=>"inputHiddenContent", "value"=>"$idUser"],
 
-                "description"=>["value"=>"Your description", "required"=>true, "id"=>"textaeraAddPage", "class"=>"","minlength"=>2,"maxlength"=>310,
-                    "error"=>"Your description must be between two or three hundred ten characters","type"=>""],
-
-                "route"=>["type"=>"text","placeholder"=>"Your url of your page", "required"=>true, "class"=>"inputAddPage", "id"=>"i2--AddPage","maxlength"=>50,
-                    "error"=>"Your road exceeds one hundred characters"]
+                "content"=>["value"=>"Your comment", "required"=>true, "id"=>"textaeraAddComment", "class"=>"","minlength"=>2,"maxlength"=>300,
+                    "error"=>"Your comment must be between two or three hundred characters","type"=>""]
             ]
 
         ];

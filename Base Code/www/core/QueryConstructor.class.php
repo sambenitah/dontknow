@@ -16,9 +16,7 @@ class QueryConstructor{
             throw new \Exception('Aucune connection');
     }
 
-
-
-
+    
     public function select(array ...$select):self //principe fluente  retourne une instance de la class
     {
         $this->requestType = self::SELECT;
@@ -59,6 +57,12 @@ class QueryConstructor{
     public function where(array $where):self
     {
         $this->where = $where;
+        return $this;
+    }
+
+    public function innerJoin(string $innerJoin):self
+    {
+        $this->innerJoin = $innerJoin;
         return $this;
     }
 

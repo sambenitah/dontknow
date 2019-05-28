@@ -19,13 +19,6 @@
 <body>
 <header>
     <div class="row">
-<!--        <div id="backgroundHeader" class="col-12 col-m-12 col-l-12">
-            <a href="<?php /*echo Routing::getSlug("Articles","yourWebSite");*/?>" id="headerPartMainSection">
-
-                Dont Kn?w
-
-            </a>
-        </div>-->
     </div>
 </header>
 

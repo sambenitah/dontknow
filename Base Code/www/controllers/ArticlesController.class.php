@@ -34,7 +34,7 @@ class ArticlesController{
                 $addArticle->setTitle($data["title"]);
                 $addArticle->setRoute($data["route"]);
                 $addArticle->addArticle();
-               //header('Location: '.Routing::getSlug("Articles","showArticles").'');
+               header('Location: '.Routing::getSlug("Articles","showArticles").'');
                exit;
             }
         }
@@ -104,14 +104,39 @@ class ArticlesController{
 
     public function singleArticleAction($param){ // ok
         $showDetailArticle = new Articles();
+        $comment = new Comments();
         $selectDetailArticle = $showDetailArticle->selectSingleArticle(["route"=>$param]);
+        $idArticle =  $selectDetailArticle[0]->id;
+        $idUser = $_SESSION["auth"];
+        $formComment = $comment->getAddCommentForm($idArticle, $idUser);
+        $method = strtoupper($formComment["config"]["method"]);
+        $data = $GLOBALS["_".$method];
+
+        if( $_SERVER['REQUEST_METHOD']==$method && !empty($data) ){
+
+            $validator = new Validator($formComment,$data);
+            $form["errors"] = $validator->errors;
+
+            if(empty($form["errors"])){
+
+                $comment->setArticleId($data["articleId"]);
+                $comment->setUserId($data["userId"]);
+                $comment->setContent($data["content"]);
+                $comment->addComment();
+            }
+        }
+
         if (empty($selectDetailArticle)) {
             header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
         }else{
 
+            $messages = $showDetailArticle->selectCommentArticle(["idArticle"=>$idArticle]);
             $v = new View("singleArticle", self::nameClass , "basic");
             $v->assign("ListPage", $selectDetailArticle);
+            $v->assign("CommentForm", $formComment);
+            $v->assign("Messages", $messages);
             exit;
+
         }
     }
 
