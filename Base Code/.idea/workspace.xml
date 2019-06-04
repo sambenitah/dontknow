@@ -3,31 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cee0f292-5b2f-48df-8183-4c75a2ebcbc2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Comments.frm" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Comments.frm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Comments.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Comments.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/dontknow/Users.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/dontknow/Users.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/ibtmp1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/mysql/innodb_index_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db_data/mysql/innodb_table_stats.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/ArticlesController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/ArticlesController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/CommentsController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/CommentsController.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/controllers/UsersController.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/controllers/UsersController.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_data/ibdata1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/conf.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/conf.inc.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/core/QueryConstructor.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/QueryConstructor.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/core/View.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/core/View.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/Articles.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/Articles.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/Comments.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/Comments.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/models/Users.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/models/Users.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Back-css/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Back-css/_general.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Back-css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Back-css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Front-css/_general.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Front-css/_general.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Front-css/_posts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Front-css/_posts.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/public/css/Front-css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/public/css/Front-css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/Articles/singleArticle.view.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/Articles/singleArticle.view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/templates/basic.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/www/views/templates/basic.tpl.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -140,42 +118,43 @@
     <session id="-1780509215">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="1" />
-          <entry key="php" value="123" />
+          <entry key="php" value="127" />
           <entry key="scss" value="7" />
-          <entry key="yml" value="8" />
+          <entry key="yml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="123" />
+          <entry key="PHP" value="127" />
           <entry key="SCSS" value="7" />
-          <entry key="YAML" value="8" />
+          <entry key="YAML" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
-          <entry key="php" value="11715" />
+          <entry key="php" value="11719" />
           <entry key="scss" value="71" />
-          <entry key="txt" value="18" />
+          <entry key="txt" value="20" />
           <entry key="yml" value="75" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="11715" />
-          <entry key="PLAIN_TEXT" value="34" />
+          <entry key="PHP" value="11719" />
+          <entry key="PLAIN_TEXT" value="36" />
           <entry key="SCSS" value="71" />
           <entry key="YAML" value="75" />
         </counts>
@@ -185,36 +164,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/views/Articles/singleArticle.view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/controllers/ArticlesController.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="133" selection-start-line="133" selection-end-line="133" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/models/Articles.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="113" selection-start-line="113" selection-end-line="113" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/models/Categories.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-229">
+            <state relative-caret-position="225">
               <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
             </state>
           </provider>
@@ -229,11 +181,56 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="10" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/core/QueryConstructor.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+            <state relative-caret-position="270">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="398">
+              <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/core/SPDO.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="46" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/conf.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/core/Routing.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -267,7 +264,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>session_start()</find>
       <find>add</find>
       <find>ed</find>
       <find>getoneby</find>
@@ -297,6 +293,7 @@
       <find>hidden</find>
       <find>#comments .comment-context</find>
       <find>Count</find>
+      <find>DBDRIVER</find>
     </findStrings>
     <replaceStrings>
       <replace>singleArticle</replace>
@@ -311,7 +308,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/controllers/ArticleController.class.php" />
         <option value="$PROJECT_DIR$/www/views/listFrontPages.view.php" />
         <option value="$PROJECT_DIR$/www/public/css/Grid/style.css" />
         <option value="$PROJECT_DIR$/www/public/css/Front-css/_card.scss" />
@@ -362,6 +358,7 @@
         <option value="$PROJECT_DIR$/www/controllers/ArticlesController.class.php" />
         <option value="$PROJECT_DIR$/www/views/Articles/singleArticle.view.php" />
         <option value="$PROJECT_DIR$/www/core/QueryConstructor.class.php" />
+        <option value="$PROJECT_DIR$/www/conf.inc.php" />
       </list>
     </option>
   </component>
@@ -374,7 +371,7 @@
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="971" />
@@ -405,7 +402,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -436,52 +432,11 @@
               <item name="www" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Base Code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Base Code" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Base Code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Base Code" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Base Code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Base Code" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="Back-css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Base Code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Base Code" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="Front-css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Base Code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Base Code" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Base Code" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Base Code" type="462c0819:PsiDirectoryNode" />
-              <item name="www" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Articles" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -568,6 +523,8 @@
       <workItem from="1557231757116" duration="5000" />
       <workItem from="1557250807507" duration="41923000" />
       <workItem from="1557684445907" duration="33183000" />
+      <workItem from="1559071763108" duration="100000" />
+      <workItem from="1559670235916" duration="978000" />
     </task>
     <task id="LOCAL-00001" summary="reset project">
       <created>1548753304095</created>
@@ -730,16 +687,24 @@
       <option name="project" value="LOCAL" />
       <updated>1558218945162</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="commit 28/05/19">
+      <created>1559071789015</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1559071789015</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183511000" />
+    <option name="totallyTimeSpent" value="184589000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="791" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="792" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2739628" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28040057" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -805,23 +770,10 @@
     <MESSAGE value="commit 06/05/19" />
     <MESSAGE value="commit 13/05/19" />
     <MESSAGE value="commit 19/05/19" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit 19/05/19" />
+    <MESSAGE value="commit 28/05/19" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit 28/05/19" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/public/css/Commercial-css/commercial.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-252">
-          <caret line="845" selection-start-line="845" selection-end-line="905" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/public/css/Front-css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13448">
-          <caret line="84" column="10" selection-start-line="84" selection-start-column="6" selection-end-line="84" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/public/css/Front-css/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -876,13 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
           <caret line="37" column="88" selection-start-line="37" selection-start-column="88" selection-end-line="37" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/core/SPDO.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -946,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/core/Routing.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/controllers/ErrorPageController.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="505">
@@ -1006,13 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="7" lean-forward="true" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1079,17 +1010,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/routes.yml">
+    <entry file="file://$PROJECT_DIR$/www/views/Articles/singleArticle.view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="12" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="735">
+          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/models/Statistics.class.php">
+    <entry file="file://$PROJECT_DIR$/www/controllers/ArticlesController.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="67" />
+        <state relative-caret-position="1995">
+          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/models/Articles.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/models/Categories.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -1100,38 +1045,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/models/Categories.class.php">
+    <entry file="file://$PROJECT_DIR$/www/models/Statistics.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        <state relative-caret-position="135">
+          <caret line="9" column="67" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/views/Articles/singleArticle.view.php">
+    <entry file="file://$PROJECT_DIR$/www/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="49" column="35" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+        <state relative-caret-position="398">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/controllers/ArticlesController.class.php">
+    <entry file="file://$PROJECT_DIR$/www/core/Routing.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="133" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="249">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/models/Articles.class.php">
+    <entry file="file://$PROJECT_DIR$/www/routes.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        <state relative-caret-position="180">
+          <caret line="12" column="12" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docker-compose.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="10" selection-start-line="15" selection-start-column="2" selection-end-line="15" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/core/QueryConstructor.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/core/SPDO.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/conf.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
         </state>
       </provider>
     </entry>
