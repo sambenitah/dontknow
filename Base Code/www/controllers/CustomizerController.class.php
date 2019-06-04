@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Core\View;
+
+
 Class CustomizerController{
 
     const nameClass = "Customizer";

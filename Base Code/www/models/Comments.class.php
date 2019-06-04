@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-class Comments extends BaseSQL{
+namespace DontKnow\Models;
+use DontKnow\Core\QueryConstructor;
 
 
-    public function __construct(){
-        parent::__construct();
-    }
+
+class Comments {
 
 
     public function setIDBIS($id)

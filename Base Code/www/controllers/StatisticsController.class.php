@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Models\Statistics;
+
+
 class StatisticsController{
 
     const nameClass = "Statistics";

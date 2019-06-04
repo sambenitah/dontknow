@@ -2,20 +2,18 @@
 
 declare(strict_types=1);
 
-class Users extends BaseSQL{
+namespace DontKnow\Models;
+
+class Users{
 
     public $id = null;
-    /*public $firstname;
-    public $lastname;
-    public $email;
-    public $token;*/
-    public $pwd;
-    public $role=1;
-    public $status=0;
-
-    public function __construct(){
-        parent::__construct();
-    }
+    /*Public $firstname;
+    Public $lastname;
+    Public $email;
+    Public $token;
+    Public $pwd;
+    Public $role=1;
+    Public $status=0;*/
 
     public function setIDBIS($id)
     {
@@ -126,8 +124,26 @@ class Users extends BaseSQL{
     }
 
     public function generateToken(){
-        $token = sha1(uniqid(rand(),true)).date('YmdHis');
+        $token = sha1(uniqid((string)rand(),true)).date('YmdHis');
         return $token;
+    }
+
+
+    public function updateToken(){
+        $user = new Users();
+        $user->getOneBy(["email" => $_SESSION['auth']]);
+        $user->setIDBIS($user->id);
+        $token = $this->generateToken();
+        $user->setToken($token);
+        $user->updateUser();
+        $_SESSION['token'] = $token;
+        return $token;
+    }
+
+    public function getToken(){
+        $user = new Users();
+        $user->getOneBy(["email" => $_SESSION['auth']]);
+        return $user->token;
     }
 
     public function loginVerify(Users $user, array $data)
@@ -135,11 +151,24 @@ class Users extends BaseSQL{
 
         $user->getOneBy(["email" => $data["email"]]);
         if ($user->id != null && password_verify($data["pwd"],$user->pwd)) {
+            $token = $this->generateToken();
+            $user->setIDBIS($user->id);
+            $user->setToken($token);
+            $user->updateUser();
             $_SESSION['auth'] = $data["email"];
+            $_SESSION['token'] = $token;
             return true;
         }
 
         return false;
+    }
+
+    public function updateUser(){
+        $updateUser = new QueryConstructor();
+        $arguments = get_object_vars($this);
+        $query = $updateUser->table('Users')->update($arguments);
+        $query = $updateUser->instance->prepare((string)$query);
+        $query->execute($arguments);
     }
 
     public  function logged(){

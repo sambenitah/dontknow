@@ -2,72 +2,44 @@
 
 declare(strict_types=1);
 
-class Routing{
+namespace DontKnow\Core;
 
-    public static $routeFile = "routes.yml";
+class Routing
+{
+    public static $routeFile = 'routes.yml';
 
-    public static function getRoute($slug){
-
-        $slug = explode("/", $slug);
-
-        if(!isset($slug[3])){
-            $slugPartOne = "/".$slug[1];
-            $routes = yaml_parse_file(self::$routeFile);
-            if(isset($routes[$slugPartOne])){
-                if(empty($routes[$slugPartOne]["controller"]) || empty($routes[$slugPartOne]["action"])){
-                    header('Location: '.Routing::getSlug("ErrorPage","showErrorPage").'');
-                }
-                $controller = ucfirst($routes[$slugPartOne]["controller"])."Controller";
-                $action = $routes[$slugPartOne]["action"]."Action";
-                $controllerPath = "controllers/".$controller.".class.php";
-                $connexion =  $routes[$slugPartOne]["connexion"];
-                $role =  $routes[$slugPartOne]["role"];
-                $param = null;
-
-
-            }else if(isset($slug[1]) && isset($slug[2])){
-                $controller = ucfirst($slug[1])."Controller";
-                $action = $slug[2]."Action";
-                $controllerPath = "controllers/".$controller.".class.php";
-                $connexion = null;
-                $role = null;
-                $param = null;
-
-            }else{
-                return ["c"=>null, "a"=>null,"cPath"=>null ];
-
+    public static function getRoute($slug)
+    {
+        $routes = yaml_parse_file(self::$routeFile);
+        if (isset($routes[$slug])) {
+            if (empty($routes[$slug]['controller']) || empty($routes[$slug]['action'])) {
+                die('Il y a une erreur dans le fichier routes.yml');
             }
-
-        }else{
-            $controller = ucfirst($slug[1])."Controller";
-            $action = $slug[2]."Action";
-            $controllerPath = "controllers/".$controller.".class.php";
-            $param = $slug[3];
-            $connexion = null;
-            $role = null;
-
+            $controller = ucfirst($routes[$slug]['controller']).'Controller';
+            $action = $routes[$slug]['action'].'Action';
+        } else {
+            return ['controller' => null, 'action' => null];
         }
-        return ["controller"=>$controller, "action"=>$action,"controllerPath"=>$controllerPath, "param"=>$param,"connexion"=>$connexion,"role"=>$role ];
+
+        return ['controller' => $controller, 'action' => $action];
     }
 
-
-    public static function getSlug($c, $a){
+    public static function getSlug($controller, $action)
+    {
         $routes = yaml_parse_file(self::$routeFile);
 
         foreach ($routes as $slug => $cAndA) {
-
-            if( !empty($cAndA["controller"]) &&
-                !empty($cAndA["action"]) &&
-                $cAndA["controller"] == $c &&
-                $cAndA["action"] == $a){
+            if (!empty($cAndA['controller']) &&
+                !empty($cAndA['action']) &&
+                $cAndA['controller'] == $controller &&
+                $cAndA['action'] == $action) {
                 return $slug;
             }
         }
+
         return null;
     }
-
 }
-
 
 
 

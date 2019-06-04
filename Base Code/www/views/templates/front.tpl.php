@@ -1,3 +1,6 @@
+<?php
+use DontKnow\Core\Routing;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,7 @@
           integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Montserrat:400,600,700%7CLato:400,700'
           type='text/css' media='all'/>
-    <link rel="stylesheet" type="text/css" href="../../public/css/Front-css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../Public/css/Front-css/style.css">
 </head>
 <body>
 <header>
@@ -184,8 +187,8 @@
                         </div>
                     </div>
                 </footer>
-                <script src="../../public/js/jquery-3.3.1.min.js"></script>
-                <script src="../../public/js/script.js"></script>
+                <script src="../../Public/js/jquery-3.3.1.min.js"></script>
+                <script src="../../Public/js/script.js"></script>
 
             </div>
         </div>

@@ -2,17 +2,20 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Models;
+use DontKnow\Core\QueryConstructor;
+
 class Articles{
 
-    //public $title;
-    //public $description;
-    //public $route;
-   // public $content;
+    //Public $title;
+    //Public $description;
+    //Public $route;
+   // Public $content;
 
-    //public function __construct(){
+    //Public function __construct(){
     //    parent::__construct();
     //}
-    /*public function __get($property) {
+    /*Public function __get($property) {
         if (property_exists($this, $property)) {
             if('date_inserted' === $property) {
                 echo "test";

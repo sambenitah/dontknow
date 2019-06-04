@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Core\View;
+use DontKnow\Models\Pictures;
+use DontKnow\Core\ValidatorFiles;
+use DontKnow\Core\Routing;
+
 Class PicturesController{
 
     const nameClass = "Pictures";
@@ -12,7 +18,7 @@ Class PicturesController{
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_".$method];
         $file = $GLOBALS["_FILES"];
-        $pathFile = ["pathFile" => "public/imagesUpload/"];
+        $pathFile = ["pathFile" => "Public/imagesUpload/"];
         $array = array_merge($data, $file , $pathFile);
 
 

@@ -2,10 +2,20 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Core\View;
+use DontKnow\Models\Articles;
+use DontKnow\Core\Validator;
+use DontKnow\Core\Routing;
 
 class ArticlesController{
 
     const nameClass = "Articles";
+
+    public function __construct(Articles $articles)
+    {
+        $this->articles = $articles;
+    }
 
     public function defaultAction(){ //ok
 

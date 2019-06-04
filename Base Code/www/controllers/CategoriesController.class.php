@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Core\View;
+use DontKnow\Models\Categories;
+use DontKnow\Core\Validator;
+use DontKnow\Core\Routing;
+
 Class CategoriesController{
 
     const nameClass = "Categories";

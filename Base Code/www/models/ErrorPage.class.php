@@ -1,5 +1,10 @@
 <?php
 
+namespace DontKnow\Models;
+use DontKnow\Core\QueryConstructor;
+use DontKnow\Core\Routing;
+
+
 class ErrorPage{
 
     public function setIdBis($id)

@@ -2,12 +2,22 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Core\View;
+use DontKnow\Models\Users;
+use DontKnow\Core\Validator;
+use DontKnow\Core\Routing;
+
 class UsersController{
 
     const nameClass = "Users";
 
-    public function defaultAction(){
+    public function __construct(Users $users)
+    {
+        $this->users = $users;
+    }
 
+    public function defaultAction(){
         $v = new View("homepage",self::nameClass, "commercial");
 
     }
@@ -42,8 +52,7 @@ class UsersController{
 
 
     public function loginAction(){
-
-        $user = new Users();
+        $user = $this->users;
         $form = $user->getLoginForm();
         $method = strtoupper($form["config"]["method"]);
         $data = $GLOBALS["_".$method];
@@ -56,12 +65,11 @@ class UsersController{
                 if($user->loginVerify($user,$data)) {
                     header('Location: '.Routing::getSlug("Articles","yourWebSite").'');
                 }else{
-
+                        echo"error";
                 }
             }
 
         }
-
         $v = new View("loginUser",self::nameClass, "login");
         $v->assign("form", $form);
 

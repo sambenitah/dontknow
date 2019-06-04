@@ -1,3 +1,6 @@
+<?php
+use DontKnow\Core\Routing;
+?>
 <!DOCTYPE html>
 <html lang="en">
 

@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Controllers;
+use DontKnow\Core\View;
+use DontKnow\Models\ErrorPage;
+use DontKnow\Core\Validator;
+use DontKnow\Core\Routing;
+
 Class ErrorPageController{
 
     const nameClass = "Errors";

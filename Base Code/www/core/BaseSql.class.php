@@ -1,4 +1,7 @@
 <?php
+
+namespace DontKnow\Core;
+
 class BaseSQL{
 
     private $table;

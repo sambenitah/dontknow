@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Models;
+use DontKnow\Core\QueryConstructor;
+
+
 class Categories{
 
     public function setName($name)

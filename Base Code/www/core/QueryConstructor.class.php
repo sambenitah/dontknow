@@ -1,5 +1,7 @@
 <?php
 
+namespace DontKnow\Core;
+
 class QueryConstructor{
 
 
@@ -16,7 +18,7 @@ class QueryConstructor{
             throw new \Exception('Aucune connection');
     }
 
-
+    
     public function select(array ...$select):self //principe fluente  retourne une instance de la class
     {
         $this->requestType = self::SELECT;

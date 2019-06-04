@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace DontKnow\Core;
+
 class View{
 
     private $v;
@@ -15,7 +17,7 @@ class View{
 
     public function setView($v,$class){
 
-        $viewPath = "views/".$class."/".$v.".view.php";
+        $viewPath = "Views/".$class."/".$v.".view.php";
 
         if( file_exists($viewPath)){
             $this->v=$viewPath;
@@ -25,7 +27,7 @@ class View{
     }
 
     public function setTemplate($t){
-        $templatePath = "views/templates/".$t.".tpl.php";
+        $templatePath = __DIR__."/../Views/templates/".$t.".tpl.php";
         if( file_exists($templatePath)){
             $this->t=$templatePath;
         }else{
@@ -35,11 +37,11 @@ class View{
     }
 
 
-    //$modal = form //"views/modals/form.mod.php"
+    //$modal = form //"Views/Modals/form.mod.php"
     //$config = [ ..... ]
     public function addModal($modal, $config){
         //form.mod.php
-        $modalPath = "views/modals/".$modal.".mod.php";
+        $modalPath = "Views/Modals/".$modal.".mod.php";
         if( file_exists($modalPath)){
             include $modalPath;
         }else{
@@ -56,10 +58,6 @@ class View{
 
     public function __destruct(){
         extract($this->data);
-        //$this->data =["pseudo"=>"prof", "age"=>30, "city"=>"Paris"]
-        //$pseudo = "prof"
-        //$age = 30
-        //$city = "Paris"
         include $this->t;
     }
 }
