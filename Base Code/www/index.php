@@ -13,6 +13,8 @@ function myAutoloader($class){
     }
 }
 
+
+
 spl_autoload_register("myAutoloader");
 $slug = $_SERVER["REQUEST_URI"];
 $slugExploded = explode("?", $slug);
